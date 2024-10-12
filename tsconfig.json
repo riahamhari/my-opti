@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"ignoreDeprecations": "5.0",
+		"sourceMap": false,
+		"target": "es6",
+		"moduleDetection": "force",
+		"lib": ["ES2020", "DOM", "DOM.Iterable"]
+	},
+	"exclude": ["Archive/**/*"]
+}

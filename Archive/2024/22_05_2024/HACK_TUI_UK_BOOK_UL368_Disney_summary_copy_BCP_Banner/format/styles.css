@@ -1,0 +1,57 @@
+.opti_disneyOffer_banner {
+  border-radius: 8px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  background-color: #e3f5fd;
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+  align-items: center;
+  cursor: pointer;
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_header .opti_attention_icon {
+  display: flex;
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_header h5 {
+  font-family: Ambit;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #1b115c;
+  margin-right: auto;
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_header .opti_expand_icon {
+  cursor: pointer;
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_header .opti_expanded svg {
+  transform: rotate(180deg);
+}
+.opti_disneyOffer_banner .opti_disneyOffer_banner_details {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #4c4c4c;
+  margin-left: 32px;
+}
+.opti_disneyOffer_banner .opti_details_hidden {
+  display: none;
+}
+
+.BookingReference__bookingReference .WCMSComponent {
+  flex-direction: column;
+}
+.BookingReference__bookingReference .WCMSComponent .opti_disneyOffer_banner {
+  margin-top: 8px;
+}
+
+.opti-content .opti_included_disney_offer_text {
+  margin-left: 24px;
+}

@@ -1,0 +1,203 @@
+#boardBasisBreakdown__component .sectionHeading h2 {
+  font-size: 0;
+}
+#boardBasisBreakdown__component .sectionHeading h2::after {
+  content: "Tailor your experience";
+  font-size: 28px;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign [aria-label="board options list"] {
+  display: none;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container {
+  border-radius: 16px;
+  border: solid 1px #b9b9b9;
+  padding: 24px 16px;
+  position: relative;
+  margin: 32px 0;
+  overflow: auto;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container h5 {
+  font-family: Ambit;
+  font-size: 18px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #1b115c;
+  display: flex;
+  gap: 4px;
+}
+@media screen and (max-width: 759.98px) {
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container h5 {
+    display: block;
+  }
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container h5 .opti_premiumAI_copy {
+    margin-right: 4px;
+  }
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container h5 .opti_premiumAI_copy {
+  font-weight: 600;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_included ul .opti_included_list_item {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #092a5e;
+  display: flex;
+  margin: 16px 0;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_included ul .opti_included_list_item .opti_check_icon {
+  display: flex;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_included ul .opti_included_list_item .opti_included_list_item_details {
+  margin-left: 8px;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_included ul .opti_included_list_item .opti_included_list_item_details span {
+  color: #4c4c4c;
+  margin-left: 4px;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  align-items: center;
+}
+@media screen and (max-width: 759.98px) {
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection {
+    display: block;
+  }
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_BoardOptionsBreakdown__removeLink,
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_add_premiumAi_btn {
+    float: right;
+  }
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_premiumAI_price {
+  font-family: Ambit;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #1b115c;
+}
+@media screen and (max-width: 759.98px) {
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_premiumAI_price {
+    margin-bottom: 8px;
+  }
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_premiumAI_price .opti_tt_price {
+  color: #4c4c4c;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_BoardOptionsBreakdown__removeLink {
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.89;
+  letter-spacing: normal;
+  color: #3567f6;
+  text-decoration: underline;
+  display: none;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_add_premiumAi_btn {
+  display: block;
+  max-width: 98px;
+}
+@media screen and (max-width: 759.98px) {
+  #boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .opti_premiumAI_selection .opti_add_premiumAi_btn {
+    max-width: unset;
+  }
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .cards__triangle {
+  display: none;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container .cards__triangle::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  border: 1.25rem solid transparent;
+  border-width: 20px;
+  border-right-color: #376af6;
+  border-top-color: #376af6;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected {
+  border: 2px solid #376af6;
+  box-shadow: 0 0 2px 0 #376af6;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected h5 span {
+  display: none;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected .cards__triangle {
+  display: block;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected .cards__triangle .cards__tick {
+  top: 4px;
+  top: 0.25rem;
+  right: 4px;
+  right: 0.25rem;
+  position: absolute;
+  fill: #fff;
+  display: block;
+  z-index: 1;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected .opti_premiumAI_selection .opti_BoardOptionsBreakdown__removeLink {
+  display: block;
+}
+#boardBasisBreakdown__component .opti_premiumAI_redesign .opti_premiumAI_container.opti_premium_selected .opti_premiumAI_selection .opti_add_premiumAi_btn {
+  display: none;
+}
+
+#roomAllocation__component .RoomAllocation__roomAllocationTitle > h2 {
+  font-size: 0;
+}
+#roomAllocation__component .RoomAllocation__roomAllocationTitle > h2::after {
+  content: "Choose amount of cabins";
+  font-size: 28px;
+}
+
+.RoomAllocation__roomAllocation h4 {
+  display: none;
+}
+
+#roomAllocation__component .RoomAllocation__roomsList li:not(.opti_num_of_cabin_listItem) {
+  display: none;
+}
+#roomAllocation__component .RoomAllocation__roomsList .opti_num_of_cabin_listItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+#roomAllocation__component .RoomAllocation__roomsList .opti_num_of_cabin_listItem .opti_number_of_cabins {
+  font-family: Ambit;
+  font-size: 22px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #1b115c;
+}
+#roomAllocation__component .RoomAllocation__buttonContainer button {
+  border: 0;
+  text-decoration: underline;
+  font-size: 18px;
+}
+#roomAllocation__component .RoomAllocation__buttonContainer button:hover {
+  background-color: #fff;
+}
+
+#stepContinue1__component .StepContinueButton__buttonContainer .contentWidth .StepContinueButton__button {
+  font-size: 0;
+}
+#stepContinue1__component .StepContinueButton__buttonContainer .contentWidth .StepContinueButton__button::after {
+  content: "Continue to Cabin options";
+  font-size: 16px;
+  color: #fff;
+}

@@ -1,0 +1,36 @@
+.opti-pax-banner #allGoneBanner {
+  display: none;
+}
+.opti-pax-banner #allGoneBanner ~ div {
+  display: none;
+}
+.opti-pax-banner #searchPanel__component:has(~ .allGone) {
+  display: none;
+}
+.opti-pax-banner #opti-contact-banner {
+  padding: 0 16px;
+}
+.opti-pax-banner .opti-contact {
+  box-sizing: border-box;
+  padding: 16px;
+  padding: 1rem;
+  background: #ccf5eb;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  margin-top: 32px;
+  margin-top: 2rem;
+}
+.opti-pax-banner .opti-contact strong {
+  font-family: "BrandonText-medium", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+@media screen and (max-width: 959.98px) {
+  .opti-pax-banner .opti-contact .opti-phone__desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 960px) {
+  .opti-pax-banner .opti-contact .opti-phone__mobile {
+    display: none;
+  }
+}

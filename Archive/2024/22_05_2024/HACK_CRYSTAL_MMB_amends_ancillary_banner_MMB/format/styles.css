@@ -1,0 +1,13 @@
+#opti-amends-banner {
+  border: 1px dashed #84329b;
+  margin-top: 8px;
+  padding: 12px;
+}
+
+#opti-amends-banner p {
+  color: #252a32;
+}
+
+#opti-amends-banner p strong {
+  font-family: "BrandonText-Medium", Arial, Helvetica, sans-serif;
+}

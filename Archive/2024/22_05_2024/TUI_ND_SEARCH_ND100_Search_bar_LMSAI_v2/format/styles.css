@@ -1,0 +1,35 @@
+@media (max-width: 759px) {
+  .UI__choiceSearchTabsWrapper ul.UI__choiceSearchScrollerClass {
+    justify-content: space-between;
+    width: 100% !important;
+  }
+  .UI__choiceSearchTabsWrapper ul.UI__choiceSearchScrollerClass li {
+    width: auto;
+    height: 93px;
+  }
+  .UI__choiceSearchTabsWrapper ul.UI__choiceSearchScrollerClass .UI__choiceSearchTab {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 0;
+    height: 93px;
+    min-width: 43px;
+  }
+  .UI__choiceSearchTabsWrapper ul.UI__choiceSearchScrollerClass .UI__choiceSearchTab .UI__label {
+    -webkit-line-clamp: 2;
+    /* Limit text to two lines */
+    -webkit-box-orient: vertical;
+    overflow: visible;
+    text-overflow: ellipsis;
+    /* Add ellipsis if text overflows */
+    line-height: 1.2rem;
+    /* Set line height to ensure text fits within two lines */
+    max-height: 2.4rem;
+    white-space: normal;
+  }
+}
+@media (min-width: 760px) and (max-width: 821px) {
+  ul.UI__choiceSearchScrollerClass .UI__choiceSearchTab {
+    padding: 1rem 0.5rem 0.5rem !important;
+  }
+}

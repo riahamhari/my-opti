@@ -1,0 +1,46 @@
+.opti-pax-banner {
+	#allGoneBanner {
+		display: none;
+
+		& ~ div {
+			display: none;
+		}
+	}
+
+	#searchPanel__component:has(~ .allGone) {
+		display: none;
+	}
+
+	#opti-contact-banner {
+		padding: 0 16px;
+	}
+
+	.opti-contact {
+		box-sizing: border-box;
+		padding: 16px;
+		padding: 1rem;
+		background: #ccf5eb;
+		margin-bottom: 16px;
+		margin-bottom: 1rem;
+		margin-top: 32px;
+		margin-top: 2rem;
+
+		strong {
+			font-family: 'BrandonText-medium', Arial, Helvetica, sans-serif;
+			font-weight: 400;
+		}
+
+		.opti-phone {
+			&__desktop {
+				@media screen and (max-width: 959.98px) {
+					display: none;
+				}
+			}
+			&__mobile {
+				@media screen and (min-width: 960px) {
+					display: none;
+				}
+			}
+		}
+	}
+}
