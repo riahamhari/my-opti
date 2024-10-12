@@ -1,0 +1,33 @@
+@media screen and (min-width: 768px) {
+  .opti_starter_package_upsell_test .tittleAndPriceBlock .tittleAndPriceBlock__title h2 {
+    margin-bottom: 8px;
+  }
+}
+.opti_starter_package_upsell_test #opti_starter_package_upsell_desktop,
+.opti_starter_package_upsell_test #opti_starter_package_upsell_mobile {
+  color: #404041;
+  font-weight: 500;
+  font-size: 16px;
+}
+.opti_starter_package_upsell_test #opti_starter_package_upsell_desktop strong,
+.opti_starter_package_upsell_test #opti_starter_package_upsell_mobile strong {
+  font-weight: 600;
+}
+.opti_starter_package_upsell_test #opti_starter_package_upsell_desktop a,
+.opti_starter_package_upsell_test #opti_starter_package_upsell_mobile a {
+  color: #ffae01;
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .opti_starter_package_upsell_test #opti_starter_package_upsell_desktop {
+    display: none;
+  }
+}
+.opti_starter_package_upsell_test #opti_starter_package_upsell_mobile {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .opti_starter_package_upsell_test #opti_starter_package_upsell_mobile {
+    display: none;
+  }
+}

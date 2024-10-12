@@ -1,1 +1,35 @@
 @use 'sass/base' as *;
+
+.opti_starter_package_upsell_test {
+	.tittleAndPriceBlock .tittleAndPriceBlock__title h2 {
+		@media screen and (min-width: 768px) {
+			margin-bottom: 8px;
+		}
+	}
+
+	#opti_starter_package_upsell_desktop,
+	#opti_starter_package_upsell_mobile {
+		color: #404041;
+		font-weight: 500;
+		font-size: 16px;
+		strong {
+			font-weight: 600;
+		}
+		a {
+			color: #ffae01;
+			text-decoration: underline;
+		}
+	}
+	#opti_starter_package_upsell_desktop {
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	#opti_starter_package_upsell_mobile {
+		text-align: center;
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+}
