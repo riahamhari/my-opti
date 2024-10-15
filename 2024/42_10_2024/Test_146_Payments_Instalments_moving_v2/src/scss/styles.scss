@@ -1,0 +1,61 @@
+@use 'sass/base' as *;
+
+.opti_split_payments_Wrapper {
+	position: relative;
+	margin-bottom: 32px;
+	#opti_split_payments {
+		color: #69b3e5;
+		font-weight: 500;
+		text-align: right;
+		font-size: 15px;
+		@media screen and (max-width: 768px) {
+			text-align: center;
+		}
+		.opti_popover_trigger {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+	.popover {
+		left: calc(100% - 198px);
+		top: 50px;
+		@media screen and (max-width: 768px) {
+			top: 50px;
+			transform: translateX(-50%);
+			left: 60%;
+		}
+
+		@media screen and (max-width: 576px) {
+			left: 50%;
+			& > .arrow {
+				left: 72%;
+			}
+		}
+	}
+
+	.opti_show_popover {
+		display: block;
+	}
+}
+
+#payment-plan-trigger-top {
+	float: right;
+	@media screen and (max-width: 768px) {
+		float: unset;
+	}
+	a {
+		text-decoration: none !important;
+		padding: 14px 20px;
+		background-color: #fefefe;
+		color: #ffae01;
+		text-transform: uppercase;
+		border: 2px solid #ffae01;
+		border-radius: 6px;
+		font-weight: 700;
+		&:hover {
+			border-color: #efa106;
+			background-color: #efa106;
+			color: #fefefe;
+		}
+	}
+}

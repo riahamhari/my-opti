@@ -1,0 +1,65 @@
+.opti_split_payments_Wrapper {
+  position: relative;
+  margin-bottom: 32px;
+}
+.opti_split_payments_Wrapper #opti_split_payments {
+  color: #69b3e5;
+  font-weight: 500;
+  text-align: right;
+  font-size: 15px;
+}
+@media screen and (max-width: 768px) {
+  .opti_split_payments_Wrapper #opti_split_payments {
+    text-align: center;
+  }
+}
+.opti_split_payments_Wrapper #opti_split_payments .opti_popover_trigger {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.opti_split_payments_Wrapper .popover {
+  left: calc(100% - 198px);
+  top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .opti_split_payments_Wrapper .popover {
+    top: 50px;
+    transform: translateX(-50%);
+    left: 60%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .opti_split_payments_Wrapper .popover {
+    left: 50%;
+  }
+  .opti_split_payments_Wrapper .popover > .arrow {
+    left: 72%;
+  }
+}
+.opti_split_payments_Wrapper .opti_show_popover {
+  display: block;
+}
+
+#payment-plan-trigger-top {
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  #payment-plan-trigger-top {
+    float: unset;
+  }
+}
+#payment-plan-trigger-top a {
+  text-decoration: none !important;
+  padding: 14px 20px;
+  background-color: #fefefe;
+  color: #ffae01;
+  text-transform: uppercase;
+  border: 2px solid #ffae01;
+  border-radius: 6px;
+  font-weight: 700;
+}
+#payment-plan-trigger-top a:hover {
+  border-color: #efa106;
+  background-color: #efa106;
+  color: #fefefe;
+}
