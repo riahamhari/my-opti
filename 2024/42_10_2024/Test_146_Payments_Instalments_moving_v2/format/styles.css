@@ -1,54 +1,80 @@
-.opti_split_payments_Wrapper {
-  position: relative;
-  margin-bottom: 32px;
+@media screen and (min-width: 992px) {
+  .opti_grid_container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto auto;
+  }
+  .opti_grid_container .opti_split_payments_Wrapper {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .opti_grid_container fieldset:has(#payment-plan-trigger-top) {
+    grid-column: 2;
+    grid-row: 2;
+    white-space: nowrap;
+  }
+  .opti_grid_container fieldset:has(#payment-plan-section-top) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .opti_grid_container .login-register {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .opti_grid_container .login-register .col-lg-6 {
+    width: 80%;
+  }
 }
-.opti_split_payments_Wrapper #opti_split_payments {
+.opti_grid_container .opti_split_payments_Wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+.opti_grid_container .opti_split_payments_Wrapper #opti_split_payments {
   color: #69b3e5;
   font-weight: 500;
   text-align: right;
   font-size: 15px;
 }
 @media screen and (max-width: 768px) {
-  .opti_split_payments_Wrapper #opti_split_payments {
+  .opti_grid_container .opti_split_payments_Wrapper #opti_split_payments {
     text-align: center;
   }
 }
-.opti_split_payments_Wrapper #opti_split_payments .opti_popover_trigger {
+.opti_grid_container .opti_split_payments_Wrapper #opti_split_payments .opti_popover_trigger {
   text-decoration: underline;
   cursor: pointer;
 }
-.opti_split_payments_Wrapper .popover {
+.opti_grid_container .opti_split_payments_Wrapper .popover {
   left: calc(100% - 198px);
   top: 50px;
 }
 @media screen and (max-width: 768px) {
-  .opti_split_payments_Wrapper .popover {
+  .opti_grid_container .opti_split_payments_Wrapper .popover {
     top: 50px;
     transform: translateX(-50%);
     left: 60%;
   }
 }
 @media screen and (max-width: 576px) {
-  .opti_split_payments_Wrapper .popover {
+  .opti_grid_container .opti_split_payments_Wrapper .popover {
     left: 50%;
   }
-  .opti_split_payments_Wrapper .popover > .arrow {
+  .opti_grid_container .opti_split_payments_Wrapper .popover > .arrow {
     left: 72%;
   }
 }
-.opti_split_payments_Wrapper .opti_show_popover {
+.opti_grid_container .opti_split_payments_Wrapper .opti_show_popover {
   display: block;
 }
-
-#payment-plan-trigger-top {
+.opti_grid_container #payment-plan-trigger-top {
   float: right;
 }
 @media screen and (max-width: 768px) {
-  #payment-plan-trigger-top {
+  .opti_grid_container #payment-plan-trigger-top {
     float: unset;
   }
 }
-#payment-plan-trigger-top a {
+.opti_grid_container #payment-plan-trigger-top a {
   text-decoration: none !important;
   padding: 14px 20px;
   background-color: #fefefe;
@@ -58,8 +84,12 @@
   border-radius: 6px;
   font-weight: 700;
 }
-#payment-plan-trigger-top a:hover {
+.opti_grid_container #payment-plan-trigger-top a:hover {
   border-color: #efa106;
   background-color: #efa106;
   color: #fefefe;
+}
+
+.opti_hide_default_pp_section {
+  display: none !important;
 }

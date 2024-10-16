@@ -7,7 +7,7 @@ Test name: Test 146 - Payments Instalments moving v2
     const myInterval = setInterval(() => {
         const paymentPlanSections = document.querySelectorAll('.payment-plan-section');
         const eightPaymentsListEl = document.querySelector('li:has(#PaymentPlan8-Weekly) .js-total');
-        if (paymentPlanSections && paymentPlanSections.length) {
+        if (paymentPlanSections && paymentPlanSections.length && eightPaymentsListEl) {
             clearInterval(myInterval);
             initFunc(paymentPlanSections);
             const waitForTopSection = setInterval(() => {
@@ -110,6 +110,7 @@ Test name: Test 146 - Payments Instalments moving v2
 		
 		</div>`;
         topPaymentPlanSection.insertAdjacentHTML('beforebegin', splitPaymentsHtml);
+        // popover fucntionality
         const waitForTrigger = setInterval(() => {
             const popoverTrigger = document.querySelector('.opti_popover_trigger');
             const popover = document.getElementById('opti_popover');
@@ -126,6 +127,21 @@ Test name: Test 146 - Payments Instalments moving v2
                 });
             }
         }, 300);
+        // put els in a grid
+        const splitPaymentsWrapper = document.querySelector('.opti_split_payments_Wrapper');
+        const paymentPlanCtaContainer = document.querySelector('fieldset:has(#payment-plan-trigger-top)');
+        const topFormSection = document.querySelector('fieldset:has(#payment-plan-section-top)');
+        const loginRegisterSection = document.querySelector('.login-register');
+        const firstFieldset = document.querySelector('.details-form fieldset');
+        const gridContainer = document.createElement('div');
+        gridContainer.classList.add('opti_grid_container');
+        firstFieldset.insertAdjacentElement('afterend', gridContainer);
+        gridContainer.append(splitPaymentsWrapper, paymentPlanCtaContainer, topFormSection, loginRegisterSection);
+        const newCta = paymentPlanCtaContainer.querySelector('a');
+        const paymentPlanDefaultSection = document.querySelector('fieldset:has(#payment-plan-section)');
+        newCta.onclick = () => {
+            paymentPlanDefaultSection.classList.add('opti_hide_default_pp_section');
+        };
     };
     setTimeout(function () {
         if (myInterval) {
