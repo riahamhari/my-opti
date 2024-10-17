@@ -1,0 +1,67 @@
+.tittleAndPriceBlock__points {
+  display: none;
+}
+
+.opti_tittleAndPriceBlock__points h5 {
+  font-size: 15px;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.opti_tittleAndPriceBlock__points h5 .opti_relative {
+  position: relative;
+  display: inline;
+}
+.opti_tittleAndPriceBlock__points h5 .opti_info_icon {
+  cursor: pointer;
+}
+.opti_tittleAndPriceBlock__points .guarantee .svg-like {
+  fill: #808184;
+  width: 15px;
+  height: 15px;
+}
+.opti_tittleAndPriceBlock__points .opti_info_icon {
+  width: 18px;
+  height: 18px;
+}
+.opti_tittleAndPriceBlock__points .popover {
+  /* right: -16px; */
+  top: 20px;
+  left: unset;
+  right: -20px;
+}
+.opti_tittleAndPriceBlock__points .popover .arrow {
+  right: 8px;
+  left: unset;
+}
+@media screen and (max-width: 768px) {
+  .opti_tittleAndPriceBlock__points .popover {
+    left: unset;
+    right: -20px;
+  }
+}
+.opti_tittleAndPriceBlock__points .popover .popover-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.opti_tittleAndPriceBlock__points .popover .popover-content p {
+  font-size: 12px;
+  text-transform: none;
+  font-family: museo-sans, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.7;
+}
+.opti_tittleAndPriceBlock__points .opti_show_popover {
+  display: block;
+  min-width: 290px;
+}
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    padding-left: 16px;
+  }
+}

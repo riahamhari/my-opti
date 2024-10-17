@@ -1,0 +1,90 @@
+@use 'sass/base' as *;
+
+.tittleAndPriceBlock__points {
+	display: none;
+}
+.opti_tittleAndPriceBlock__points {
+	h5 {
+		font-size: 15px;
+		gap: 8px;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		display: flex;
+
+		.opti_relative {
+			position: relative;
+			display: inline;
+		}
+		.opti_info_icon {
+			cursor: pointer;
+		}
+	}
+	.guarantee {
+		.svg-like {
+			fill: #808184;
+			width: 15px;
+			height: 15px;
+			// margin-right: 10px;
+		}
+	}
+
+	// .paymentPlan{
+
+	// }
+
+	.opti_info_icon {
+		width: 18px;
+		height: 18px;
+	}
+
+	.popover {
+		// right: -16px;
+		// top: 20px;
+		// left: unset;
+		/* right: -16px; */
+		top: 20px;
+		left: unset;
+		right: -20px;
+		.arrow {
+			right: 8px;
+			left: unset;
+		}
+		@media screen and (max-width: 768px) {
+			left: unset;
+			right: -20px;
+		}
+
+		// @media screen and (max-width: 576px) {
+		// 	// left: 50%;
+		// 	& > .arrow {
+		// 		left: 72%;
+		// 	}
+		// }
+
+		.popover-content {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			p {
+				font-size: 12px;
+				text-transform: none;
+				font-family: museo-sans, sans-serif;
+				font-weight: 400;
+				letter-spacing: 0px;
+				line-height: 1.7;
+			}
+		}
+	}
+
+	.opti_show_popover {
+		display: block;
+		min-width: 290px;
+	}
+}
+
+.sidebar {
+	@media screen and (min-width: 992px) {
+		padding-left: 16px;
+	}
+}
