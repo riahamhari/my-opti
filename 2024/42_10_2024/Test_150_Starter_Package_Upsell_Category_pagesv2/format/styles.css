@@ -1,0 +1,23 @@
+.opti_starter_package_upsell_category_test .opti_row .opti_hide_free_block {
+  display: none;
+}
+.opti_starter_package_upsell_category_test .opti_row #opti_starter_block .courseSeries__preview__banner a {
+  text-decoration: underline;
+}
+.opti_starter_package_upsell_category_test .opti_row #opti_starter_block .courseSeries__preview__step h5 {
+  color: #69b3e5;
+}
+@media screen and (min-width: 480px) {
+  .opti_starter_package_upsell_category_test .opti_row .courseSeries__preview--thumbsHigherImage .video-mask > a {
+    height: 208px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .opti_starter_package_upsell_category_test .opti_row .courseSeries__preview--thumbsHigherImage .video-mask {
+    height: 208px;
+  }
+}
+
+.courseSeries__preview .courseSeries__preview__step h5 {
+  color: #69b3e5;
+}

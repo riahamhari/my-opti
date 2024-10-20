@@ -1,0 +1,48 @@
+@use 'sass/base' as *;
+
+.opti_starter_package_upsell_category_test {
+	#opti_upsellBanner {
+		background: #f3f9f4;
+		position: relative;
+		padding: 16px;
+
+		.opti_banner_close_icon {
+			position: absolute;
+			top: 8px;
+			right: 4px;
+			cursor: pointer;
+		}
+		.opti_upsellBanner_text {
+			margin: 0;
+			display: flex;
+			gap: 4px;
+			font-weight: 500;
+			font-size: 16px;
+			text-align: left;
+			flex-wrap: wrap;
+			strong {
+				font-weight: 600;
+			}
+			a {
+				color: #ffae01;
+				text-decoration: underline;
+				margin-left: 4px;
+			}
+		}
+		.opti_tag_icon {
+			margin-right: 16px;
+			display: flex;
+			@media screen and (max-width: 768px) {
+				margin-right: 8px;
+			}
+			svg {
+				transform: rotateY(180deg);
+			}
+		}
+		.opti_copy_text {
+			@media screen and (max-width: 768px) {
+				max-width: 90%;
+			}
+		}
+	}
+}
