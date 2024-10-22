@@ -6,7 +6,7 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v2
 (() => {
 	'use strict';
 	const bodyInt = setInterval(() => {
-		if (document.body) {
+		if (document?.body) {
 			clearInterval(bodyInt);
 			document.body.style.display = 'none';
 		}
