@@ -6,11 +6,11 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v1
 (() => {
 	'use strict';
 	const myInterval = setInterval(() => {
-		const courseSeriesText = document.querySelector('#core-courses .p1') || document.querySelector('.courseSeries p');
+		const courseSeriesInfo = document.querySelector('.courseSeries__info');
 
-		if (courseSeriesText) {
+		if (courseSeriesInfo) {
 			clearInterval(myInterval);
-			optiInit(courseSeriesText);
+			optiInit(courseSeriesInfo);
 		}
 	}, 300);
 
@@ -112,15 +112,18 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v1
 			d="M2.3 3.7c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0L8 6.6l4.3-4.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L9.4 8l4.3 4.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0L8 9.4l-4.3 4.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4L6.6 8 2.3 3.7z"></path>
 	</svg>`;
 
-	const optiInit = (courseSeriesText) => {
+	const optiInit = (courseSeriesInfo) => {
 		const currentUrl = window.location.href;
 
 		const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
 
+		const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+
 		const matchingCourse = Object.keys(copyForCategoryPages).find((course) =>
-			copyForCategoryPages[course].courseLandingPages.some(
-				(page) => page === baseUrl // Compare against the base URL only
-			)
+			copyForCategoryPages[course].courseLandingPages.some((page) => {
+				const normalizedPage = page.endsWith('/') ? page.slice(0, -1) : page;
+				return normalizedPage === normalizedBaseUrl;
+			})
 		);
 
 		if (!matchingCourse) {
@@ -138,7 +141,12 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v1
 		<p class="opti_upsellBanner_text"><span class="opti_tag_icon">${tagIcon}</span><span class="opti_copy_text">${copy}<a href=${packageLink}>Learn More</a></span></p>
 		</div>`;
 
-		courseSeriesText.insertAdjacentHTML('afterend', upsellBannerHtml);
+		if (matchingCourse === 'tuning starter package' || matchingCourse === 'diesel tuning starter package') {
+			const p1 = courseSeriesInfo.querySelector('.p1');
+			p1.insertAdjacentHTML('afterend', upsellBannerHtml);
+		} else {
+			courseSeriesInfo.insertAdjacentHTML('beforeend', upsellBannerHtml);
+		}
 
 		const waitForCloseIcon = setInterval(() => {
 			const closeIcon = document.querySelector<HTMLElement>('.opti_banner_close_icon');

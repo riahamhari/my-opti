@@ -5,12 +5,24 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v2
 
 (() => {
 	'use strict';
+	const bodyInt = setInterval(() => {
+		if (document.body) {
+			clearInterval(bodyInt);
+			document.body.style.display = 'none';
+		}
+	});
+
 	const myInterval = setInterval(() => {
-		const firstRow = document.querySelector('.row.equal-height');
+		const firstRow: HTMLElement = document.querySelector('.row.equal-height');
 		const rowArr = [...document.querySelectorAll('.site-main .row.equal-height')];
-		if (firstRow && rowArr.length) {
+		if (firstRow && rowArr.length && document.body) {
 			clearInterval(myInterval);
+
 			optiInit(firstRow);
+			// Use a setTimeout to allow modifications to complete before showing
+			setTimeout(() => {
+				document.body.style.display = '';
+			}, 270);
 		}
 	}, 300);
 

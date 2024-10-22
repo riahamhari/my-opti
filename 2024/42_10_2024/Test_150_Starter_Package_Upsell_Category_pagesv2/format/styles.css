@@ -21,3 +21,12 @@
 .courseSeries__preview .courseSeries__preview__step h5 {
   color: #69b3e5;
 }
+
+.opti_smooth_transition {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+.opti_visible {
+  opacity: 1; /* Fully visible */
+}
