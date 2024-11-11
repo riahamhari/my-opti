@@ -1,0 +1,124 @@
+@use 'sass/base' as *;
+
+.main-content.tittleAndPriceBlock {
+	@media screen and (max-width: 579.98px) {
+		margin-bottom: 0;
+
+		.tittleAndPriceBlock__price {
+			background: #ecebea;
+			padding: 0 20px 20px;
+		}
+	}
+}
+
+.sidebar.tittleAndPriceBlock {
+	@media screen and (max-width: 579.98px) {
+		background: #ecebea;
+		margin-top: 0;
+		padding: 0 16px 16px;
+	}
+}
+
+#opti_package_inclusion {
+	background: #ecebea;
+	padding: 20px 20px 0;
+	margin-top: 20px;
+	@media screen and (min-width: 580px) {
+		display: none;
+	}
+
+	hr {
+		margin-top: -1px;
+		border-color: #d8d7d7;
+	}
+	.package-title {
+		font-size: 0;
+		display: inline-block;
+		padding-bottom: 15px;
+		margin-bottom: 0;
+		border-bottom: 5px solid #69b3e5;
+		letter-spacing: 0;
+		&::after {
+			content: 'GET LIFETIME ACCESS TO:';
+			font-size: 16px;
+			letter-spacing: 2px;
+		}
+	}
+	.package-course {
+		h4 {
+			color: #404041;
+			margin-bottom: 0;
+		}
+		h4:first-of-type {
+			padding-left: 40px;
+			flex-wrap: wrap;
+			display: flex;
+			&::before {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				width: 28px;
+				left: 20px;
+				height: 24px;
+				background-image: url("data:image/svg+xml,%3Csvg fill='%2357B62B' width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' stroke='%2357B62B' style='%0A'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+			}
+		}
+		.course-price {
+			font-size: 16px;
+			color: #69b3e5;
+			margin-bottom: 20px;
+			margin-left: 40px;
+		}
+	}
+
+	.package-total {
+		.saving {
+			text-align: center;
+			margin-bottom: 0;
+
+			span {
+				color: #d92129;
+				font-size: 1.4em;
+				text-decoration: line-through;
+				&::before {
+					content: ':';
+					margin-right: 8px;
+					color: #808184;
+					font-size: 16px;
+					display: inline-block;
+					text-decoration: none;
+					margin-left: -4px;
+				}
+			}
+		}
+		.total {
+			color: #808184;
+			text-align: center;
+			margin-bottom: 0;
+			&::after {
+				content: ':';
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+
+	.package-course.opti_2_years_support {
+		margin-bottom: 20px;
+		.course-price {
+			display: none !important;
+		}
+		span {
+			color: #69b3e5;
+			font-size: 16px;
+		}
+	}
+}
+
+.btn-sticky {
+	@media screen and (max-width: 580px) {
+		position: static !important;
+		background: unset !important;
+	}
+}
