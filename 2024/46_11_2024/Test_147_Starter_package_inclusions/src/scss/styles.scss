@@ -51,8 +51,7 @@
 		}
 		h4:first-of-type {
 			padding-left: 40px;
-			flex-wrap: wrap;
-			display: flex;
+
 			&::before {
 				content: '';
 				display: inline-block;
@@ -116,9 +115,9 @@
 	}
 }
 
-.btn-sticky {
-	@media screen and (max-width: 580px) {
-		position: static !important;
-		background: unset !important;
-	}
-}
+// .btn-sticky {
+// 	@media screen and (max-width: 580px) {
+// 		position: static !important;
+// 		background: unset !important;
+// 	}
+// }

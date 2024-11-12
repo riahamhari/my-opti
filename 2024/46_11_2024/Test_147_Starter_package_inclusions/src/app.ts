@@ -22,9 +22,10 @@ declare global {
 (() => {
 	'use strict';
 	const myInterval = setInterval(() => {
-		const packageTitle = document.querySelector('.tittleAndPriceBlock__title') as HTMLElement;
+		const packageTitle: HTMLElement = document.querySelector('.tittleAndPriceBlock__title');
 		const packageEl = document.querySelector('.package');
-		if (packageTitle && packageEl) {
+		const buttonWrapper: HTMLElement = document.querySelector('.btn-wrapper');
+		if (packageTitle && packageEl && buttonWrapper) {
 			clearInterval(myInterval);
 			optiInit(packageTitle, packageEl);
 		}
@@ -34,13 +35,16 @@ declare global {
 		const packageInclusion = packageEl.cloneNode(true) as HTMLElement;
 		packageInclusion.setAttribute('id', 'opti_package_inclusion');
 
-		const checkIcon = `<svg fill="#57B62B" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#57B62B" style="
-"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z"></path></g></svg>`;
-
 		// remove descriptions
 		const descriptions = [...packageInclusion.querySelectorAll('.package-course p')];
 		descriptions.forEach((description) => {
 			description.remove();
+		});
+
+		// remove empty divs
+		const emptyDivs = [...packageInclusion.querySelectorAll('.package-course .package-course')];
+		emptyDivs.forEach((emptyDiv) => {
+			emptyDiv.remove();
 		});
 
 		// amend the last package inclusion - 24 months gold membership
@@ -51,9 +55,21 @@ declare global {
 		const lastPackagePrice = lastPackagePriceEl?.innerText;
 		if (lastPackageTitle.innerText === '24 Months of Gold Membership' && lastPackagePrice) {
 			lastPackage.classList.add('opti_2_years_support');
-			lastPackageTitle.innerHTML = `PLUS: bonus 2 years of dedicated support and webinar access <span>worth ${lastPackagePrice}<span>`;
+			lastPackageTitle.innerHTML = `PLUS: bonus 2 years of dedicated support and webinar access <span>worth ${lastPackagePrice}</span>`;
 		}
 		packageTitle.insertAdjacentElement('afterend', packageInclusion);
+
+		const buttonWrapper: HTMLElement = document.querySelector('.btn-wrapper');
+		const buttonBottomOffset = buttonWrapper.offsetTop + buttonWrapper.offsetHeight;
+
+		window.addEventListener('scroll', () => {
+			// Check if the button is completely out of view
+			if (window.scrollY >= buttonBottomOffset + 1280) {
+				buttonWrapper.classList.add('btn-sticky');
+			} else {
+				buttonWrapper.classList.remove('btn-sticky');
+			}
+		});
 	};
 
 	setTimeout(function () {

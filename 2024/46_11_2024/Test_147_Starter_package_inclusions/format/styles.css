@@ -49,8 +49,6 @@
 }
 #opti_package_inclusion .package-course h4:first-of-type {
   padding-left: 40px;
-  flex-wrap: wrap;
-  display: flex;
 }
 #opti_package_inclusion .package-course h4:first-of-type::before {
   content: "";
@@ -105,11 +103,4 @@
 #opti_package_inclusion .package-course.opti_2_years_support span {
   color: #69b3e5;
   font-size: 16px;
-}
-
-@media screen and (max-width: 580px) {
-  .btn-sticky {
-    position: static !important;
-    background: unset !important;
-  }
 }
