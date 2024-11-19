@@ -1,4 +1,4 @@
-@media screen and (max-width: 579.98px) {
+@media screen and (max-width: 767.98px) {
   .main-content.tittleAndPriceBlock {
     margin-bottom: 0;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-width: 579.98px) {
+@media screen and (max-width: 767.98px) {
   .sidebar.tittleAndPriceBlock {
     background: #ecebea;
     margin-top: 0;
@@ -21,7 +21,7 @@
   padding: 20px 20px 0;
   margin-top: 20px;
 }
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 768px) {
   #opti_package_inclusion {
     display: none;
   }
@@ -103,4 +103,212 @@
 #opti_package_inclusion .package-course.opti_2_years_support span {
   color: #69b3e5;
   font-size: 16px;
+}
+
+@media screen and (max-width: 767.98px) {
+  #opti_starter_title {
+    display: flex;
+    flex-direction: column;
+  }
+  #opti_starter_title .price-wrapper {
+    display: none;
+  }
+}
+#opti_starter_title .tittleAndPriceBlock__price {
+  background: #ecebea;
+  padding: 0 20px 20px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  #opti_starter_title .tittleAndPriceBlock__price {
+    display: none;
+  }
+}
+#opti_starter_title .tittleAndPriceBlock__price h3 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2px;
+}
+#opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__mobileOr {
+  color: #69b3e5;
+  margin-bottom: 2px;
+  text-align: center;
+}
+#opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink {
+  display: block;
+  color: #69b3e5;
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
+}
+#opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover-trigger {
+  display: block;
+  padding-top: 5px;
+  color: #69b3e5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover {
+  left: calc(100% - 198px);
+  top: 50px;
+}
+@media screen and (max-width: 768px) {
+  #opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover {
+    top: 142px;
+    transform: translateX(-50%);
+    left: 60%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover {
+    left: 50%;
+  }
+}
+#opti_starter_title .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .opti_show_popover {
+  display: block;
+}
+
+.opti_tittleAndPriceBlock__points h5 {
+  font-size: 15px !important;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.opti_tittleAndPriceBlock__points h5 .opti_relative {
+  position: relative;
+  display: inline;
+}
+.opti_tittleAndPriceBlock__points h5 .opti_info_icon {
+  cursor: pointer;
+}
+.opti_tittleAndPriceBlock__points .guarantee .svg-like {
+  fill: #808184;
+  width: 15px;
+  height: 15px;
+}
+.opti_tittleAndPriceBlock__points .opti_info_icon {
+  width: 18px;
+  height: 18px;
+}
+.opti_tittleAndPriceBlock__points .popover {
+  /* right: -16px; */
+  top: 20px;
+  left: unset;
+  right: -20px;
+}
+.opti_tittleAndPriceBlock__points .popover .arrow {
+  right: 8px;
+  left: unset;
+}
+@media screen and (max-width: 768px) {
+  .opti_tittleAndPriceBlock__points .popover {
+    left: unset;
+    right: -20px;
+  }
+}
+.opti_tittleAndPriceBlock__points .popover .popover-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.opti_tittleAndPriceBlock__points .popover .popover-content p {
+  font-size: 12px;
+  text-transform: none;
+  font-family: museo-sans, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.7;
+}
+.opti_tittleAndPriceBlock__points .opti_show_popover {
+  display: block;
+  min-width: 290px;
+}
+
+@media screen and (min-width: 768px) {
+  .VIPSignupPage .tittleAndPriceBlock {
+    display: none;
+  }
+}
+.VIPSignupPage .sidebar.col-sm-4 .package h4:first-of-type::before {
+  left: 70px !important;
+}
+.VIPSignupPage .sidebar.col-sm-4 .package .opti_new_cta button span {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: normal !important;
+}
+.VIPSignupPage .sidebar.col-sm-4 .package .opti_new_cta .guarantee svg {
+  display: none;
+}
+.VIPSignupPage .sidebar.col-sm-4 .package .opti_new_cta .price {
+  display: none;
+}
+.VIPSignupPage .sidebar.col-sm-4 .package .package-total .saving {
+  text-align: center;
+}
+
+.sidebar.col-sm-4 .package .package-title {
+  font-size: 0;
+}
+.sidebar.col-sm-4 .package .package-title::after {
+  font-size: 16px;
+  content: "GET LIFETIME ACCESS TO:";
+  display: block;
+  letter-spacing: 1px;
+}
+.sidebar.col-sm-4 .package .package-course h4 {
+  margin-left: 30px;
+}
+.sidebar.col-sm-4 .package .package-course h4:first-of-type::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 28px;
+  left: 30px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%2357B62B' width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' stroke='%2357B62B' style='%0A'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+.sidebar.col-sm-4 .package .package-course p {
+  display: none;
+}
+.sidebar.col-sm-4 .package .package-total .saving span {
+  color: #d92129;
+  font-size: 1.4em;
+}
+.sidebar.col-sm-4 .package .package-total .total {
+  text-align: center;
+}
+.sidebar.col-sm-4 .package .opti_desktop_or {
+  color: #69b3e5;
+  margin-bottom: 2px;
+  font-size: 16px;
+  text-align: center;
+}
+.sidebar.col-sm-4 .package .opti_desktop_payment_plan {
+  display: block;
+  color: #69b3e5;
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 16px;
+}
+.sidebar.col-sm-4 .package .opti_desktop_payment_plan .popover-trigger {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sidebar.col-sm-4 .package .opti_desktop_payment_plan .popover {
+  top: 74px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.sidebar.col-sm-4 .package .opti_desktop_payment_plan .popover.opti_show_popover {
+  display: block;
+}
+.sidebar.col-sm-4 .package .opti_new_cta .paymentPlan svg {
+  display: none;
 }
