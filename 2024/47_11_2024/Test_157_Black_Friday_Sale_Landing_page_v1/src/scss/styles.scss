@@ -1,0 +1,171 @@
+@use 'sass/base' as *;
+
+.breadcrumbs-wrapper,
+.courses-info-box-wrapper,
+.title-row,
+.CourseSalesHolder .site-main .course-info--courseSalesHolder #algolia-dropdown-search {
+	display: none;
+}
+
+#opti_black_friday_banner {
+	position: relative;
+
+	.home-banner-inner {
+		position: static;
+		.opti_banner_row {
+			display: flex;
+			padding-bottom: 60px;
+			@media screen and (max-width: 768px) {
+				margin-bottom: 120px;
+			}
+			.hp-banner-content {
+				margin: 0 auto;
+				text-align: center;
+				h3 {
+					font-size: 28px;
+					color: #fff;
+					margin-bottom: 20px;
+					font-weight: 600;
+				}
+				.opti_black_friday_discount {
+					font-size: 48px;
+					color: #69b3e5;
+					margin-bottom: 20px;
+					font-weight: 600;
+				}
+				.opti_black_friday_all_courses {
+					font-size: 36px;
+					color: #fff;
+					font-weight: 600;
+					margin-bottom: 30px;
+				}
+			}
+		}
+		.opti_social_proofing_flex {
+			position: absolute;
+			bottom: -90px;
+			border-radius: 12px;
+			background: #fff;
+			display: flex;
+			padding: 20px;
+			margin: 0 auto;
+			transform: translateX(-50%);
+			left: 50%;
+			box-sizing: border-box;
+			gap: 16px;
+			min-width: 64%;
+			justify-content: space-evenly;
+			box-shadow: 0 14px 20px rgba(0, 0, 0, 0.2);
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+				align-items: center;
+				min-width: 80%;
+			}
+
+			.join-students {
+				position: static;
+				display: block;
+				max-width: 50%;
+				@media screen and (max-width: 768px) {
+					max-width: unset;
+					text-align: center;
+				}
+				.join-students-content {
+					padding-left: 0;
+					@media screen and (max-width: 768px) {
+						justify-content: center;
+					}
+				}
+				h4 {
+					color: #000;
+					font-size: 30px;
+					font-weight: 900;
+					margin: 0 0 10px;
+					.opti_text_underline {
+						text-decoration: underline;
+					}
+				}
+				.hp-banner-text-and-stars {
+					.text {
+						color: #000;
+						font-size: 15px;
+						@media screen and (max-width: 768px) {
+							text-align: justify;
+						}
+					}
+					.stars {
+						@media screen and (max-width: 768px) {
+							text-align: justify;
+						}
+					}
+				}
+			}
+			.opti_sale_end_timer {
+				max-width: 50%;
+				@media screen and (max-width: 768px) {
+					max-width: unset;
+					text-align: center;
+				}
+				.opti_sale_end_timer_inner_content {
+					h5 {
+						font-family: proxima-nova, sans-serif;
+						font-weight: 700;
+						color: #808184;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+						margin: 0;
+						font-size: 14px;
+						text-align: center;
+					}
+					.opti_sale_end_timer_inner_content_timer {
+						display: flex;
+						gap: 10px;
+						.opti_sale_end_timer_units {
+							text-align: center;
+							.opti_sale_end_timer_units_number {
+								font-size: 30px;
+								font-weight: 900;
+								color: #000;
+								margin-bottom: -8px;
+							}
+							.opti_sale_end_timer_units_text {
+								font-size: 16px;
+								color: #000;
+								font-weight: 300;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#opti_bonus_black_friday_deal {
+	margin-top: 130px;
+	margin-bottom: 20px;
+	.row {
+		margin: 0 auto;
+		text-align: center;
+
+		h5 {
+			font-weight: 600;
+			font-size: 17px;
+			color: #000;
+			margin-bottom: 10px;
+		}
+		.opti_bonus_black_friday_deal_content {
+			p {
+				font-weight: 300;
+				color: #000;
+				margin: 0;
+				.opti_fullstop {
+					color: #ffae01;
+				}
+				a {
+					color: #69b3e5;
+				}
+			}
+		}
+	}
+}

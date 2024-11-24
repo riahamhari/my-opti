@@ -231,9 +231,6 @@
     display: none;
   }
 }
-.VIPSignupPage .sidebar.col-sm-4 .package h4:first-of-type::before {
-  left: 70px !important;
-}
 .VIPSignupPage .sidebar.col-sm-4 .package .opti_new_cta button span {
   font-size: 13px;
   font-weight: 400;
@@ -260,20 +257,26 @@
   display: block;
   letter-spacing: 1px;
 }
+.sidebar.col-sm-4 .package .package-course {
+  position: relative;
+}
 .sidebar.col-sm-4 .package .package-course h4 {
-  margin-left: 30px;
+  padding-left: 30px;
 }
 .sidebar.col-sm-4 .package .package-course h4:first-of-type::before {
   content: "";
   display: inline-block;
   position: absolute;
   width: 28px;
-  left: 30px;
+  left: -4px;
   height: 24px;
   background-image: url("data:image/svg+xml,%3Csvg fill='%2357B62B' width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' stroke='%2357B62B' style='%0A'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 }
 .sidebar.col-sm-4 .package .package-course p {
   display: none;
+}
+.sidebar.col-sm-4 .package .package-total .saving {
+  text-align: center;
 }
 .sidebar.col-sm-4 .package .package-total .saving span {
   color: #d92129;
