@@ -13,9 +13,12 @@ const tagInterval = setInterval(() => {
     const myInterval = setInterval(() => {
         const header = document.querySelector('header');
         const dealsGrid = document.querySelector('.course-sales-pages');
-        if (header) {
+        const courseInfoBoxRow = document.querySelector('.row:has(.courses-info-box-wrapper)');
+        const courseRow = document.querySelector('.row:has(.course-sales-pages)');
+        if (header && dealsGrid && courseInfoBoxRow) {
             clearInterval(myInterval);
             optiInit(header, dealsGrid);
+            courseRow.insertAdjacentElement('afterend', courseInfoBoxRow);
         }
     }, 300);
     const blackFridayBannerHtml = `<article id="opti_black_friday_banner" class="home-banner">
@@ -91,9 +94,28 @@ const tagInterval = setInterval(() => {
 											</div>
 										</div>
 									</div>`;
+    const vipCard = `<div class="course-sales-page" id="opti_course_sales_card">
+            <div class="csp-price-box opti_price_box">GET $600 OFF</div>
+            <div class="csp-image">
+                <img src="https://i.vimeocdn.com/video/1221816216-9abcaf7b59e3d9e4d307252cad1a67e2840e6fed898dc56c0b46275b393d4b75-d_960x540?r=pad" alt="VIP package">
+            </div>
+            <div class="csp-content">
+                <h3>VIP Package</h3>
+                <p>Never pay for a training course again</p>
+                <h5>
+                   39 COURSES + <span>ALL FUTURE COURSES</span>
+                    
+                </h5>
+            </div>
+            <div class="csp-button">
+                <a href="https://www.hpacademy.com/vip-package/" class="btn btn-primary">View Package</a>
+            </div>
+        </div>`;
     // TIMER SET TO FINISH ON 30TH NOVEMBER (PACIFIC TIME)
     const optiInit = (header, dealsGrid) => {
+        const courseGrid = document.querySelector('.course-sales-pages');
         header.insertAdjacentHTML('afterend', blackFridayBannerHtml + bonusBlackFridayDealHtml);
+        courseGrid.insertAdjacentHTML('beforeend', vipCard);
         initializeCountdownTimer();
         const waitForCTA = setInterval(() => {
             const viewDealsCTA = document.querySelector('#opti_black_friday_banner .opti_scroll_to_deals');

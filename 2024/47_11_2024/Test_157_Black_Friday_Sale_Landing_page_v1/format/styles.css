@@ -1,5 +1,4 @@
 .breadcrumbs-wrapper,
-.courses-info-box-wrapper,
 .title-row,
 .CourseSalesHolder .site-main .course-info--courseSalesHolder #algolia-dropdown-search {
   display: none;
@@ -169,4 +168,37 @@
 }
 #opti_bonus_black_friday_deal .row .opti_bonus_black_friday_deal_content p a {
   color: #69b3e5;
+}
+
+#opti_course_sales_card {
+  border-top: 0;
+  padding-top: 100px;
+}
+#opti_course_sales_card .csp-image img {
+  border-radius: 8px;
+}
+#opti_course_sales_card .csp-price-box {
+  right: unset;
+  left: 0;
+  background-color: #ffae01;
+  padding: 8px;
+  padding-right: 15px;
+}
+#opti_course_sales_card .csp-price-box::after {
+  width: 30px;
+  position: absolute;
+  height: 100%;
+  background-color: #ffae01;
+  content: " ";
+  right: -15px;
+  top: 0;
+  transform: skew(152deg);
+  z-index: 1;
+}
+#opti_course_sales_card .csp-content h5 span {
+  text-decoration: underline;
+}
+
+.row:has(.courses-info-box-wrapper) {
+  margin-top: 60px;
 }
