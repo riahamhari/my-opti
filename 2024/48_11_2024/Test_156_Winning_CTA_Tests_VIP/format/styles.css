@@ -1,0 +1,110 @@
+.starter-title.row {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row h2 {
+    text-align: center;
+  }
+}
+.starter-title.row #opti_price_wrapper {
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row #opti_price_wrapper {
+    text-align: center;
+  }
+}
+.starter-title.row #opti_price_wrapper .price {
+  text-align: right;
+  font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row #opti_price_wrapper .price {
+    text-align: center;
+  }
+}
+.starter-title.row #opti_price_wrapper .saving {
+  display: none;
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__mobileOr {
+  color: #69b3e5;
+}
+@media screen and (min-width: 768px) {
+  .starter-title.row #opti_price_wrapper .titleAndPriceBlock__mobileOr {
+    display: none;
+  }
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink {
+  text-transform: lowercase;
+  position: relative;
+  display: block;
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink a:hover {
+  text-decoration: none;
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .popover-trigger {
+  color: #69b3e5;
+  text-decoration: underline;
+  text-transform: capitalize;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .popover {
+  left: calc(100% - 198px);
+  top: 75px;
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .popover {
+    top: 50px;
+    transform: translateX(-50%);
+    left: 60%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .popover {
+    left: 50%;
+  }
+  .starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .popover > .arrow {
+    left: 72%;
+  }
+}
+.starter-title.row #opti_price_wrapper .titleAndPriceBlock__paymentPlanLink .opti_show_popover {
+  display: block;
+}
+.starter-title.row #opti_price_wrapper .btn-wrapper {
+  margin-top: 10px;
+}
+.starter-title.row #opti_price_wrapper .btn-wrapper .price {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .starter-title.row #opti_price_wrapper .btn-wrapper {
+    display: none;
+  }
+}
+.starter-title.row #opti_price_wrapper .btn-wrapper.btn-sticky {
+  position: fixed;
+  bottom: 0;
+  top: inherit;
+  background-color: #fefefe;
+  z-index: 1070;
+  left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 10px;
+  will-change: transform;
+}
+.starter-title.row #opti_price_wrapper .btn-wrapper.btn-sticky .price {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .starter-title.row .sidebar .btn-wrapper {
+    display: none;
+  }
+}

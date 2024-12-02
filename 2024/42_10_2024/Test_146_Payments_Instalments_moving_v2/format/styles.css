@@ -52,13 +52,10 @@
   .opti_grid_container .opti_split_payments_Wrapper .popover {
     top: 50px;
     transform: translateX(-50%);
-    left: 60%;
+    left: 50%;
   }
 }
 @media screen and (max-width: 576px) {
-  .opti_grid_container .opti_split_payments_Wrapper .popover {
-    left: 50%;
-  }
   .opti_grid_container .opti_split_payments_Wrapper .popover > .arrow {
     left: 72%;
   }

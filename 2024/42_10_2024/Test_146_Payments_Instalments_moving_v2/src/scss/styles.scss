@@ -50,11 +50,11 @@
 			@media screen and (max-width: 768px) {
 				top: 50px;
 				transform: translateX(-50%);
-				left: 60%;
+				left: 50%;
 			}
 
 			@media screen and (max-width: 576px) {
-				left: 50%;
+				// left: 50%;
 				& > .arrow {
 					left: 72%;
 				}
