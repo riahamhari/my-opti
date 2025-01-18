@@ -12,10 +12,12 @@ const tagInterval = setInterval(() => {
     'use strict';
     const myInterval = setInterval(() => {
         const currentCourses = document.getElementById('vip-courses-current');
-        if (currentCourses) {
+        const [instantAccessLi, freeAccessLi] = [...document.querySelectorAll('.main-content h3~ul .p1')];
+        if (currentCourses && instantAccessLi && freeAccessLi) {
             clearInterval(myInterval);
             createAccordion(currentCourses);
             accordionFunction();
+            insertAnchorLinks(instantAccessLi, freeAccessLi);
         }
     }, 300);
     const newWindowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24.00 24.00" fill="none">
@@ -30,97 +32,77 @@ const tagInterval = setInterval(() => {
     const coursesData = {
         tuning: {
             courseName: 'Tuning Course',
-            courseImgSrc: 'https://www.hpacademy.com/assets/f5b480d6cd/Screen-Shot-2020-08-19-at-11__ResizedImageWzE1NiwxNDBd.02.58-AM.png',
+            courseImgSrc: 'https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/tuningIcon.png',
             courses: [
-                {
-                    title: 'Bare Minimum Tuning Knowledge',
-                    oldPrice: 'No old price',
-                    lessons: '6 Lessons',
-                    moreInfoLink: '#',
-                },
                 {
                     title: 'Introduction to Engine Tuning',
                     oldPrice: '$19',
                     lessons: '31 Lessons',
                     moreInfoLink: '/courses/introduction-to-engine-tuning/',
+                    studentsEnrolled: '17,362',
                 },
                 {
                     title: 'EFI Tuning Fundamentals',
                     oldPrice: '$99',
                     lessons: '55 Lessons',
                     moreInfoLink: '/courses/efi-tuning-fundamentals/',
+                    studentsEnrolled: '47,913',
                 },
                 {
                     title: 'Understanding AFR',
                     oldPrice: '$89',
                     lessons: '36 Lessons',
                     moreInfoLink: '/courses/understanding-afr/',
+                    studentsEnrolled: '21,780',
                 },
                 {
                     title: 'Practical Reflash Tuning',
                     oldPrice: '$229',
                     lessons: '129 Lessons',
                     moreInfoLink: '/courses/practical-reflash-tuning/',
+                    studentsEnrolled: '18,331',
                 },
                 {
                     title: 'Practical Standalone Tuning',
                     oldPrice: '$229',
                     lessons: '196 Lessons',
                     moreInfoLink: '/courses/practical-standalone-tuning/',
-                },
-                {
-                    title: 'WinOLS Mastery: Map Identification & Editing',
-                    oldPrice: '$299',
-                    lessons: '59 Lessons',
-                    moreInfoLink: '/courses/winols-mastery-map-identification-and-editing/',
-                },
-                {
-                    title: 'CAN Bus Communications Decoded',
-                    oldPrice: '$199',
-                    lessons: '58 Lessons',
-                    moreInfoLink: '/courses/canbus-communications-decoded/',
-                },
-                {
-                    title: 'Ethanol & Flex Fuel Tuning',
-                    oldPrice: '$129',
-                    lessons: '47 Lessons',
-                    moreInfoLink: '/courses/ethanol-and-flex-fuel-tuning/',
-                },
-                {
-                    title: 'Data Analysis Fundamentals',
-                    oldPrice: '$129',
-                    lessons: '83 Lessons',
-                    moreInfoLink: '/courses/data-analysis-fundamentals/',
+                    studentsEnrolled: '19,931',
                 },
                 {
                     title: 'Boost Control',
                     oldPrice: '$79',
                     lessons: '26 Lessons',
                     moreInfoLink: '/courses/boost-control/',
+                    studentsEnrolled: '11,670',
+                },
+                {
+                    title: 'Ethanol & Flex Fuel Tuning',
+                    oldPrice: '$129',
+                    lessons: '47 Lessons',
+                    moreInfoLink: '/courses/ethanol-and-flex-fuel-tuning/',
+                    studentsEnrolled: '9,157',
                 },
                 {
                     title: 'Launch Control',
                     oldPrice: '$39',
                     lessons: '26 Lessons',
                     moreInfoLink: '/courses/launch-control/',
+                    studentsEnrolled: '17,029',
                 },
                 {
                     title: 'Variable Cam Control Tuning',
                     oldPrice: '$149',
                     lessons: '48 Lessons',
                     moreInfoLink: '/courses/variable-cam-control-tuning/',
+                    studentsEnrolled: '7,841',
                 },
                 {
-                    title: 'Link G4 Plus Software Tutorial',
-                    oldPrice: '$99',
-                    lessons: '74 Lessons',
-                    moreInfoLink: '/courses/link-g4-plus-software-tutorial/',
-                },
-                {
-                    title: 'MoTeC M1 Software Tutorial',
-                    oldPrice: '$229',
-                    lessons: '85 Lessons',
-                    moreInfoLink: '/courses/motec-m1-software-tutorial/',
+                    title: 'Data Analysis Fundamentals',
+                    oldPrice: '$129',
+                    lessons: '83 Lessons',
+                    moreInfoLink: '/courses/data-analysis-fundamentals/',
+                    studentsEnrolled: '8,176',
                 },
             ],
         },
@@ -133,30 +115,35 @@ const tagInterval = setInterval(() => {
                     oldPrice: '$99',
                     lessons: '66 Lessons',
                     moreInfoLink: '/courses/wiring-fundamentals/',
+                    studentsEnrolled: '23,541',
                 },
                 {
                     title: 'Practical Wiring - Club Level',
                     oldPrice: '$229',
                     lessons: '36 Lessons',
                     moreInfoLink: '/courses/practical-harness-construction-club-level/',
+                    studentsEnrolled: '14,029',
                 },
                 {
                     title: 'Practical Wiring - Professional Motorsport',
                     oldPrice: '$299',
                     lessons: '48 Lessons',
                     moreInfoLink: '/courses/professional-motorsport-wiring-harness-construction/',
+                    studentsEnrolled: '10,008',
                 },
                 {
                     title: 'CAN Bus Communications Decoded',
                     oldPrice: '$199',
                     lessons: '58 Lessons',
                     moreInfoLink: '/courses/canbus-communications-decoded/',
+                    studentsEnrolled: '10,245',
                 },
                 {
                     title: 'PDM Installation & Configuration',
                     oldPrice: '$149',
                     lessons: '46 Lessons',
                     moreInfoLink: '/courses/pdm-installation-and-configuration/',
+                    studentsEnrolled: '7,936',
                 },
             ],
         },
@@ -169,18 +156,21 @@ const tagInterval = setInterval(() => {
                     oldPrice: '$129',
                     lessons: '73 Lessons',
                     moreInfoLink: '/courses/engine-building-fundamentals/',
+                    studentsEnrolled: '27,180',
                 },
                 {
                     title: 'Practical Engine Building',
                     oldPrice: '$199',
                     lessons: '91 Lessons',
                     moreInfoLink: '/courses/practical-engine-building/',
+                    studentsEnrolled: '13,255',
                 },
                 {
                     title: 'How to Degree a Cam',
                     oldPrice: '$49',
                     lessons: '47 Lessons',
                     moreInfoLink: '/courses/how-to-degree-a-cam/',
+                    studentsEnrolled: '15,316',
                 },
             ],
         },
@@ -189,22 +179,18 @@ const tagInterval = setInterval(() => {
             courseImgSrc: 'https://www.hpacademy.com/resources/themes/base/production/images/diesel-tuning-course.gif',
             courses: [
                 {
-                    title: 'Bare Minimum Diesel Tuning Knowledge',
-                    oldPrice: 'No old price',
-                    lessons: '5 Lessons',
-                    moreInfoLink: '#',
-                },
-                {
                     title: 'Diesel Tuning Fundamentals',
                     oldPrice: '$129',
                     lessons: '29 Lessons',
                     moreInfoLink: '/courses/diesel-tuning-fundamentals/',
+                    studentsEnrolled: '10,454',
                 },
                 {
                     title: 'Practical Diesel Tuning',
                     oldPrice: '$229',
                     lessons: '52 Lessons',
                     moreInfoLink: '/courses/practical-diesel-tuning/',
+                    studentsEnrolled: '9,596',
                 },
             ],
         },
@@ -213,39 +199,44 @@ const tagInterval = setInterval(() => {
             courseName: 'Suspension and Car Setup Course',
             courses: [
                 {
-                    title: 'Suspension Tuning & Optimization',
-                    oldPrice: '$149',
-                    lessons: '38 Lessons',
-                    moreInfoLink: '/courses/suspension-tuning-and-optimization/',
-                },
-                {
                     title: 'Motorsport Wheel Alignment',
                     oldPrice: '$129',
                     lessons: '83 Lessons',
                     moreInfoLink: '/courses/motorsport-wheel-alignment-fundamentals/',
+                    studentsEnrolled: '10,868',
                 },
                 {
                     title: 'Practical Corner Weighting',
                     oldPrice: '$99',
                     lessons: '48 Lessons',
                     moreInfoLink: '/courses/practical-corner-weighting/',
+                    studentsEnrolled: '8,324',
+                },
+                {
+                    title: 'Suspension Tuning & Optimization',
+                    oldPrice: '$149',
+                    lessons: '38 Lessons',
+                    moreInfoLink: '/courses/suspension-tuning-and-optimization/',
+                    studentsEnrolled: '9,673',
                 },
                 {
                     title: 'Brake System Design and Optimization',
                     oldPrice: '$149',
                     lessons: '46 Lessons',
                     moreInfoLink: '/courses/brake-system-design-and-optimization/',
+                    studentsEnrolled: '7,185',
                 },
                 {
                     title: 'Wheel and Tyre Fitment',
                     oldPrice: '$99',
                     lessons: '35 Lessons',
                     moreInfoLink: '/courses/wheel-and-tyre-fitment/',
+                    studentsEnrolled: '6,906',
                 },
             ],
         },
         'driver training and improvement': {
-            courseImgSrc: 'https://www.hpacademy.com/resources/themes/base/production/images/DriverTraining.png',
+            courseImgSrc: 'https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/driverTrainingIcon.png',
             courseName: 'Driver Training and Improvement Course',
             courses: [
                 {
@@ -253,23 +244,26 @@ const tagInterval = setInterval(() => {
                     oldPrice: '$99',
                     lessons: '54 Lessons',
                     moreInfoLink: '/courses/race-driving-fundamentals/',
+                    studentsEnrolled: '8,844',
                 },
                 {
                     title: 'Data Analysis Fundamentals',
                     oldPrice: '$129',
                     lessons: '83 Lessons',
                     moreInfoLink: '/courses/data-analysis-fundamentals/',
+                    studentsEnrolled: '8,176',
                 },
                 {
                     title: 'Professional Motorsport Data Analysis',
                     oldPrice: '$197',
                     lessons: '63 Lessons',
                     moreInfoLink: '/courses/professional-motorsport-data-analysis/',
+                    studentsEnrolled: '7,186',
                 },
             ],
         },
         'motorsport fabrication': {
-            courseImgSrc: 'https://www.hpacademy.com/resources/themes/base/production/images/motorsport-fabrication.png',
+            courseImgSrc: 'https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/fabricationIcon.png',
             courseName: 'Motorsport Fabrication Course',
             courses: [
                 {
@@ -277,30 +271,35 @@ const tagInterval = setInterval(() => {
                     oldPrice: '$99',
                     lessons: '68 Lessons',
                     moreInfoLink: '/courses/motorsport-fabrication-fundamentals/',
+                    studentsEnrolled: '12,446',
                 },
                 {
                     title: 'Practical TIG Welding',
                     oldPrice: '$199',
                     lessons: '52 Lessons',
                     moreInfoLink: '/courses/practical-tig-welding/',
+                    studentsEnrolled: '9,515',
                 },
                 {
                     title: '3D Modeling & CAD for Motorsport',
                     oldPrice: '$199',
                     lessons: '74 Lessons',
                     moreInfoLink: '/courses/3d-modeling-and-cad-for-motorsport/',
+                    studentsEnrolled: '10,325',
                 },
                 {
                     title: 'Motorsport Plumbing Systems',
                     oldPrice: '$129',
                     lessons: '60 Lessons',
                     moreInfoLink: '/courses/motorsport-plumbing-systems/',
+                    studentsEnrolled: '7,154',
                 },
                 {
                     title: 'Practical 3D Scanning',
                     oldPrice: '$179',
                     lessons: '31 Lessons',
                     moreInfoLink: '/courses/practical-3d-scanning/',
+                    studentsEnrolled: '6,807',
                 },
             ],
         },
@@ -313,6 +312,7 @@ const tagInterval = setInterval(() => {
                     oldPrice: '$199',
                     lessons: '40 Lessons',
                     moreInfoLink: '/courses/ev-fundamentals/',
+                    studentsEnrolled: '6,957',
                 },
             ],
         },
@@ -334,12 +334,11 @@ const tagInterval = setInterval(() => {
                     <ul>
     `;
             courses.forEach((course) => {
-                const studentsEnrolled = course.title === 'Understanding AFR' ? '8,564 Students enrolled' : '11,675 Students enrolled';
                 accordionHtml += `
             <li class="opti_course_list_item">
                 <div class="opti_course_details">
                     <h5>${course.title} <span class="opti_course_worth">Worth ${course.oldPrice}</span></h5>
-                    <p><span class="opti_course_modules">${course.lessons.replace('Lessons', 'Modules')}</span> • <span class="opti_course_students">${studentsEnrolled}</span></p>
+                    <p><span class="opti_course_modules">${course.lessons.replace('Lessons', 'Modules')}</span> • <span class="opti_course_students">${course.studentsEnrolled} Students enrolled</span></p>
                 </div>
                 <a href="https://www.hpacademy.com${course.moreInfoLink}" target="_blank">
                     <span class="opti_new_window_svg">${newWindowSvg}</span>
@@ -411,6 +410,28 @@ const tagInterval = setInterval(() => {
     function handleClass(node, className, action = 'add') {
         node.classList[action](className);
     }
+    const insertAnchorLinks = (instantAccessLi, freeAccessLi) => {
+        const scrollToElement = (id) => {
+            const targetElement = document.getElementById(id);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+            else {
+                console.warn(`Element with ID "${id}" not found.`);
+            }
+        };
+        instantAccessLi.insertAdjacentHTML('beforeend', `<a class="opti_anchor_link" href="#opti_accordion_list">View list</a>`);
+        freeAccessLi.insertAdjacentHTML('beforeend', `<a class="opti_anchor_link" href="#vip-courses-future">View list</a>`);
+        // Add click event listeners for smooth scrolling
+        instantAccessLi.querySelector('.opti_anchor_link').addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToElement('opti_accordion_list');
+        });
+        freeAccessLi.querySelector('.opti_anchor_link').addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToElement('vip-courses-future');
+        });
+    };
     setTimeout(function () {
         if (myInterval) {
             clearInterval(myInterval);

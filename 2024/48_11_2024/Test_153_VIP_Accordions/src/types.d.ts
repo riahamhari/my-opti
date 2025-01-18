@@ -3,6 +3,7 @@ type Course = {
 	oldPrice: string;
 	lessons: string;
 	moreInfoLink: string;
+	studentsEnrolled: string;
 };
 
 type CourseCategory = {

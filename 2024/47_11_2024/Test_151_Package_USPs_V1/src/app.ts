@@ -157,6 +157,7 @@ const tagInterval = setInterval(() => {
 		const packageTitle = document.querySelector<HTMLElement>('h1');
 		const packageTitleText = packageTitle?.innerText.toLowerCase().trim();
 		const key = packageTitleText.split(' - ')[0];
+		const vipCoursesCurrent = document.getElementById('vip-courses-current');
 		const packageCourse = packageCopy[key];
 
 		const packageUspsHtml = `<div class="row" id="opti_package_usps_container">
@@ -182,7 +183,13 @@ const tagInterval = setInterval(() => {
 									</div>
 								</div>`;
 
-		mainContent.insertAdjacentHTML('afterbegin', packageUspsHtml);
+		if (key === 'vip package') {
+			if (vipCoursesCurrent) {
+				vipCoursesCurrent.insertAdjacentHTML('beforebegin', packageUspsHtml);
+			}
+		} else {
+			mainContent.insertAdjacentHTML('afterbegin', packageUspsHtml);
+		}
 
 		const waitForCloseIcon = setInterval(() => {
 			const closeIcon = document.querySelector('#opti_package_usps_container .close-x');

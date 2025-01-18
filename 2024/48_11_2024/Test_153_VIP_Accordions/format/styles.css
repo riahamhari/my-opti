@@ -15,6 +15,10 @@
 .main-content p.p1 {
   display: none;
 }
+.main-content .opti_anchor_link {
+  text-decoration: underline !important;
+  margin-left: 4px;
+}
 
 #opti_accordion_list .accordion {
   margin-bottom: 10px;

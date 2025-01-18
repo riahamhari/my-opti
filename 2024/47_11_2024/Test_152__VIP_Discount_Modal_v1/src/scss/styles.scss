@@ -1,1 +1,56 @@
 @use 'sass/base' as *;
+
+#opti_discount_modal_parent {
+	#opti_discount_modal {
+		.modal-body {
+			@media screen and (max-width: 576px) {
+				padding: 20px;
+			}
+			.info-modal-content {
+				padding-bottom: 10px;
+				.opti_coupon__code_container {
+					display: flex;
+					margin: 0 auto;
+					gap: 12px;
+					align-items: center;
+					img {
+						width: 40px;
+						height: 40px;
+					}
+
+					.opti_coupon__code {
+						color: #69b3e5;
+						p {
+							font-size: 16px;
+							color: #69b3e5;
+						}
+						h3 {
+							font-size: 40px;
+						}
+					}
+				}
+			}
+
+			.opti_vip_discount_details {
+				@media screen and (min-width: 768px) {
+					font-size: 18px;
+				}
+
+				padding: 0;
+				margin-bottom: 20px;
+			}
+			.opti_discount_cta {
+				@media screen and (max-width: 576px) {
+					width: 100%;
+				}
+				.opti_discount_info {
+					font-size: 13px;
+					font-weight: 400;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
