@@ -1,0 +1,27 @@
+@use 'sass/base' as *;
+
+.opti-contact-us-cta,
+.opti-contact-us-cta-mobile {
+	&__content {
+		text-align: center;
+		p {
+			margin: 0;
+			display: inline;
+			color: #404041;
+			font-weight: 500;
+		}
+		a {
+			color: #ffae01;
+			text-decoration: underline;
+			font-weight: 500;
+		}
+	}
+}
+
+.opti-contact-us-cta-mobile {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: block;
+		margin-top: 16px;
+	}
+}

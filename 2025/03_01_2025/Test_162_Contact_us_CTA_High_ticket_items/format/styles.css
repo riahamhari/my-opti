@@ -1,0 +1,27 @@
+.opti-contact-us-cta__content,
+.opti-contact-us-cta-mobile__content {
+  text-align: center;
+}
+.opti-contact-us-cta__content p,
+.opti-contact-us-cta-mobile__content p {
+  margin: 0;
+  display: inline;
+  color: #404041;
+  font-weight: 500;
+}
+.opti-contact-us-cta__content a,
+.opti-contact-us-cta-mobile__content a {
+  color: #ffae01;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.opti-contact-us-cta-mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .opti-contact-us-cta-mobile {
+    display: block;
+    margin-top: 16px;
+  }
+}

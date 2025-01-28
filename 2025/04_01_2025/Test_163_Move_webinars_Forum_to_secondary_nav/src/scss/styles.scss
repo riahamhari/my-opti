@@ -1,0 +1,15 @@
+@use 'sass/base' as *;
+
+.header__top__nav__items_first {
+	.link:has([href='/previous-webinars/']),
+	.link:has([href='/forum/']),
+	.link:has([href='/hpa-starter-package/']) {
+		display: none;
+	}
+}
+
+.header__top__nav__items_second {
+	[href='/about-us/'] {
+		display: none;
+	}
+}

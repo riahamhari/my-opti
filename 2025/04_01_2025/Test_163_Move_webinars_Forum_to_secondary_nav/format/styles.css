@@ -1,0 +1,9 @@
+.header__top__nav__items_first .link:has([href="/previous-webinars/"]),
+.header__top__nav__items_first .link:has([href="/forum/"]),
+.header__top__nav__items_first .link:has([href="/hpa-starter-package/"]) {
+  display: none;
+}
+
+.header__top__nav__items_second [href="/about-us/"] {
+  display: none;
+}
