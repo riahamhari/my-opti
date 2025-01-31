@@ -1,0 +1,83 @@
+#opti_table_wrapper {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  width: fit-content;
+}
+#opti_table_wrapper .opti_container_inner {
+  background-color: #ecebea;
+  padding: 16px 0 0;
+}
+@media screen and (max-width: 768px) {
+  #opti_table_wrapper .opti_container_inner {
+    margin-bottom: 40px;
+  }
+}
+#opti_table_wrapper .opti_container_inner h3 {
+  border-bottom: 2px solid #ffae01;
+  width: 248px;
+  line-height: 2;
+  text-align: center;
+  margin: 8px auto 30px;
+  font-size: 20px;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table {
+  background-color: #fff;
+  display: inline-table;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr {
+  border: 0;
+  position: relative;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: #ecebea; /* Change to your border color */
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr:first-child {
+  background: #ecebea;
+  border: 0;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr th {
+  color: #404041;
+  text-align: center;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr td,
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr th {
+  padding: 16px;
+  margin: 8px;
+  display: table-cell;
+  color: #404041;
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr td:not(:first-child),
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr th:not(:first-child) {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr td {
+    white-space: nowrap;
+  }
+}
+#opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+#opti_table_wrapper .opti_container_inner .tittleAndPriceBlock {
+  float: unset;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  #opti_table_wrapper .opti_container_inner .tittleAndPriceBlock {
+    display: none;
+  }
+}
+
+.CourseEntry .courses-info-box-wrapper {
+  display: none;
+}
