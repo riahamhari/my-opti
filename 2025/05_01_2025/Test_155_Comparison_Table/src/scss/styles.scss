@@ -9,6 +9,7 @@
 		padding: 16px 0 0;
 		@media screen and (max-width: 768px) {
 			margin-bottom: 40px;
+			padding-top: 8px;
 		}
 		h3 {
 			border-bottom: 2px solid #ffae01;
@@ -17,6 +18,9 @@
 			text-align: center;
 			margin: 8px auto 30px;
 			font-size: 20px;
+			@media screen and (max-width: 768px) {
+				margin-bottom: 0;
+			}
 		}
 		#opti_price_comparison_table {
 			background-color: #fff;
@@ -52,8 +56,11 @@
 					padding: 16px;
 					margin: 8px;
 					display: table-cell;
-
 					color: #404041;
+					@media screen and (max-width: 768px) {
+						font-size: 14px;
+						padding: 8px;
+					}
 
 					&:not(:first-child) {
 						text-align: center;
@@ -70,6 +77,9 @@
 					width: 24px;
 					height: 24px;
 					object-fit: cover;
+					@media screen and (max-width: 768px) {
+						width: 20px;
+					}
 				}
 			}
 		}

@@ -10,6 +10,7 @@
 @media screen and (max-width: 768px) {
   #opti_table_wrapper .opti_container_inner {
     margin-bottom: 40px;
+    padding-top: 8px;
   }
 }
 #opti_table_wrapper .opti_container_inner h3 {
@@ -19,6 +20,11 @@
   text-align: center;
   margin: 8px auto 30px;
   font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  #opti_table_wrapper .opti_container_inner h3 {
+    margin-bottom: 0;
+  }
 }
 #opti_table_wrapper .opti_container_inner #opti_price_comparison_table {
   background-color: #fff;
@@ -52,6 +58,13 @@
   display: table-cell;
   color: #404041;
 }
+@media screen and (max-width: 768px) {
+  #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr td,
+  #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr th {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
 #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr td:not(:first-child),
 #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr th:not(:first-child) {
   text-align: center;
@@ -65,6 +78,11 @@
   width: 24px;
   height: 24px;
   object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  #opti_table_wrapper .opti_container_inner #opti_price_comparison_table tr img {
+    width: 20px;
+  }
 }
 #opti_table_wrapper .opti_container_inner .tittleAndPriceBlock {
   float: unset;
