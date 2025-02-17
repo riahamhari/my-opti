@@ -1,0 +1,182 @@
+@use 'sass/base' as *;
+
+#opti_new_discount_modal_parent {
+	.modal-dialog {
+		@media screen and (min-width: 768px) {
+			width: 80%;
+			max-width: 860px;
+		}
+		.modal-body {
+			display: flex;
+			padding: 0;
+			max-width: 100%;
+			overflow: hidden;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
+			.info-modal-cross {
+				font-size: 24px;
+				right: unset;
+				left: 15px;
+				@media screen and (max-width: 768px) {
+					color: #fff;
+				}
+			}
+			.opti_modal_form_container {
+				padding: 30px 60px 100px;
+				width: 56%;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					padding: 30px;
+				}
+				.opti_modal_form_header {
+					text-align: center;
+					@media screen and (max-width: 768px) {
+						position: absolute;
+						top: 20px;
+						left: 50%;
+						transform: translateX(-50%);
+						z-index: 1;
+					}
+					.opti_modal_form_header_logo {
+						margin-bottom: 16px;
+						@media screen and (max-width: 768px) {
+							display: none;
+						}
+						img {
+							height: 64px;
+							width: 80px;
+						}
+					}
+
+					.opti_modal_form_header_text {
+						margin-bottom: 16px;
+						h2 {
+							font-size: 32px;
+							color: #404041;
+							font-weight: 700;
+							margin-bottom: 8px;
+							@media screen and (max-width: 768px) {
+								color: #fff;
+							}
+						}
+						.info-modal-bottomtext {
+							font-family: museo-sans, sans-serif;
+							font-size: 15px;
+							font-weight: 600;
+							color: #69b3e5;
+
+							@media screen and (max-width: 768px) {
+								font-size: 0;
+								&::after {
+									font-size: 20px;
+									content: 'Your First Course';
+									font-weight: 400;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+				.opti_modal_form_content {
+					form {
+						width: 100%;
+						margin: 0;
+						margin-bottom: 16px;
+						display: flex;
+						flex-direction: column;
+						label {
+							color: #808184;
+							text-align: left;
+							font-size: 14px;
+							margin-bottom: 2px;
+						}
+						input[type='email'] {
+							background-color: #ecebea;
+							padding: 16px;
+							border-radius: 6px;
+							border: 0;
+							height: 50px;
+						}
+					}
+
+					.opti_modal_form_content_cta {
+						margin-bottom: 16px;
+						.btn {
+							width: 100%;
+							padding: 16px;
+						}
+					}
+					.join-students-content {
+						display: flex;
+						gap: 8px;
+						justify-content: center;
+						margin-bottom: 16px;
+						@media screen and (max-width768px) {
+							padding: 0;
+						}
+						.hp-banner-students-img {
+							img {
+								height: 28px;
+							}
+						}
+						.hp-banner-text-and-stars {
+							position: relative;
+							width: 50%;
+							.text {
+								text-align: left;
+								font-size: 14px;
+								font-weight: 600;
+								display: inline-block;
+								line-height: 1.4;
+								span {
+									color: #ffae01;
+								}
+							}
+							.stars {
+								display: inline;
+							}
+						}
+					}
+					.opti_modal_no_thanks {
+						display: block;
+						a {
+							color: #404041;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+
+			.opti_modal_img_container {
+				width: 44%;
+				position: relative;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					order: -1;
+					height: 186px;
+				}
+				img {
+					object-fit: cover;
+					object-position: center;
+					width: 100%;
+					height: 100%;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.5);
+				}
+			}
+		}
+	}
+}
+
+#ap3w-bar-675f6d3afff56c075fb1a416.ap3w-bar-675f6d3afff56c075fb1a416.ap3w-bar--full {
+	display: none;
+}
