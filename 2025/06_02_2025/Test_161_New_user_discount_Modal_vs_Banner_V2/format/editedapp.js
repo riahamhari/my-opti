@@ -12,9 +12,14 @@ const tagInterval = setInterval(() => {
     'use strict';
     const myInterval = setInterval(() => {
         const homepage = document.querySelector('.HomePage');
-        if (homepage) {
+        const headerACCBanner = $('.header-acc-banner');
+        if (homepage &&
+            (window === null || window === void 0 ? void 0 : window.globalNmdApplyDiscount) &&
+            (window === null || window === void 0 ? void 0 : window.globalNmdShowBanner) &&
+            headerACCBanner &&
+            headerACCBanner.length) {
             clearInterval(myInterval);
-            optiInit();
+            optiInit(headerACCBanner);
         }
     }, 300);
     const imgUrl = `https://www.hpacademy.com/resources/themes/base/production/images/hp-banner-bg.jpg`;
@@ -59,7 +64,12 @@ const tagInterval = setInterval(() => {
 								</div>
 							</div>
 						</div>`;
-    const optiInit = () => {
+    const optiInit = (headerACCBanner) => {
+        const couponCode = headerACCBanner.data('acc'), days = 0.25, cookieName = 'HPAAutoCouponCode', currentCookieValue = hpaTestGetCookie(cookieName);
+        if (!currentCookieValue) {
+            hpaTestSetCookie(cookieName, couponCode, days);
+        }
+        // Add your code to close the modal here
         const modal = createModal();
         document.body.appendChild(modal);
         initializeCountdownTimer();
@@ -111,15 +121,54 @@ const tagInterval = setInterval(() => {
 		</div>`;
         const modalClose = modal.querySelector('.info-modal-cross');
         const modalMain = modal.querySelector('.modal');
+        const ctaBtn = modal.querySelector('.opti_modal_form_content_cta button');
+        ctaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Get the email value
+            const emailInputEl = modal.querySelector('#email');
+            const banner = document.querySelector('.header-acc-banner');
+            const emailInput = emailInputEl.value.trim();
+            handleEmailInput(emailInput);
+            banner.style.display = 'block';
+            handleModalClose(modalMain);
+        });
         modalClose.addEventListener('click', () => {
             handleModalClose(modalMain);
         });
         return modal;
     };
+    const handleEmailInput = (emailInput) => {
+        // Validate email input
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        fetch('https://hooks.zapier.com/hooks/catch/4987095/2w9pdlt/', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: emailInput }),
+        })
+            .then((response) => {
+            if (response.ok) {
+                console.log('Email sent successfully!');
+            }
+            else {
+                console.error('Error sending email:', response.statusText);
+            }
+        })
+            .catch((error) => console.error('Network error:', error));
+    };
     // Countdown Timer
     function initializeCountdownTimer() {
-        // Target date: 30th November, Pacific Time
-        const targetDate = new Date('2025-02-15T23:59:59-08:00').getTime();
+        const currentDate = new Date();
+        // Calculate the value to add (0.25 days in milliseconds)
+        const timeToAdd = 0.25 * 24 * 60 * 60 * 1000;
+        // Add the value to the current date
+        const targetDate = new Date(currentDate.getTime() + timeToAdd).getTime();
         // Select timer elements
         const daysElement = document.querySelector('.opti_days_number');
         const hoursElement = document.querySelector('.opti_hours_number');
@@ -152,6 +201,30 @@ const tagInterval = setInterval(() => {
         const timerInterval = setInterval(updateTimer, 1000);
         // Initial update to prevent delay
         updateTimer();
+    }
+    function hpaTestSetCookie(name, value, days) {
+        var expires = '';
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = '; expires=' + date.toUTCString();
+        }
+        document.cookie = name + '=' + (value || '') + expires + '; path=/';
+    }
+    function hpaTestGetCookie(name) {
+        var nameEQ = name + '=';
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ')
+                c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0)
+                return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    function hpaTestDelCookie(name) {
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
     const handleModalClose = (modalMain) => {
         modalMain.style.display = 'none';

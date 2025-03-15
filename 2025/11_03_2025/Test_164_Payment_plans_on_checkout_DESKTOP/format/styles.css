@@ -1,0 +1,82 @@
+.opti_hide_overlay {
+  display: block !important;
+}
+
+.GenericPaymentConfirmationPage .details-form.paymentContainer {
+  display: flex;
+  flex-direction: column;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer h1,
+.GenericPaymentConfirmationPage .details-form.paymentContainer fieldset:has(#order-items-table-wrapper),
+.GenericPaymentConfirmationPage .details-form.paymentContainer .login-register {
+  order: -1;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top {
+  display: block !important;
+  position: relative;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top .pp-top-options ul {
+  margin: 0 0 8px;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top .opti-payment-methods__not-logged-in-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fefefe;
+  opacity: 0.5;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer #opti_pay_in_full_btn {
+  padding: 14px 20px;
+  background-color: #ffae01;
+  color: #fefefe;
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 2px solid #ffae01;
+  max-width: 60%;
+  display: block;
+  height: auto;
+  text-decoration: none;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer #opti_pay_in_full_btn:hover {
+  color: #fefefe;
+  border-color: #efa106;
+  background-color: #efa106;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer #opti_pay_in_installments_btn {
+  padding: 14px 20px;
+  background-color: #fefefe;
+  color: #ffae01;
+  text-transform: uppercase;
+  border: 2px solid #ffae01;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block !important;
+  max-width: 60%;
+  height: auto;
+  text-decoration: none;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer #opti_pay_in_installments_btn:hover {
+  border-color: #efa106;
+  background-color: #efa106;
+  color: #fefefe;
+}
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top .pp-top-price,
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top .pp-top-btn-wrapper,
+.GenericPaymentConfirmationPage .details-form.paymentContainer .payment-plan-section-top .pp-top-options {
+  text-align: left;
+  overflow: hidden;
+}
+
+.pp-top-price {
+  text-indent: -18px;
+}
+
+.popover .popover-content {
+  text-indent: 0px;
+}

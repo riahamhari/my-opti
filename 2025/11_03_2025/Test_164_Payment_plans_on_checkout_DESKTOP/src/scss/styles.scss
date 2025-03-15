@@ -1,0 +1,188 @@
+@use 'sass/base' as *;
+
+// .opti_payment_plans {
+// 	// .opti_payment_plans__heading{
+
+// 	// }
+// 	.opti_split_payments_wrapper {
+// 		position: relative;
+// 		margin-bottom: 16px;
+
+// 		#opti_split_payments {
+// 			color: #69b3e5;
+// 			font-weight: 500;
+
+// 			font-size: 15px;
+// 			@media screen and (max-width: 768px) {
+// 				text-align: center;
+// 			}
+// 			.opti_popover_trigger {
+// 				text-decoration: underline;
+// 				cursor: pointer;
+// 			}
+// 		}
+// 		.popover {
+// 			left: calc(100% - 198px);
+// 			top: 50px;
+// 			@media screen and (max-width: 768px) {
+// 				top: 50px;
+// 				transform: translateX(-50%);
+// 				left: 50%;
+// 			}
+
+// 			@media screen and (max-width: 576px) {
+// 				// left: 50%;
+// 				& > .arrow {
+// 					left: 72%;
+// 				}
+// 			}
+// 		}
+
+// 		.opti_show_popover {
+// 			display: block;
+// 		}
+// 	}
+// 	.payment-plan-section-field {
+// 		.payment-heading__prompt {
+// 			text-align: left !important;
+// 			.opti_outline_button {
+// 				padding: 14px 20px;
+// 				background-color: #fefefe;
+// 				color: #ffae01;
+// 				text-transform: uppercase;
+// 				border: 2px solid #ffae01;
+// 				border-radius: 6px;
+// 				font-weight: 700;
+// 				margin-bottom: 10px;
+// 				display: block !important;
+// 				width: 282px;
+// 				height: auto;
+// 				text-decoration: none;
+
+// 				&:hover {
+// 					border-color: #efa106;
+// 					background-color: #efa106;
+// 					color: #fefefe;
+// 				}
+// 			}
+
+// 			.opti_fill_button {
+// 				padding: 14px 20px;
+// 				background-color: #ffae01;
+// 				color: #fefefe;
+// 				text-transform: uppercase;
+// 				border-radius: 6px;
+// 				font-weight: 700;
+// 				border: 2px solid #ffae01;
+// 				width: 282px;
+// 				height: auto;
+// 				text-decoration: none;
+// 				&:hover {
+// 					color: #fefefe;
+// 					border-color: #efa106;
+// 					background-color: #efa106;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .opti_not-logged-in-overlay {
+// 	top: 298px !important;
+// }
+
+.opti_hide_overlay {
+	display: block !important;
+}
+
+.GenericPaymentConfirmationPage .details-form.paymentContainer {
+	display: flex;
+	flex-direction: column;
+
+	h1,
+	fieldset:has(#order-items-table-wrapper),
+	.login-register {
+		order: -1;
+	}
+
+	.payment-plan-section-top {
+		display: block !important;
+		position: relative;
+		.pp-top-options ul {
+			margin: 0 0 8px;
+		}
+
+		.opti-payment-methods__not-logged-in-overlay {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			background-color: #fefefe;
+			opacity: 0.5;
+		}
+	}
+
+	#opti_pay_in_full_btn {
+		padding: 14px 20px;
+		background-color: #ffae01;
+		color: #fefefe;
+		text-transform: uppercase;
+		border-radius: 6px;
+		font-weight: 700;
+		border: 2px solid #ffae01;
+		max-width: 60%;
+		display: block;
+		height: auto;
+		text-decoration: none;
+		&:hover {
+			color: #fefefe;
+			border-color: #efa106;
+			background-color: #efa106;
+		}
+	}
+
+	#opti_pay_in_installments_btn {
+		padding: 14px 20px;
+		background-color: #fefefe;
+		color: #ffae01;
+		text-transform: uppercase;
+		border: 2px solid #ffae01;
+		border-radius: 6px;
+		font-weight: 700;
+		margin-bottom: 10px;
+		display: block !important;
+		max-width: 60%;
+		height: auto;
+		text-decoration: none;
+
+		&:hover {
+			border-color: #efa106;
+			background-color: #efa106;
+			color: #fefefe;
+		}
+	}
+
+	.payment-plan-section-top {
+		.pp-top-price,
+		.pp-top-btn-wrapper,
+		.pp-top-options {
+			text-align: left;
+			overflow: hidden;
+		}
+	}
+}
+
+.pp-top-price {
+	text-indent: -18px;
+}
+// .pp-top-price::after {
+// 	content: ' 8 easy payments of only $52.13';
+// 	text-indent: 0;
+// 	display: inline;
+// }
+.popover .popover-content {
+	text-indent: 0px;
+}

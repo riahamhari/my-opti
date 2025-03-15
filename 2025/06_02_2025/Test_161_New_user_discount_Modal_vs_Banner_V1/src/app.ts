@@ -9,6 +9,8 @@ declare global {
 		store?: any;
 		utag?: any;
 		clarity?: any;
+		globalNmdApplyDiscount?: boolean;
+		globalNmdShowBanner?: boolean;
 	}
 }
 
@@ -23,9 +25,16 @@ const tagInterval = setInterval(() => {
 	'use strict';
 	const myInterval = setInterval(() => {
 		const homepage = document.querySelector('.HomePage ');
-		if (homepage) {
+		const headerACCBanner = $('.header-acc-banner');
+		if (
+			homepage &&
+			window?.globalNmdApplyDiscount &&
+			window?.globalNmdShowBanner &&
+			headerACCBanner &&
+			headerACCBanner.length
+		) {
 			clearInterval(myInterval);
-			optiInit();
+			optiInit(headerACCBanner);
 		}
 	}, 300);
 
@@ -45,7 +54,18 @@ const tagInterval = setInterval(() => {
                     </div>
                 </div>`;
 
-	const optiInit = () => {
+	const optiInit = (headerACCBanner) => {
+		const couponCode = headerACCBanner.data('acc'),
+			days = 0.25,
+			cookieName = 'HPAAutoCouponCode',
+			currentCookieValue = hpaTestGetCookie(cookieName);
+
+		if (!currentCookieValue) {
+			hpaTestSetCookie(cookieName, couponCode, days);
+		}
+
+		// Add your code to close the modal here
+
 		const modal = createModal();
 		document.body.appendChild(modal);
 	};
@@ -100,14 +120,78 @@ const tagInterval = setInterval(() => {
 		const modalMain = modal.querySelector<HTMLElement>('.modal');
 		const ctaBtn = modal.querySelector<HTMLElement>('.opti_modal_form_content_cta button');
 
-		ctaBtn.addEventListener('click', () => {
+		ctaBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			// Get the email value
+			const emailInputEl = modal.querySelector<HTMLInputElement>('#email');
+			const banner: HTMLElement = document.querySelector('.header-acc-banner');
+			const emailInput = emailInputEl.value.trim();
+
+			handleEmailInput(emailInput);
+			banner.style.display = 'block';
 			handleModalClose(modalMain);
 		});
+
 		modalClose.addEventListener('click', () => {
 			handleModalClose(modalMain);
 		});
+
 		return modal;
 	};
+
+	const handleEmailInput = (emailInput: string) => {
+		// Validate email input
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(emailInput)) {
+			alert('Please enter a valid email address.');
+			return;
+		}
+
+		fetch('https://hooks.zapier.com/hooks/catch/4987095/2w9pdlt/', {
+			method: 'POST',
+			mode: 'no-cors',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ email: emailInput }),
+		})
+			.then((response) => {
+				if (response.ok) {
+					console.log('Email sent successfully!');
+				} else {
+					console.error('Error sending email:', response.statusText);
+				}
+			})
+			.catch((error) => console.error('Network error:', error));
+	};
+
+	function hpaTestSetCookie(name, value, days) {
+		var expires = '';
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+			expires = '; expires=' + date.toUTCString();
+		}
+
+		document.cookie = name + '=' + (value || '') + expires + '; path=/';
+	}
+
+	function hpaTestGetCookie(name) {
+		var nameEQ = name + '=';
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+		}
+
+		return null;
+	}
+
+	function hpaTestDelCookie(name) {
+		document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	}
 
 	const handleModalClose = (modalMain) => {
 		modalMain.style.display = 'none';
