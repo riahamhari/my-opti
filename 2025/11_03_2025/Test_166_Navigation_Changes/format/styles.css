@@ -1,0 +1,147 @@
+.header__top__nav__items .header__top__nav__items_first .link:has([href="/vip-package/"]):not(.cre-drop-item),
+.header__top__nav__items .header__top__nav__items_first .link:has([href="/forum/"]) {
+  display: none;
+}
+@media screen and (max-width: 1060px) {
+  .header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn a.js-displayLoginPrompt {
+  padding: 14px 32px;
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn a.js-displayLoginPrompt:hover {
+  border-color: #efa106;
+  background-color: #efa106;
+  color: #fefefe;
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn a.js-displayLoginPrompt:active {
+  padding: 14px 34px;
+  border-top-color: #d69005;
+  border-width: 0;
+  border-top-width: 3px;
+  color: #fefefe;
+}
+@media screen and (max-width: 1060px) {
+  .header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn a.js-displayLoginPrompt {
+    margin-bottom: 20px;
+    border-color: #ffae01;
+    background-color: #fefefe;
+    color: #ffae01;
+    border-width: 2px;
+  }
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn {
+  position: relative;
+  color: #fefefe;
+  background-color: #ffae01;
+  display: block;
+  padding: 14px 32px;
+  -webkit-transition: background-color 80ms linear, color 80ms linear, background-color 80ms linear;
+  transition: background-color 80ms linear, color 80ms linear, background-color 80ms linear;
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn:hover {
+  background-color: #efa106;
+  border-color: #efa106;
+  color: #fefefe;
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn:active {
+  padding: 14px 32px;
+  color: #fefefe;
+  background-color: #cd8c00;
+  border-color: #c38500;
+  border-width: 2px;
+}
+@media screen and (max-width: 1060px) {
+  .header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn {
+    order: 1;
+    border-width: 2px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1060px) {
+  .header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+.header__top__nav__items .header__top__nav__items_first .header__top__nav__items__attn #opti_vip_btn .opti_vip_btn__label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+  background-color: #fff;
+  color: #69b3e5;
+  border-radius: 6px;
+  padding: 4px 8px;
+  z-index: 1;
+  font-size: 10px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (min-width: 1060px) {
+  #header-search-icon2 {
+    right: 332px !important;
+    top: 62px;
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .main-header__top__nav .header__top__nav__items .header__top__nav__items__attn {
+    right: -205px;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .header__top__nav__items_first {
+    left: 200px;
+    display: flex;
+    align-items: center;
+    right: 208px;
+    top: 92px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .main-header__main__top .main-header__main__top__logo a {
+    background-size: 122px;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .main-header__main {
+    height: 135px;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .main-header__main .main-header__main__top {
+    height: 135px;
+  }
+}
+
+[href="/hpa-starter-package/"] ~ .cre-nav-dropdown .cre-dropdown .cre-el a .pakages-submenu-info {
+  cursor: pointer;
+  text-transform: none;
+  font-family: museo-sans, sans-serif;
+  letter-spacing: normal;
+}
+
+@media screen and (min-width: 1060px) {
+  .opti_nav_changes_not_logged_in #header-search-icon2 {
+    right: 380px !important;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .opti_nav_changes_not_logged_in .header__top__nav__items_first {
+    left: 190px;
+  }
+}
+@media screen and (min-width: 1060px) and (max-width: 1139px) {
+  .opti_nav_changes_not_logged_in .header__top__nav__items_first {
+    left: 154px;
+  }
+}

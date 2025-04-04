@@ -1,0 +1,124 @@
+.course-info .video-mask {
+  display: none;
+}
+
+.row.title-row {
+  display: none !important;
+}
+
+.opti_course_info_bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #ecebea, -1px -1px 4px #ecebea;
+}
+@media screen and (max-width: 992px) {
+  .opti_course_info_bar {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .opti_course_info_bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.opti_course_info_instructor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+}
+@media screen and (max-width: 576px) {
+  .opti_course_info_instructor {
+    order: 1;
+  }
+}
+.opti_course_info_instructor img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  min-width: 80px;
+  min-height: 80px;
+  object-fit: cover;
+}
+.opti_course_info_instructor .opti_course_info_instructor__details .opti_course_info_instructor__label {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+.opti_course_info_instructor .opti_course_info_instructor__details .opti_course_info_instructor__name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #404041;
+  white-space: nowrap;
+  margin-top: 0;
+  line-height: 1;
+}
+
+.opti_course_info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px 8px;
+  grid-template-rows: repeat(2, auto);
+}
+@media screen and (max-width: 1060px) {
+  .opti_course_info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .opti_course_info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.opti_course_info .opti_course_info_item {
+  display: flex;
+  gap: 8px;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item__icon {
+  background: #c2e1f5;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item__icon img {
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  min-width: 24px;
+}
+.opti_course_info .opti_course_info_item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item_details {
+  text-align: left;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item_details .opti_course_info_item__label {
+  color: #808184;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 5px 0 0;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item_details .opti_course_info_item__value {
+  color: #404041;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.5;
+}
+.opti_course_info .opti_course_info_item .opti_course_info_item_details .opti_course_info_item__demand {
+  font-size: 12px;
+  font-weight: 400;
+  color: #808184;
+  margin: 0;
+}

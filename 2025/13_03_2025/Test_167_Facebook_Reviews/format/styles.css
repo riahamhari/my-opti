@@ -1,0 +1,49 @@
+.reviews-rating.v2 {
+  display: none !important;
+}
+
+#opti_fb_reviews {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  #opti_fb_reviews {
+    justify-content: flex-start;
+  }
+}
+#opti_fb_reviews .opti_fb_logo_container img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings {
+  line-height: 1.25;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex {
+  display: flex;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_rating {
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #404041;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_stars {
+  display: flex;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_stars .glyphicon-star {
+  font-size: 20px;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings p {
+  margin: 0;
+  line-height: 1;
+}
+#opti_fb_reviews .opti_fb_reviews_ratings p .opti_fb_reviews_link {
+  font-size: 12px;
+  color: #808184;
+  font-weight: 400;
+  text-decoration: underline;
+}
