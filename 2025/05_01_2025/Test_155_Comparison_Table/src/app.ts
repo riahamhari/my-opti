@@ -33,7 +33,6 @@ const tagInterval = setInterval(() => {
 		const enrollBtn: HTMLElement = document.querySelector('.btn-wrapper .btn');
 		if (positionEl && coursePrice && enrollBtn) {
 			clearInterval(myInterval);
-			console.log('int cleared');
 
 			optiInit();
 		}
@@ -122,7 +121,6 @@ const tagInterval = setInterval(() => {
 	const optiInit = () => {
 		const currentUrl = window.location.href;
 		const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
-		console.log(baseUrl);
 
 		const key = Object.keys(courseData).find(
 			(course) => courseData[course].pageLink === baseUrl || courseData[course]?.courseLandingPages?.includes(baseUrl) // Compare against the base URL only

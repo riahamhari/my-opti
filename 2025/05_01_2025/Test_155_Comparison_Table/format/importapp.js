@@ -20,7 +20,6 @@ const tagInterval = setInterval(() => {
         const enrollBtn = document.querySelector('.btn-wrapper .btn');
         if (positionEl && coursePrice && enrollBtn) {
             clearInterval(myInterval);
-            console.log('int cleared');
             optiInit();
         }
     }, 300);
@@ -104,7 +103,6 @@ const tagInterval = setInterval(() => {
     const optiInit = () => {
         const currentUrl = window.location.href;
         const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
-        console.log(baseUrl);
         const key = Object.keys(courseData).find((course) => { var _a, _b; return courseData[course].pageLink === baseUrl || ((_b = (_a = courseData[course]) === null || _a === void 0 ? void 0 : _a.courseLandingPages) === null || _b === void 0 ? void 0 : _b.includes(baseUrl)); } // Compare against the base URL only
         );
         const enrollBtn = document.querySelector('.btn-wrapper .btn');

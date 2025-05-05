@@ -22,15 +22,44 @@ const tagInterval = setInterval(() => {
 (() => {
 	'use strict';
 
-	let totalsFieldset, orderTotal, eightPaymentsEl;
+	let totalsFieldset,
+		orderTotal,
+		eightPaymentsEl,
+		paymentPlanHeading: HTMLElement,
+		paymentMethods: HTMLElement,
+		overlay: HTMLElement,
+		paymentPlanListEls: HTMLElement[],
+		paymentPlanLink: HTMLElement;
+
 	const myInterval = setInterval(() => {
 		totalsFieldset = document.querySelector('fieldset:has(.order-totals)');
 		orderTotal = document.getElementById('order-total');
+		paymentPlanHeading = document.querySelector('#payment-method-section h3');
+		paymentMethods = document.querySelector('.payment-methods .optionset');
 		eightPaymentsEl =
 			document.querySelector<HTMLElement>('[for="PaymentPlan8-Monthly-top"] .js-total') ||
 			document.querySelector<HTMLElement>('[for="PaymentPlan8-Weekly-top"] .js-total');
-
-		if (totalsFieldset && orderTotal && eightPaymentsEl) {
+		overlay = document.querySelector(
+			'.GenericPaymentConfirmationPage .details-form fieldset.payment-methods .payment-methods__not-logged-in-overlay, .GenericPaymentConfirmationPage .details-form fieldset:not(:last-child).payment-methods .payment-methods__not-logged-in-overlay'
+		);
+		paymentPlanLink = document.querySelector(
+			'.GenericPaymentConfirmationPage .details-form fieldset.payment-plan-section .payment-heading .payment-heading__prompt a'
+		);
+		paymentPlanListEls = [
+			...document.querySelectorAll<HTMLElement>(
+				'.GenericPaymentConfirmationPage .details-form fieldset.payment-plan-section .payment-heading ul li'
+			),
+		];
+		if (
+			totalsFieldset &&
+			orderTotal &&
+			eightPaymentsEl &&
+			paymentPlanHeading &&
+			paymentMethods &&
+			overlay &&
+			paymentPlanLink &&
+			paymentPlanListEls
+		) {
 			clearInterval(myInterval);
 			optiInit(totalsFieldset);
 
@@ -42,6 +71,18 @@ const tagInterval = setInterval(() => {
 					const priceStr = eightPaymentsEl.innerText.split('USD')[0].trim();
 					const priceEl: HTMLElement = document.querySelector('#opti_split_payments_Wrapper span');
 					priceEl.innerText = priceStr;
+					const select = document.getElementById('opti_payment_plan_select');
+					if (!select) {
+						return;
+					}
+					[...select.querySelectorAll<HTMLElement>('option')].forEach((option) => {
+						const value = option.getAttribute('value');
+						const matchingPPListItem: HTMLInputElement = document.querySelector(
+							`.GenericPaymentConfirmationPage .details-form fieldset.payment-plan-section .payment-heading ul li:has(input#${value})`
+						);
+						const paymentText = matchingPPListItem.innerText.replace('Make ', '');
+						option.innerHTML = `${paymentText}`;
+					});
 				},
 				300,
 				false
@@ -91,6 +132,18 @@ const tagInterval = setInterval(() => {
 		const splitPayments = createSplitPayments(priceStr);
 
 		totalsFieldset.insertAdjacentElement('afterend', splitPayments);
+
+		// change payment plans text
+		paymentPlanHeading.innerHTML = `
+                    <span class="highlight">2.</span> Payment Info
+
+
+                `;
+
+		overlay.classList.remove('opti_hide_overlay');
+		// add payment plan select element
+		const paymentPlanSelect = createPPSelect();
+		paymentMethods.after(paymentPlanSelect);
 	};
 
 	const createSplitPayments = (priceStr) => {
@@ -117,6 +170,44 @@ const tagInterval = setInterval(() => {
 		});
 
 		return splitPayment;
+	};
+
+	const createPPSelect = () => {
+		const select = document.createElement('div');
+		select.classList.add('opti-select-wrapper');
+		// select.setAttribute('name', 'opti_payment_plan_select');
+		// select.classList.add('custom-select');
+		// select.id = 'opti_payment_plan_select';
+		select.innerHTML = `<div class="row">
+								<div class="col-md-8">
+									<select class="custom-select" id="opti_payment_plan_select" name="opti_payment_plan_select">
+										${paymentPlanListEls
+											.map((listEl) => {
+												const paymentText = listEl.innerText.replace('Make ', '');
+												const value = listEl.querySelector('input').id;
+												return `<option value="${value}">${paymentText}</option>`;
+											})
+											.join('')}
+									</select>
+								</div>
+							</div>
+							`;
+
+		select.onchange = (e) => {
+			const target: any = e.target;
+			const value = target.value;
+			paymentPlanLink.click();
+			const matchingRadioInput: HTMLInputElement = document.querySelector(
+				`.GenericPaymentConfirmationPage .details-form fieldset.payment-plan-section .payment-heading ul li input#${value}`
+			);
+			const matchingLabel: HTMLInputElement = document.querySelector(
+				`.GenericPaymentConfirmationPage .details-form fieldset.payment-plan-section .payment-heading ul li:has(input#${value}) label`
+			);
+			matchingLabel.click();
+			matchingRadioInput.checked = true;
+		};
+
+		return select;
 	};
 
 	const debounce = (func: Function, wait = 300, immediate = false) => {

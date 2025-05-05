@@ -1,0 +1,544 @@
+.opti_discount_label {
+  background: #b4df84;
+  padding: 8px 20px;
+  font-size: 18px;
+  color: #404041;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  width: fit-content;
+  border-radius: 6px;
+  justify-content: center;
+}
+.opti_discount_label img {
+  width: 24px;
+}
+.opti_discount_label span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#opti_wiring_package_hero {
+  /* padding-top: 64px; */
+  justify-content: center;
+  gap: 10px;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_wiring_package_hero {
+    gap: 0;
+    height: 85vh;
+  }
+}
+#opti_wiring_package_hero .opti_line-through {
+  text-decoration: line-through !important;
+}
+#opti_wiring_package_hero h1 {
+  margin-top: 16px;
+  width: 70%;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_wiring_package_hero h1 {
+    width: 100%;
+  }
+}
+#opti_wiring_package_hero .header-subtitle p {
+  max-width: 540px;
+}
+#opti_wiring_package_hero .no-catches {
+  display: none;
+}
+#opti_wiring_package_hero div .opti_cta_price {
+  color: #ffae01;
+  font-size: 40px;
+}
+#opti_wiring_package_hero div .opti_cta_price__currency {
+  font-size: 24px;
+}
+#opti_wiring_package_hero div .opti_cta_price_brackets {
+  font-size: 15px;
+  color: #fefefe;
+}
+#opti_wiring_package_hero .deals-page-header-content {
+  margin: 2rem 0;
+}
+#opti_wiring_package_hero .deals-page-header-extra img {
+  width: 20px;
+  height: 20px !important;
+}
+
+#opti_wiring_package_youll_learn div:has(.from-our-expert) {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  #opti_wiring_package_youll_learn [alt="Wiring - You'll Learn Side Image"] {
+    width: 50%;
+  }
+}
+
+#opti_ultimate_wiring_card {
+  border-radius: 6px;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+  padding: 30px 30px 20px;
+}
+@media screen and (min-width: 992px) {
+  #opti_ultimate_wiring_card {
+    width: 50%;
+  }
+}
+#opti_ultimate_wiring_card div .opti_cta_price {
+  color: #ffae01;
+  font-size: 40px;
+}
+#opti_ultimate_wiring_card div .opti_cta_price__currency {
+  font-size: 15px;
+}
+#opti_ultimate_wiring_card div .opti_cta_price_brackets {
+  font-size: 15px;
+  color: #404041;
+  font-weight: 700;
+}
+#opti_ultimate_wiring_card h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li {
+  margin-bottom: 16px;
+  display: list-item;
+  font-size: 15px;
+  list-style: none;
+  color: #404041;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li:last-child {
+  margin-bottom: 0;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li span {
+  margin-right: 10px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li span .opti_tick_icon {
+  width: 25px !important;
+  height: 25px !important;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li strong {
+  font-weight: 700;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li .popover-trigger {
+  display: inline;
+  position: relative;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__benefits li .popover-trigger img {
+  top: -8px;
+  position: relative;
+  width: 16px;
+  height: 16px !important;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__incl {
+  list-style: inside disc;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  color: #404041;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_ultimate_wiring_card .opti_ultimate_wiring__incl {
+    margin: 0;
+  }
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__incl li {
+  margin-bottom: 0;
+  display: list-item;
+  font-size: 15px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__incl li::marker {
+  font-size: 20px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__incl li:last-of-type {
+  margin-bottom: 10px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__enrollBtn {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__enrollBtn .btn {
+  font-size: 14px;
+  padding: 15px 30px;
+  letter-spacing: 1.5px;
+}
+#opti_ultimate_wiring_card .opti_ultimate_wiring__enroll .opti_payment_icons img {
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.opti_ultimate_wiring__ppLabel {
+  background: #f0f9e6;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.opti_ultimate_wiring__ppLabel span {
+  display: flex;
+}
+.opti_ultimate_wiring__ppLabel p {
+  margin: 0 !important;
+}
+.opti_ultimate_wiring__ppLabel .popover-trigger {
+  display: flex;
+}
+
+.DealsPage_Alternate2 .dealspage-alternate2 .section-1 {
+  max-width: 55em !important;
+}
+
+.DealsPage_Alternate2 .dealspage-alternate2 .section-1 .video {
+  max-width: 55em !important;
+}
+
+.opti_ultimate_wiring__enrollBtn {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.opti_ultimate_wiring__enrollBtn .btn {
+  font-size: 14px;
+  padding: 15px 30px;
+  letter-spacing: 1.5px;
+}
+.opti_ultimate_wiring__enroll .opti_ultimate_wiring__ppLabel {
+  background: #f0f9e6;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  white-space-collapse: preserve-breaks;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.opti_ultimate_wiring__enroll .opti_ultimate_wiring__ppLabel span {
+  display: flex;
+}
+.opti_ultimate_wiring__enroll .opti_payment_icons img {
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.opti_payment_icons img {
+  width: 120px !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.motorsport-wiring-section {
+  margin-bottom: 6em !important;
+}
+.motorsport-wiring-section .cta {
+  display: none !important;
+}
+.motorsport-wiring-section #opti_why_learn_motorsport {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.motorsport-wiring-section #opti_why_learn_motorsport h3 {
+  font-size: 40px;
+  margin: 0;
+}
+.motorsport-wiring-section #opti_why_learn_motorsport .opti_why_learn_motorsport__sub {
+  color: #808184;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.motorsport-wiring-section #opti_why_learn_motorsport .opti_why_learn_motorsport__info {
+  color: #404041;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#opti_table_wrapper_uw {
+  margin-top: 30px;
+  width: fit-content;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw {
+    width: 100%;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner {
+  background-color: #fff;
+  padding: 16px 0 0;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw .opti_container_inner {
+    margin-bottom: 40px;
+    padding-top: 8px;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner h3 {
+  line-height: 1;
+  text-align: center;
+  margin: 8px auto 0;
+  font-size: 40px;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw .opti_container_inner h3 {
+    margin-bottom: 0;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner .opti_table_subtext {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table {
+  background-color: #fff;
+  display: inline-table;
+  margin-bottom: 90px;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr {
+  border: 0;
+  position: relative;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr:first-child {
+  background: #fff;
+  border: 0;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr th {
+  color: #404041;
+  text-align: center;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td,
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr th {
+  padding: 12px;
+  margin: 8px;
+  display: table-cell;
+  color: #404041;
+  font-weight: 600;
+  font-size: 16px;
+  min-width: 250px;
+  max-width: 250px;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td,
+  #opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr th {
+    font-size: 14px;
+    padding: 8px;
+    min-width: unset;
+    max-width: unset;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td:not(:first-child),
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr th:not(:first-child) {
+  text-align: center;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td:nth-child(2),
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr th:nth-child(2) {
+  background: #f0f9e6;
+}
+@media screen and (min-width: 768px) {
+  #opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td {
+    white-space: nowrap;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr td .opti_table_cell_subtext {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #8e8f91;
+  margin: 0;
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr img {
+    width: 20px;
+  }
+}
+#opti_table_wrapper_uw .opti_container_inner #opti_price_comparison_table tr .opti_hpa_logo {
+  width: 80px;
+}
+#opti_table_wrapper_uw .opti_container_inner .tittleAndPriceBlock {
+  float: unset;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  #opti_table_wrapper_uw .opti_container_inner .tittleAndPriceBlock {
+    display: none;
+  }
+}
+
+#opti_everything_you_need_section {
+  background: #f5f5f5;
+  padding: 60px 30px 30px;
+}
+#opti_everything_you_need_section h2.section-title {
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+}
+#opti_everything_you_need_section #opti_ultimate_wiring_card {
+  margin: 0 auto;
+  background: #fff;
+}
+
+#opti_reviews_section {
+  background: #fff !important;
+}
+@media screen and (min-width: 992px) {
+  #opti_reviews_section {
+    padding: 8em 4em 4em;
+  }
+}
+#opti_reviews_section h2.section-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  max-width: 450px;
+  margin: 6px auto;
+}
+#opti_reviews_section #opti_fb_reviews {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+  width: fit-content;
+  margin: 30px auto;
+}
+@media screen and (min-width: 768px) {
+  #opti_reviews_section #opti_fb_reviews {
+    justify-content: flex-start;
+  }
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_logo_container img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings {
+  line-height: 1.25;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex {
+  display: flex;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_rating {
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #404041;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_stars {
+  display: flex;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings .opti_reviews_flex .opti_stars .glyphicon-star {
+  font-size: 20px;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings p {
+  margin: 0;
+  line-height: 1;
+}
+#opti_reviews_section #opti_fb_reviews .opti_fb_reviews_ratings p .opti_fb_reviews_link {
+  font-size: 12px;
+  color: #808184;
+  font-weight: 400;
+  text-decoration: underline;
+}
+#opti_reviews_section .cta {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px) {
+  .industry-leading {
+    padding: 4em 0 8em !important;
+  }
+}
+
+.DealsPage_Alternate2 .dealspage-alternate2 .course-curriculum .curriculum-content h2.section-title::before {
+  content: "Wiring ";
+}
+
+.popover-trigger {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.opti_lifetime_popover,
+.opti_payment_popover {
+  cursor: pointer;
+  width: fit-content;
+  min-width: 300px;
+  left: -151px;
+  top: 20px;
+}
+.opti_lifetime_popover .popover-content,
+.opti_payment_popover .popover-content {
+  font-weight: 400;
+}
+@media screen and (max-width: 576px) {
+  .opti_lifetime_popover,
+  .opti_payment_popover {
+    left: 102px;
+    transform: translateX(-50%);
+    min-width: 250px;
+  }
+  .opti_lifetime_popover .arrow,
+  .opti_payment_popover .arrow {
+    left: 9%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .opti_lifetime_popover {
+    left: -60px;
+    transform: translateX(-50%);
+    min-width: 250px;
+  }
+  .opti_lifetime_popover .arrow {
+    left: 77%;
+  }
+}
+
+#opti_payment_popover_bottom {
+  cursor: pointer;
+  left: 102px;
+  transform: translateX(-50%);
+  min-width: 250px;
+  top: -346px;
+}
+#opti_payment_popover_bottom .popover-content {
+  font-weight: 400;
+}
+#opti_payment_popover_bottom .arrow {
+  left: 9%;
+}
+#opti_payment_popover_bottom .arrow:after {
+  border-top-color: #4b5c6b;
+}
+
+.opti_show_popover {
+  display: block !important;
+}

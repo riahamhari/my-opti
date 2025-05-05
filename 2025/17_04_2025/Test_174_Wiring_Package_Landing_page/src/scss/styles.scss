@@ -1,1 +1,587 @@
 @use 'sass/base' as *;
+
+.opti_discount_label {
+	background: #b4df84;
+	padding: 8px 20px;
+	font-size: 18px;
+	color: #404041;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	width: fit-content;
+	border-radius: 6px;
+	justify-content: center;
+	img {
+		width: 24px;
+	}
+
+	span {
+		font-size: 15px;
+		font-weight: 600;
+	}
+}
+#opti_wiring_package_hero {
+	/* padding-top: 64px; */
+	justify-content: center;
+	gap: 10px;
+	@media screen and (max-width: 767.98px) {
+		gap: 0;
+		height: 85vh;
+	}
+	.opti_line-through {
+		text-decoration: line-through !important;
+	}
+	h1 {
+		margin-top: 16px;
+		width: 70%;
+		@media screen and (max-width: 767.98px) {
+			width: 100%;
+		}
+	}
+
+	.header-subtitle p {
+		max-width: 540px;
+	}
+
+	.no-catches {
+		display: none;
+	}
+	div {
+		.opti_cta_price {
+			color: #ffae01;
+			font-size: 40px;
+			&__currency {
+				font-size: 24px;
+			}
+		}
+		.opti_cta_price_brackets {
+			font-size: 15px;
+			color: #fefefe;
+		}
+	}
+
+	.deals-page-header-content {
+		margin: 2rem 0;
+	}
+
+	.deals-page-header-extra {
+		img {
+			width: 20px;
+			height: 20px !important;
+		}
+	}
+}
+// youll learn styling
+#opti_wiring_package_youll_learn {
+	div:has(.from-our-expert) {
+		display: none;
+	}
+	[alt="Wiring - You'll Learn Side Image"] {
+		// max-height: 601px;
+		@media screen and (min-width: 992px) {
+			width: 50%;
+		}
+	}
+}
+#opti_ultimate_wiring_card {
+	border-radius: 6px;
+	box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+	padding: 30px 30px 20px;
+	@media screen and (min-width: 992px) {
+		width: 50%;
+	}
+
+	div {
+		.opti_cta_price {
+			color: #ffae01;
+			font-size: 40px;
+			&__currency {
+				font-size: 15px;
+			}
+		}
+		.opti_cta_price_brackets {
+			font-size: 15px;
+			color: #404041;
+			font-weight: 700;
+		}
+	}
+	h3 {
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
+
+	.opti_ultimate_wiring__benefits {
+		li {
+			margin-bottom: 16px;
+			display: list-item;
+			font-size: 15px;
+			list-style: none;
+			color: #404041;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			span {
+				margin-right: 10px;
+				.opti_tick_icon {
+					width: 25px !important;
+					height: 25px !important;
+				}
+			}
+			strong {
+				font-weight: 700;
+			}
+			.popover-trigger {
+				display: inline;
+				position: relative;
+				img {
+					top: -8px;
+					position: relative;
+					width: 16px;
+					height: 16px !important;
+				}
+			}
+		}
+	}
+
+	.opti_ultimate_wiring__incl {
+		list-style: inside disc;
+		margin-left: 40px;
+		margin-bottom: 20px;
+		color: #404041;
+		@media screen and (max-width: 767.98px) {
+			margin: 0;
+		}
+		li {
+			margin-bottom: 0;
+			display: list-item;
+			font-size: 15px;
+			&::marker {
+				font-size: 20px;
+			}
+			&:last-of-type {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.opti_ultimate_wiring__enroll {
+		// width: fit-content;
+		// margin: 0 auto;
+
+		&Btn {
+			width: fit-content;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			.btn {
+				font-size: 14px;
+				padding: 15px 30px;
+				letter-spacing: 1.5px;
+			}
+		}
+
+		.opti_payment_icons {
+			img {
+				width: 120px;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.opti_ultimate_wiring__ppLabel {
+	background: #f0f9e6;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+
+	text-align: center;
+	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	justify-content: center;
+	width: fit-content;
+	margin: 0 auto;
+	gap: 4px;
+	font-size: 12px;
+	font-weight: 300;
+	margin-bottom: 10px;
+	span {
+		display: flex;
+	}
+	p {
+		margin: 0 !important;
+	}
+	.popover-trigger {
+		display: flex;
+	}
+}
+
+.DealsPage_Alternate2 .dealspage-alternate2 .section-1 {
+	max-width: 55em !important;
+}
+.DealsPage_Alternate2 .dealspage-alternate2 .section-1 .video {
+	max-width: 55em !important;
+}
+
+.opti_ultimate_wiring__enroll {
+	// width: fit-content;
+	// margin: 0 auto;
+
+	&Btn {
+		width: fit-content;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		.btn {
+			font-size: 14px;
+			padding: 15px 30px;
+			letter-spacing: 1.5px;
+		}
+	}
+
+	.opti_ultimate_wiring__ppLabel {
+		background: #f0f9e6;
+		display: flex;
+		align-items: center;
+		padding: 5px;
+
+		text-align: center;
+		box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+		border-radius: 6px;
+		white-space-collapse: preserve-breaks;
+		justify-content: center;
+		width: fit-content;
+		margin: 0 auto;
+		gap: 4px;
+		font-size: 12px;
+		font-weight: 300;
+		margin-bottom: 10px;
+		span {
+			display: flex;
+		}
+	}
+	.opti_payment_icons {
+		img {
+			width: 120px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+.opti_payment_icons {
+	img {
+		width: 120px !important;
+		display: block !important;
+		margin: 0 auto !important;
+	}
+}
+
+// why learn styling
+.motorsport-wiring-section {
+	margin-bottom: 6em !important;
+	.cta {
+		display: none !important;
+	}
+	#opti_why_learn_motorsport {
+		text-align: center;
+		margin-bottom: 36px;
+		h3 {
+			font-size: 40px;
+			margin: 0;
+		}
+		.opti_why_learn_motorsport__sub {
+			color: #808184;
+			font-size: 16px;
+			margin-bottom: 16px;
+		}
+		.opti_why_learn_motorsport__info {
+			color: #404041;
+			font-size: 16px;
+			font-weight: 400;
+		}
+	}
+}
+
+// table styling
+
+#opti_table_wrapper_uw {
+	// box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	margin-top: 30px;
+	width: fit-content;
+	margin: 0 auto;
+	@media screen and (max-width: 767.98px) {
+		width: 100%;
+	}
+	.opti_container_inner {
+		background-color: #fff;
+		padding: 16px 0 0;
+		@media screen and (max-width: 767.98px) {
+			margin-bottom: 40px;
+			padding-top: 8px;
+		}
+		h3 {
+			// border-bottom: 2px solid #ffae01;
+			// width: 248px;
+			line-height: 1;
+			text-align: center;
+			margin: 8px auto 0;
+			font-size: 40px;
+			@media screen and (max-width: 767.98px) {
+				margin-bottom: 0;
+			}
+		}
+		.opti_table_subtext {
+			text-align: center;
+			margin-bottom: 60px;
+		}
+		#opti_price_comparison_table {
+			background-color: #fff;
+			display: inline-table;
+			margin-bottom: 90px;
+
+			tr {
+				// border-bottom: 1px solid #ecebea;
+				border: 0;
+				// border-bottom: 1px solid #ecebea;
+				position: relative;
+
+				&:first-child {
+					background: #fff;
+					border: 0;
+				}
+				th {
+					color: #404041;
+					text-align: center;
+				}
+
+				td,
+				th {
+					padding: 12px;
+					margin: 8px;
+					display: table-cell;
+					color: #404041;
+					font-weight: 600;
+					font-size: 16px;
+					min-width: 250px;
+					max-width: 250px;
+					@media screen and (max-width: 767.98px) {
+						font-size: 14px;
+						padding: 8px;
+						min-width: unset;
+						max-width: unset;
+					}
+
+					&:not(:first-child) {
+						text-align: center;
+					}
+					&:nth-child(2) {
+						background: #f0f9e6;
+					}
+				}
+
+				td {
+					@media screen and (min-width: 768px) {
+						white-space: nowrap;
+					}
+
+					.opti_table_cell_subtext {
+						font-size: 14px;
+						line-height: 1.3;
+						font-weight: 400;
+						color: #8e8f91;
+						margin: 0;
+					}
+				}
+
+				img {
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					@media screen and (max-width: 767.98px) {
+						width: 20px;
+					}
+				}
+				.opti_hpa_logo {
+					width: 80px;
+				}
+			}
+		}
+		.tittleAndPriceBlock {
+			float: unset;
+			width: 100%;
+			background: #fff;
+			padding: 20px;
+			@media screen and (max-width: 767.98px) {
+				display: none;
+			}
+		}
+	}
+}
+
+// everything you need section styling
+#opti_everything_you_need_section {
+	background: #f5f5f5;
+	padding: 60px 30px 30px;
+	h2.section-title {
+		font-size: 40px;
+		text-align: center;
+		margin: 0;
+		line-height: 1.3;
+	}
+	#opti_ultimate_wiring_card {
+		margin: 0 auto;
+		background: #fff;
+	}
+}
+
+// review section
+#opti_reviews_section {
+	background: #fff !important;
+	@media screen and (min-width: 992px) {
+		padding: 8em 4em 4em;
+	}
+	h2.section-title {
+		text-align: center;
+		font-size: 2em;
+		font-weight: 700;
+		max-width: 450px;
+		margin: 6px auto;
+	}
+	#opti_fb_reviews {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		margin-bottom: 20px;
+		justify-content: center;
+		width: fit-content;
+		margin: 30px auto;
+		@media screen and (min-width: 768px) {
+			justify-content: flex-start;
+		}
+		.opti_fb_logo_container {
+			img {
+				width: 25px;
+				height: 25px;
+				object-fit: cover;
+				clip-path: circle(50% at 50% 50%);
+			}
+		}
+		.opti_fb_reviews_ratings {
+			line-height: 1.25;
+			.opti_reviews_flex {
+				display: flex;
+				.opti_rating {
+					margin-right: 8px;
+					font-size: 20px;
+					font-weight: 500;
+					color: #404041;
+				}
+				.opti_stars {
+					display: flex;
+					.glyphicon-star {
+						font-size: 20px;
+					}
+				}
+			}
+			p {
+				margin: 0;
+				line-height: 1;
+				.opti_fb_reviews_link {
+					font-size: 12px;
+					color: #808184;
+					font-weight: 400;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.cta {
+		display: none !important;
+	}
+}
+
+// industry leading styling
+.industry-leading {
+	@media screen and (min-width: 992px) {
+		padding: 4em 0 8em !important;
+	}
+}
+
+// curriculum-content
+.DealsPage_Alternate2 .dealspage-alternate2 .course-curriculum .curriculum-content {
+	h2.section-title {
+		&::before {
+			content: 'Wiring ';
+		}
+	}
+}
+
+// popover
+.popover-trigger {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.opti_lifetime_popover,
+.opti_payment_popover {
+	cursor: pointer;
+	width: fit-content;
+
+	min-width: 300px;
+	left: -151px;
+	top: 20px;
+
+	.popover-content {
+		font-weight: 400;
+	}
+
+	@media screen and (max-width: 576px) {
+		left: 102px;
+		transform: translateX(-50%);
+		min-width: 250px;
+
+		.arrow {
+			left: 9%;
+		}
+	}
+}
+
+.opti_lifetime_popover {
+	@media screen and (max-width: 576px) {
+		left: -60px;
+		transform: translateX(-50%);
+		min-width: 250px;
+
+		.arrow {
+			left: 77%;
+		}
+	}
+}
+
+#opti_payment_popover_bottom {
+	cursor: pointer;
+	left: 102px;
+	transform: translateX(-50%);
+	min-width: 250px;
+	top: -346px;
+	.popover-content {
+		font-weight: 400;
+	}
+	.arrow {
+		left: 9%;
+	}
+
+	.arrow:after {
+		border-top-color: #4b5c6b;
+	}
+}
+.opti_show_popover {
+	display: block !important;
+}
+
+// .DealsPage_Alternate2 section .dealspage-alternate2 .deals-page-header-wrapper {
+// 	@media screen and (min-width: 768px) {
+// 		background-image: url('https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/wiring-package-hero.png');
+// 	}
+// 	background-image: url('https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/wiring-package-hero.png');
+// }
