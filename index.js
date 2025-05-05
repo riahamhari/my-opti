@@ -181,6 +181,7 @@ declare global {
 	interface Window {
 		store?: any;
 		utag?: any;
+		clarity?: any;
 	}
 }`;
 
