@@ -124,7 +124,7 @@ Test name: Test 150 - Starter Package Upsell (Category pages)v1
 				const normalizedPage = page.endsWith('/') ? page.slice(0, -1) : page;
 				return normalizedPage === normalizedBaseUrl;
 			})
-		);
+		); 
 
 		if (!matchingCourse) {
 			return;
