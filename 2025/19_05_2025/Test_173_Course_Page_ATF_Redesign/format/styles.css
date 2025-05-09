@@ -28,8 +28,23 @@
     width: 66.66666667%;
   }
 }
+@media screen and (max-width: 767.98px) {
+  .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign_heading {
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign_heading {
+    text-align: center;
+  }
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign_heading .opti_vip_redesign_heading__main {
   font-size: 48px;
@@ -38,9 +53,10 @@
   margin-bottom: 0px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign_heading .opti_vip_redesign_heading__main {
     line-height: 1.1;
+    font-size: 36px;
   }
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign_heading .opti_vip_redesign_heading__main span {
@@ -52,12 +68,13 @@
   font-weight: 600;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   max-width: 85%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText {
     max-width: unset;
+    text-align: center;
   }
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText p {
@@ -69,7 +86,7 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText p strong {
   font-weight: 600;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText p:nth-child(2) {
     display: inline;
   }
@@ -77,6 +94,11 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText .opti_students_info {
   display: flex;
   gap: 15px;
+}
+@media screen and (max-width: 767.98px) {
+  .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText .opti_students_info {
+    justify-content: center;
+  }
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__infoText .opti_students_info .opti_icon_container {
   display: flex;
@@ -95,6 +117,14 @@
   border-radius: 6px;
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
 }
+@media screen and (max-width: 767.98px) {
+  .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__ticks {
+    padding: 10px 20px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__ticks ul {
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +133,7 @@
   margin: 0;
   gap: 15px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__ticks ul {
     flex-direction: column;
   }
@@ -127,7 +157,7 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__main .opti_vip_redesign__ticks ul li img {
   width: 22px;
   height: 22px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 @media screen and (min-width: 992px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side {
@@ -135,7 +165,7 @@
   }
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont {
-  padding: 20px;
+  padding: 10px;
   background: var(--light-gray);
   margin-bottom: 20px;
   border-radius: 8px;
@@ -153,12 +183,12 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .opti_vip_redesign__currPrice {
   font-size: 48px;
   font-weight: 600;
-  margin-bottom: 0px;
+  margin-bottom: -5px;
   text-align: center;
   color: #000;
   line-height: 1.45;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .opti_vip_redesign__currPrice {
     margin-bottom: 10px;
   }
@@ -173,7 +203,7 @@
     margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .opti_vip_redesign__currPrice span {
     display: inline;
   }
@@ -185,8 +215,7 @@
   text-align: center;
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  max-width: 90%;
-  margin: 0 auto 15px;
+  margin: 0 auto 10px;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .opti_vip_redesign__paymentPlan .opti_vip_redesign_popover_wrapper {
   display: flex;
@@ -196,7 +225,7 @@
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .opti_vip_redesign__paymentPlan_text {
   color: #000;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,6 +239,7 @@
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper .btn {
   text-align: center;
+  margin-bottom: 10px;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky {
   background: var(--light-gray);
@@ -258,8 +288,20 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky .opti_sticky_cta .opti_sticky_cta__paymentPlan span svg {
   fill: #808184;
 }
+.course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky .btn {
+  text-align: center;
+  margin-bottom: 10px;
+  max-width: 50vw;
+  display: block;
+  float: unset;
+  margin: 0 auto 10px;
+}
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .payment-icons {
   margin-bottom: 0;
+}
+.course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .payment-icons img {
+  width: 120px;
+  min-width: 120px;
 }
 @media screen and (max-width: 992px) {
   .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .payment-icons img {
@@ -276,8 +318,9 @@
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign__moneyBack img {
-  width: 30px;
+  width: 20px;
   height: 20px;
+  max-width: unset !important;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign__moneyBack .opti_vip_redesign__moneyBack_text h5 {
   font-weight: 600;
@@ -297,8 +340,7 @@
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .popover-trigger {
   position: relative;
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  height: 20px;
 }
 
 #opti_fb_reviews {
@@ -347,7 +389,7 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .sidebar .btn-wrapper.btn-sticky:not(.opti_btn_wrapper) {
     display: none;
   }
@@ -413,4 +455,14 @@
 .CourseEntry .course-info .row.title-row,
 .CourseEntry .JITWebinarPage_live .webinarPromotionalMainContent .liveEmbedder .row.title-row {
   display: block !important;
+}
+
+.main-content .col-xs-12:has(.courses-info-box-wrapper) {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .row .course-entry-content {
+    margin-top: -20px;
+  }
 }

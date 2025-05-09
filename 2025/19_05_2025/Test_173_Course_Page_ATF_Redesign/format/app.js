@@ -404,9 +404,9 @@ const tagInterval = setInterval(() => {
 															${eightPaymentsHtml}
 														</div>
 													</div>
-												<p class="opti_vip_redesign__paymentPlan_text">Payment plans available. </p>
+												<p class="opti_vip_redesign__paymentPlan_text">Payment plans available over 8 weeks. </p>
 											</div>
-											<p class="opti_vip_redesign__paymentPlan_text">Make ${paymentPlanText}</span></p>
+										
 									  </div>`
             : ''}
 							
@@ -427,7 +427,7 @@ const tagInterval = setInterval(() => {
             : ''}
 							
 											</div>
-											<a class="btn btn-primary" href="/vip-package/purchase/">BECOME A VIP</a>
+											<a class="btn btn-primary" href="/vip-package/purchase/">ENROLL NOW</a>
 									  </div>
 									  <div class="payment-icons">
 											<img src="/resources/themes/base/production/images/payment-icons.png">

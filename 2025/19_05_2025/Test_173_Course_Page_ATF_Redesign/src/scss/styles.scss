@@ -30,17 +30,29 @@
 					@media screen and (min-width: 768px) {
 						width: 66.66666667%;
 					}
+					@media screen and (max-width: 767.98px) {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						padding-left: 15px;
+						padding-right: 15px;
+					}
 
 					.opti_vip_redesign_heading {
 						margin-bottom: 20px;
+						margin-top: 20px;
+						@media screen and (max-width: 767.98px) {
+							text-align: center;
+						}
 						.opti_vip_redesign_heading__main {
 							font-size: 48px;
 							font-weight: 600;
 							color: #000;
 							margin-bottom: 0px;
 							text-transform: uppercase;
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 767.98px) {
 								line-height: 1.1;
+								font-size: 36px;
 							}
 							span {
 								font-size: 60px;
@@ -53,10 +65,11 @@
 						}
 					}
 					.opti_vip_redesign__infoText {
-						margin-bottom: 20px;
+						margin-bottom: 30px;
 						max-width: 85%;
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 767.98px) {
 							max-width: unset;
+							text-align: center;
 						}
 						p {
 							font-size: 18px;
@@ -68,7 +81,7 @@
 								font-weight: 600;
 							}
 							&:nth-child(2) {
-								@media screen and (max-width: 768px) {
+								@media screen and (max-width: 767.98px) {
 									display: inline;
 								}
 							}
@@ -76,6 +89,9 @@
 						.opti_students_info {
 							display: flex;
 							gap: 15px;
+							@media screen and (max-width: 767.98px) {
+								justify-content: center;
+							}
 							.opti_icon_container {
 								display: flex;
 								align-items: center;
@@ -94,6 +110,12 @@
 						max-width: 90%;
 						border-radius: 6px;
 						box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+						@media screen and (max-width: 767.98px) {
+							padding: 10px 20px;
+							max-width: 100%;
+							width: 100%;
+							margin: 0;
+						}
 						ul {
 							display: flex;
 							flex-wrap: wrap;
@@ -101,7 +123,7 @@
 							padding: 0;
 							margin: 0;
 							gap: 15px;
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 767.98px) {
 								flex-direction: column;
 							}
 							li {
@@ -123,7 +145,7 @@
 								img {
 									width: 22px;
 									height: 22px;
-									margin-right: 5px;
+									margin-right: 10px;
 								}
 							}
 						}
@@ -134,7 +156,7 @@
 						padding-left: 15px;
 					}
 					.opti_vip_redesign_priceCont {
-						padding: 20px;
+						padding: 10px;
 						background: var(--light-gray);
 						margin-bottom: 20px;
 						border-radius: 8px;
@@ -151,11 +173,11 @@
 						.opti_vip_redesign__currPrice {
 							font-size: 48px;
 							font-weight: 600;
-							margin-bottom: 0px;
+							margin-bottom: -5px;
 							text-align: center;
 							color: #000;
 							line-height: 1.45;
-							@media screen and (max-width: 768px) {
+							@media screen and (max-width: 767.98px) {
 								margin-bottom: 10px;
 							}
 							span {
@@ -165,7 +187,7 @@
 									display: block;
 									margin-bottom: 20px;
 								}
-								@media screen and (max-width: 768px) {
+								@media screen and (max-width: 767.98px) {
 									display: inline;
 								}
 							}
@@ -177,8 +199,8 @@
 							text-align: center;
 							box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
 							border-radius: 6px;
-							max-width: 90%;
-							margin: 0 auto 15px;
+
+							margin: 0 auto 10px;
 							// position: relative;
 							.opti_vip_redesign_popover_wrapper {
 								display: flex;
@@ -188,7 +210,7 @@
 							}
 							&_text {
 								color: #000;
-								font-size: 16px;
+								font-size: 15px;
 								display: flex;
 								align-items: center;
 								justify-content: center;
@@ -204,6 +226,7 @@
 							}
 							.btn {
 								text-align: center;
+								margin-bottom: 10px;
 							}
 						}
 						.btn-wrapper.btn-sticky {
@@ -254,10 +277,20 @@
 									}
 								}
 							}
+							.btn {
+								text-align: center;
+								margin-bottom: 10px;
+								max-width: 50vw;
+								display: block;
+								float: unset;
+								margin: 0 auto 10px;
+							}
 						}
 						.payment-icons {
 							margin-bottom: 0;
 							img {
+								width: 120px;
+								min-width: 120px;
 								@media screen and (max-width: 992px) {
 									min-width: unset;
 								}
@@ -273,8 +306,9 @@
 						border-radius: 6px;
 						box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
 						img {
-							width: 30px;
+							width: 20px;
 							height: 20px;
+							max-width: unset !important;
 						}
 						.opti_vip_redesign__moneyBack_text {
 							h5 {
@@ -298,8 +332,7 @@
 				.popover-trigger {
 					position: relative;
 					cursor: pointer;
-					display: flex;
-					align-items: center;
+					height: 20px;
 				}
 			}
 		}
@@ -353,7 +386,7 @@
 }
 
 .sidebar .btn-wrapper.btn-sticky:not(.opti_btn_wrapper) {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767.98px) {
 		display: none;
 	}
 }
@@ -418,4 +451,14 @@
 .CourseEntry .course-info .row.title-row,
 .CourseEntry .JITWebinarPage_live .webinarPromotionalMainContent .liveEmbedder .row.title-row {
 	display: block !important;
+}
+
+.main-content .col-xs-12:has(.courses-info-box-wrapper) {
+	display: none;
+}
+
+.row .course-entry-content {
+	@media screen and (min-width: 768px) {
+		margin-top: -20px;
+	}
 }
