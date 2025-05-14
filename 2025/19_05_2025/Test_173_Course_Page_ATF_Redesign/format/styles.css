@@ -243,6 +243,10 @@
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky {
   background: var(--light-gray);
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky .opti_sticky_cta {
   display: block;
@@ -258,7 +262,7 @@
   margin-left: auto;
 }
 .course-info .row.title-row .col-sm-12 #opti_vip_package_redesign .opti_vip_redesign__side .opti_vip_redesign_priceCont .btn-wrapper.btn-sticky .opti_sticky_cta__currPrice {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 0px;
   text-align: center;

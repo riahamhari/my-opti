@@ -1,1 +1,330 @@
 @use 'sass/base' as *;
+
+.row:has(> .main-content:not(.tittleAndPriceBlock)) {
+	display: none;
+}
+
+.common-questions {
+	.container {
+		display: none;
+	}
+}
+
+.opti_course_info_instructor {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 40px 0;
+	// @media screen and (max-width: 576px) {
+	// 	order: 1;
+	// }
+
+	img {
+		width: 50px;
+
+		border-radius: 50%;
+
+		object-fit: cover;
+	}
+
+	.opti_course_info_instructor__details {
+		text-align: left;
+		.opti_course_info_instructor__label {
+			font-size: 14px; // Adjust font size as needed
+			font-weight: 600;
+			margin: 0;
+			color: #404041;
+		}
+
+		.opti_course_info_instructor__name {
+			font-size: 16px; // Adjust font size as needed
+			color: #404041;
+			white-space: nowrap;
+			margin-top: 0;
+			line-height: 1;
+			margin-bottom: 0;
+		}
+	}
+}
+
+#opti_standardised_layout {
+	h3 {
+		font-size: 1.5em;
+		font-weight: 700;
+		margin-bottom: 15px;
+		max-width: 50em;
+	}
+	p {
+		color: #404041;
+	}
+	.opti_course_intro_wrapper {
+		display: flex;
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+		}
+		.sidebar {
+			@media screen and (max-width: 768px) {
+				width: 100%;
+			}
+		}
+	}
+	.opti_main_content {
+		padding: 0 15px;
+	}
+	.opti_course_topics {
+		margin-bottom: 40px;
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			gap: 10px;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
+			li {
+				flex: 0 0 calc(50% - 10px);
+				font-size: 16px;
+				color: #000;
+				font-weight: 300;
+				position: relative;
+				padding-left: 30px;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 4px;
+					width: 20px;
+					height: 20px;
+					background: url('https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/green-tick-icon.png')
+						no-repeat center center;
+					background-size: contain;
+				}
+
+				strong {
+					font-weight: 700;
+				}
+				img {
+					width: 20px;
+					height: 22px;
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+
+	.opti_course_audienceTypes {
+		margin-bottom: 30px;
+		ul {
+			margin-left: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5px;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
+			li {
+				flex: 0 0 calc(50% - 10px);
+				font-size: 16px;
+				color: #000;
+				font-weight: 300;
+
+				strong {
+					font-weight: 700;
+				}
+				img {
+					width: 22px;
+					height: 22px;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+
+.opti_faq_container {
+	display: flex;
+}
+
+.opti-curriculum-content {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+
+	.curriculum {
+		width: 100%;
+
+		@media (min-width: 768px) {
+			width: 50%;
+		}
+
+		margin-top: 2em;
+
+		@media (min-width: 768px) {
+			margin-top: 0;
+		}
+
+		.hpa-accordion2 {
+			.hpa-section2 {
+				margin-bottom: 0;
+				background-color: #fefefe;
+				.panel-heading {
+					padding: 0;
+
+					border-bottom: 1px solid transparent;
+					border-top-right-radius: 3px;
+					border-top-left-radius: 3px;
+					.panel-title {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						padding: 0.8em 0.8em 0;
+						text-decoration: none !important;
+						&:hover {
+							text-decoration: none;
+							outline: 0;
+							h5 {
+								color: #ffae01;
+							}
+						}
+
+						h5 {
+							font-size: 16px;
+							line-height: 1.5;
+							text-transform: none;
+							font-weight: 400;
+							color: #404041;
+							flex: 1;
+							border-bottom: 0.1em solid #404041;
+							margin-right: 2em;
+							padding-bottom: 0.8em;
+							margin: 0;
+						}
+
+						.chevron {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							width: 24px;
+							height: 24px;
+							border-radius: 50%;
+							background-color: #404041;
+
+							svg {
+								&.svg-chevron-up {
+									display: none;
+								}
+
+								fill: #fefefe;
+								width: 12px;
+								height: 12px;
+								margin: 0;
+							}
+						}
+					}
+				}
+
+				.panel-collapse {
+					.panel-body {
+						padding: 0.8em;
+						p {
+							margin: 0;
+						}
+
+						ul {
+							li {
+								font-size: 1.6em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.faqs-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (min-width: 768px) {
+			align-items: center;
+			justify-content: center;
+		}
+
+		.section-title {
+			font-size: 2em;
+			font-weight: 700;
+			margin-bottom: 0.2em;
+			max-width: 50em;
+		}
+
+		h3 {
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
+.cta-banner,
+.testimonials {
+	display: none;
+}
+
+.opti-modal {
+	margin: 0 !important;
+	display: block;
+
+	position: fixed !important;
+
+	.video-trigger {
+		width: 80% !important;
+		margin: 40px auto;
+		padding: 30px;
+		height: fit-content;
+	}
+}
+
+#opti_video_modal_parent {
+	.modal-dialog {
+		@media screen and (min-width: 768px) {
+			width: 80%;
+			max-width: 860px;
+		}
+		.modal-body {
+			display: flex;
+			padding: 0;
+			max-width: 100%;
+			overflow: hidden;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
+			.info-modal-cross {
+				display: none;
+				font-size: 24px;
+				right: unset;
+				left: 15px;
+				cursor: pointer;
+				@media screen and (max-width: 768px) {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+#opti_video_modal_parent {
+	.modal-dialog {
+		width: 100%;
+	}
+	.video-mask > a {
+		min-width: 100%;
+	}
+}

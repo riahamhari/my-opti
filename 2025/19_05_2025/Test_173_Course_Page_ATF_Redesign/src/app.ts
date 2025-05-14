@@ -404,6 +404,7 @@ const tagInterval = setInterval(() => {
 		prevPriceEl: HTMLElement,
 		paymentPlanEl: HTMLElement,
 		container: HTMLElement,
+		purchaseLink: string,
 		btnWrapper: HTMLElement;
 
 	const myInterval = setInterval(() => {
@@ -411,7 +412,8 @@ const tagInterval = setInterval(() => {
 		paymentPlanEl = document.querySelector('.sidebar .btn-wrapper span');
 		btnWrapper = document.querySelector('.sidebar .btn-wrapper');
 		container = document.querySelector('.course-info .row.title-row div');
-		if (currentPriceEl && btnWrapper && container) {
+		purchaseLink = document.querySelector<HTMLAnchorElement>('.btn-wrapper a')?.href;
+		if (currentPriceEl && btnWrapper && container && purchaseLink) {
 			clearInterval(myInterval);
 			console.log('int cleared');
 
@@ -533,7 +535,7 @@ const tagInterval = setInterval(() => {
 																								}
 							
 											</div>
-											<a class="btn btn-primary" href="/vip-package/purchase/">ENROLL NOW</a>
+											<a class="btn btn-primary" href="${purchaseLink}">ENROLL NOW</a>
 									  </div>
 									  <div class="payment-icons">
 											<img src="/resources/themes/base/production/images/payment-icons.png">

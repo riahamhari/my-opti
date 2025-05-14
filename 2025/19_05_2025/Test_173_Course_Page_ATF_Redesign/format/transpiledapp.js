@@ -313,13 +313,15 @@ const tagInterval = setInterval(() => {
             students: 7517,
         },
     ];
-    let currentPriceEl, prevPriceEl, paymentPlanEl, container, btnWrapper;
+    let currentPriceEl, prevPriceEl, paymentPlanEl, container, purchaseLink, btnWrapper;
     const myInterval = setInterval(() => {
+        var _a;
         currentPriceEl = document.querySelector('.price');
         paymentPlanEl = document.querySelector('.sidebar .btn-wrapper span');
         btnWrapper = document.querySelector('.sidebar .btn-wrapper');
         container = document.querySelector('.course-info .row.title-row div');
-        if (currentPriceEl && btnWrapper && container) {
+        purchaseLink = (_a = document.querySelector('.btn-wrapper a')) === null || _a === void 0 ? void 0 : _a.href;
+        if (currentPriceEl && btnWrapper && container && purchaseLink) {
             clearInterval(myInterval);
             console.log('int cleared');
             optiInit();
@@ -427,7 +429,7 @@ const tagInterval = setInterval(() => {
             : ''}
 							
 											</div>
-											<a class="btn btn-primary" href="/vip-package/purchase/">ENROLL NOW</a>
+											<a class="btn btn-primary" href="$${!1}{purchaseLink}">ENROLL NOW</a>
 									  </div>
 									  <div class="payment-icons">
 											<img src="/resources/themes/base/production/images/payment-icons.png">
