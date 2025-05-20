@@ -1,0 +1,42 @@
+@use 'sass/base' as *;
+
+.header__top__nav__items_first {
+	.link:has([href='/forum/']),
+	.link:has([href='/hpa-starter-package/']) {
+		display: none;
+	}
+}
+.main-header__main {
+	@media screen and (min-width: 1060px) {
+		height: 110px;
+	}
+	.main-header__main__top {
+		@media screen and (min-width: 1060px) {
+			height: 110px;
+		}
+
+		.main-header__main__top__logo {
+			.navbar-brand {
+				@media screen and (min-width: 1060px) {
+					width: 115px;
+					height: 78px;
+					background-size: 115px;
+					margin: 15px 0;
+				}
+			}
+		}
+		#header-search-icon2 {
+			@media screen and (min-width: 1060px) {
+				top: 52px;
+			}
+		}
+	}
+}
+
+.main-header__top {
+	.header__top__nav__items_first {
+		@media screen and (min-width: 1060px) {
+			top: 81px;
+		}
+	}
+}

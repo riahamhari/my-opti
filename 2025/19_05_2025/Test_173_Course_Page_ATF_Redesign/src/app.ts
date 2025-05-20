@@ -401,21 +401,19 @@ const tagInterval = setInterval(() => {
 	];
 
 	let currentPriceEl: HTMLElement,
-		prevPriceEl: HTMLElement,
 		paymentPlanEl: HTMLElement,
 		container: HTMLElement,
 		purchaseLink: string,
-		btnWrapper: HTMLElement;
+		rowTitleRow: HTMLElement;
 
 	const myInterval = setInterval(() => {
 		currentPriceEl = document.querySelector('.price');
 		paymentPlanEl = document.querySelector('.sidebar .btn-wrapper span');
-		btnWrapper = document.querySelector('.sidebar .btn-wrapper');
+		rowTitleRow = document.querySelector('.course-info .row.title-row');
 		container = document.querySelector('.course-info .row.title-row div');
-		purchaseLink = document.querySelector<HTMLAnchorElement>('.btn-wrapper a')?.href;
-		if (currentPriceEl && btnWrapper && container && purchaseLink) {
+		purchaseLink = document.querySelector<HTMLAnchorElement>('.sidebar .btn')?.href;
+		if (currentPriceEl && container && purchaseLink && rowTitleRow) {
 			clearInterval(myInterval);
-			console.log('int cleared');
 
 			optiInit();
 		}
@@ -440,6 +438,8 @@ const tagInterval = setInterval(() => {
 	`;
 
 	const optiInit = () => {
+		document.body.classList.add('opti_page_atf_redesign');
+		rowTitleRow.id = 'opti_row_title_row';
 		container.className = 'col-sm-12';
 		const currentUrl = window.location.href;
 
@@ -448,13 +448,15 @@ const tagInterval = setInterval(() => {
 		const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
 
 		const matchingCourse = courseInfo.find((course: Course) => course.courseUrl === normalizedBaseUrl);
-		console.log(matchingCourse);
 
 		if (!matchingCourse) {
 			return;
 		}
 		const courseRedesign = createCourseRedesign(matchingCourse);
-		container.insertAdjacentElement('afterbegin', courseRedesign);
+
+		if (!document.getElementById('opti_vip_package_redesign')) {
+			container.insertAdjacentElement('afterbegin', courseRedesign);
+		}
 	};
 
 	const createCourseRedesign = ({ courseName, subheading, firstPoint, lessons, students }: Course) => {

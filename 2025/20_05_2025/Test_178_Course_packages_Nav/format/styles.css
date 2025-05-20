@@ -1,0 +1,34 @@
+.header__top__nav__items_first .link:has([href="/forum/"]),
+.header__top__nav__items_first .link:has([href="/hpa-starter-package/"]) {
+  display: none;
+}
+
+@media screen and (min-width: 1060px) {
+  .main-header__main {
+    height: 110px;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .main-header__main .main-header__main__top {
+    height: 110px;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .main-header__main .main-header__main__top .main-header__main__top__logo .navbar-brand {
+    width: 115px;
+    height: 78px;
+    background-size: 115px;
+    margin: 15px 0;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .main-header__main .main-header__main__top #header-search-icon2 {
+    top: 52px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .main-header__top .header__top__nav__items_first {
+    top: 81px;
+  }
+}
