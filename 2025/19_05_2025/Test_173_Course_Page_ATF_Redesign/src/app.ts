@@ -441,6 +441,8 @@ const tagInterval = setInterval(() => {
 		document.body.classList.add('opti_page_atf_redesign');
 		rowTitleRow.id = 'opti_row_title_row';
 		container.className = 'col-sm-12';
+		console.log('hello');
+
 		const currentUrl = window.location.href;
 
 		const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
