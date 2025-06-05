@@ -48,10 +48,16 @@ const tagInterval = setInterval(() => {
     const defaultSrc = '/resources/themes/base/production/images/avatar-placeholder.png';
     const optiInit = () => {
         document.body.classList.add('opti_dashboard_mobile_above_fold');
+        const vipOffer = document.querySelector('.vip-offer');
         const mobileUserDetails = createMobileUserDetails();
         const dashboardIcon = createIconDropDown();
         mainHeader.append(dashboardIcon);
         dashboardSidebar.insertAdjacentElement('afterbegin', mobileUserDetails);
+        if (vipOffer) {
+            const vipOfferClone = vipOffer.cloneNode(true);
+            vipOfferClone.classList.add('opti_vip_offer');
+            dashboardSidebar.before(vipOfferClone);
+        }
     };
     const createIconDropDown = () => {
         const iconDropDown = document.createElement('div');

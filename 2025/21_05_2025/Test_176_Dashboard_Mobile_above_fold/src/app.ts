@@ -68,10 +68,18 @@ const tagInterval = setInterval(() => {
 
 	const optiInit = () => {
 		document.body.classList.add('opti_dashboard_mobile_above_fold');
+		const vipOffer = document.querySelector('.vip-offer');
+
 		const mobileUserDetails = createMobileUserDetails();
 		const dashboardIcon = createIconDropDown();
 		mainHeader.append(dashboardIcon);
 		dashboardSidebar.insertAdjacentElement('afterbegin', mobileUserDetails);
+
+		if (vipOffer) {
+			const vipOfferClone = vipOffer.cloneNode(true) as HTMLElement;
+			vipOfferClone.classList.add('opti_vip_offer');
+			dashboardSidebar.before(vipOfferClone);
+		}
 	};
 
 	const createIconDropDown = () => {

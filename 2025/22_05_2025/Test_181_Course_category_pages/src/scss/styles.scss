@@ -1,0 +1,97 @@
+@use 'sass/base' as *;
+
+.courseSeries__preview {
+	padding-top: 0;
+	border: 0;
+	.courseSeries__preview__banner {
+		background-color: #69b3e5;
+		text-align: left;
+		width: fit-content;
+		padding: 0 20px;
+		top: -40px;
+		// a h4 {
+		// 	font-size: 0;
+		// 	&::after {
+		// 		font-size: 1.25em;
+		// 		content: 'Start here for FREE';
+		// 	}
+		// }
+	}
+	.courseSeries__preview__title,
+	.courseSeries__preview__step,
+	.courseSeries__preview__price {
+		display: none;
+	}
+	.video-mask {
+		margin-top: 0;
+		margin-bottom: 0;
+		border: 0;
+	}
+	.opti_course_card_info {
+		padding: 16px;
+		.opti_course_card_title {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			h3 {
+				font-size: 25px;
+				font-weight: 400;
+				margin-bottom: 0;
+			}
+			.opti_course_card_title__price {
+				h4 {
+					font-size: 25px;
+					font-weight: 400;
+					text-align: right;
+					margin-bottom: 10px;
+				}
+				.opti_popular_course_label {
+					border-radius: 100px;
+					color: #fefefe;
+					font-size: 15px;
+					padding: 4px;
+					text-align: center;
+					background-color: #69b3e5;
+					margin-top: 16px;
+					white-space: nowrap;
+					p {
+						color: #fefefe;
+						font-weight: 700;
+						margin: 0;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+		.opti_course_card_details {
+			p {
+				display: flex;
+				gap: 10px;
+				margin-bottom: 0;
+				img {
+					width: 20px;
+					height: 20px;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+	.courseSeries__preview__bottom {
+		padding: 16px 0 0;
+		border-top: 2px solid #dcd;
+		margin: 16px 16px 0;
+		.courseSeries__preview__bottom__fistRow {
+			display: none;
+		}
+		.btn-default {
+			display: none;
+		}
+		.btn-primary {
+			display: block;
+		}
+	}
+}
+
+.opti_spacer_hide {
+	display: none !important;
+}
