@@ -1,13 +1,147 @@
+@media screen and (min-width: 480px) {
+  .courseSeries__preview--thumbsHigherImage .video-mask {
+    height: 208px !important;
+  }
+}
+
+#data-analysis-and-improvement {
+  display: none;
+}
+
+.breadcrumbs-wrapper .container-fluid {
+  background-color: #fefefe;
+  width: 100% !important;
+}
+
+.courseSalesContainer {
+  background: #fefefe;
+}
+
+.container-fluid:has(.courseSeries__info) {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 30%, #ecebea 30%, #ecebea 90%, #fefefe 90%, #fefefe 100%);
+  width: 100% !important;
+}
+
+.container-fluid {
+  padding: 0 120px;
+}
+@media screen and (max-width: 767.98px) {
+  .container-fluid {
+    padding: 0 30px;
+  }
+}
+.container-fluid .courseSeries > h2 {
+  text-align: left;
+  font-weight: 600;
+}
+.container-fluid .courseSeries > h2::after {
+  content: "";
+  background: #ffae01;
+  width: 32%;
+  display: block;
+  height: 3px;
+  margin-top: 10px;
+}
+
+#core-courses h1,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child h1 {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767.98px) {
+  #core-courses h1,
+  .courseSalesContainer .container-fluid:first-child .courseSeries:first-child h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+#core-courses h1::after,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child h1::after {
+  display: none;
+}
+#core-courses .courseSeries__info,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .courseSeries__info {
+  display: none;
+}
+#core-courses .opti_courseSeries__info,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_courseSeries__info {
+  margin-bottom: 20px;
+}
+#core-courses .opti_courseSeries__info p,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_courseSeries__info p {
+  color: #404041;
+  text-align: left;
+  max-width: 50%;
+}
+@media screen and (max-width: 767.98px) {
+  #core-courses .opti_courseSeries__info p,
+  .courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_courseSeries__info p {
+    max-width: unset;
+    text-align: center;
+  }
+}
+#core-courses .opti_courseSeries__info p strong,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_courseSeries__info p strong {
+  font-weight: 600;
+}
+#core-courses .opti_course_ticks_banner,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner {
+  background-color: #f0f9e6;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  max-width: fit-content;
+  border-radius: 4px;
+}
+@media screen and (max-width: 767.98px) {
+  #core-courses .opti_course_ticks_banner,
+  .courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner {
+    max-width: unset;
+  }
+}
+#core-courses .opti_course_ticks_banner .opti_course_tick,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner .opti_course_tick {
+  display: flex;
+  align-items: center;
+}
+#core-courses .opti_course_ticks_banner p,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner p {
+  font-size: 16px;
+  color: #404041;
+  font-weight: 300;
+  margin: 0;
+}
+#core-courses .opti_course_ticks_banner img,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 .courseSeries__preview {
   padding-top: 0;
   border: 0;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .courseSeries__preview .courseSeries__preview__banner {
   background-color: #69b3e5;
   text-align: left;
   width: fit-content;
-  padding: 0 20px;
-  top: -40px;
+  padding: 0 30px;
+  top: -30px;
+  height: 30px;
+}
+.courseSeries__preview .courseSeries__preview__banner a {
+  font-size: 16px;
+}
+.courseSeries__preview .courseSeries__preview__banner a h4 {
+  margin-top: 5px;
+  font-size: 16px;
 }
 .courseSeries__preview .courseSeries__preview__title,
 .courseSeries__preview .courseSeries__preview__step,
@@ -25,10 +159,10 @@
 .courseSeries__preview .opti_course_card_info .opti_course_card_title {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0;
 }
 .courseSeries__preview .opti_course_card_info .opti_course_card_title h3 {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -36,16 +170,17 @@
   font-size: 25px;
   font-weight: 400;
   text-align: right;
-  margin-bottom: 10px;
+  color: #404041;
+  margin: 0;
+  text-transform: uppercase;
 }
 .courseSeries__preview .opti_course_card_info .opti_course_card_title .opti_course_card_title__price .opti_popular_course_label {
   border-radius: 100px;
   color: #fefefe;
-  font-size: 15px;
-  padding: 4px;
+  padding: 2px 8px;
   text-align: center;
   background-color: #69b3e5;
-  margin-top: 16px;
+  margin-top: 5px;
   white-space: nowrap;
 }
 .courseSeries__preview .opti_course_card_info .opti_course_card_title .opti_course_card_title__price .opti_popular_course_label p {
@@ -54,20 +189,24 @@
   margin: 0;
   font-size: 12px;
 }
+.courseSeries__preview .opti_course_card_info .opti_course_card_details {
+  margin-top: 10px;
+}
 .courseSeries__preview .opti_course_card_info .opti_course_card_details p {
   display: flex;
   gap: 10px;
   margin-bottom: 0;
+  font-size: 15px;
 }
 .courseSeries__preview .opti_course_card_info .opti_course_card_details p img {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 .courseSeries__preview .courseSeries__preview__bottom {
   padding: 16px 0 0;
   border-top: 2px solid #dcd;
-  margin: 16px 16px 0;
+  margin: 0 16px;
 }
 .courseSeries__preview .courseSeries__preview__bottom .courseSeries__preview__bottom__fistRow {
   display: none;
@@ -81,4 +220,233 @@
 
 .opti_spacer_hide {
   display: none !important;
+}
+
+#practical-application h2,
+#practical-application .courseSeries__info,
+#software-tutorials {
+  display: none;
+}
+
+#advanced-tuning-topics .courseSeries__info,
+.courseSalesContainer .container-fluid:nth-child(2) .courseSeries .courseSeries__info {
+  display: none;
+}
+
+#opti_upsell_block {
+  position: relative;
+  max-width: 85%;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fefefe;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 580px) {
+  #opti_upsell_block {
+    padding-bottom: 20px;
+  }
+}
+#opti_upsell_block .opti_slant {
+  font-family: museo-sans-rounded, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffae01;
+  color: #fefefe;
+  padding: 7px 20px;
+  border-radius: 0;
+  display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  #opti_upsell_block .opti_slant {
+    font-size: 14px;
+  }
+}
+#opti_upsell_block .opti_slant::after {
+  content: " ";
+  height: 100%;
+  width: 29px;
+  display: inline-block;
+  position: absolute;
+  background-color: #ffae01;
+  right: -10px;
+  top: 0;
+  transform: skewX(-27deg);
+  bottom: 0;
+}
+#opti_upsell_block .opti_modal_close_icon {
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+#opti_upsell_block .opti-upsell-heading {
+  color: #808184;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti-upsell-heading {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+}
+#opti_upsell_block .opti_upsell_content {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content {
+    gap: 0;
+    align-items: center;
+  }
+}
+#opti_upsell_block .opti_upsell_content__includes p {
+  line-height: 1.3;
+}
+#opti_upsell_block .opti_upsell_content__includes__link {
+  text-decoration: underline;
+  color: #69b3e5;
+  display: inline;
+  text-align: left;
+  margin-left: 4px;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__includes__link {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 580px) {
+  #opti_upsell_block .opti_upsell_content__includes__link {
+    font-size: 15px;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock {
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock {
+    margin: 0;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price {
+  width: 100%;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price h3.price {
+  white-space: nowrap;
+  color: #69b3e5;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price h3.price {
+    font-size: 32px;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .opti_total_value {
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #808184;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink {
+  font-size: 15px;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: relative;
+  max-width: 332px;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 580px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink {
+    font-size: 14px;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .desktopOr {
+  display: none;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover-trigger {
+  color: #69b3e5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .popover {
+  left: 50%;
+  transform: translateX(-25%);
+  top: -315px;
+  min-width: 280px;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .opti_show_popover {
+  display: block;
+  opacity: 1;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .tittleAndPriceBlock__price .titleAndPriceBlock__paymentPlanLink .opti_show_popover .arrow {
+  bottom: -10px;
+  transform: rotate(180deg);
+  top: unset;
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a {
+  color: #fefefe;
+  background-color: #ffae01;
+  border-color: #ffae01;
+  padding: 15px 22px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px;
+    white-space: normal;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a p {
+  font-weight: 100;
+  color: #fefefe;
+  font-size: 15px;
+  margin-top: 4px;
+}
+@media screen and (max-width: 768px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 580px) {
+  #opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a p {
+    font-size: 14px;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+}
+#opti_upsell_block .opti_upsell_content__priceBlock .opti_price_subtext {
+  text-align: center;
+  color: #808184;
+  line-height: 1.2;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.membership-cta {
+  display: none;
 }

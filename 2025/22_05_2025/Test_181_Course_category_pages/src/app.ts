@@ -21,7 +21,11 @@ interface Course {
 
 (() => {
 	'use strict';
-	let courseCards: HTMLElement[], twoCardRowCols: HTMLElement[], rowArr: HTMLElement[], courseSeries: HTMLElement[];
+	let courseCards: HTMLElement[],
+		courseSeries: HTMLElement[],
+		mainContainers: HTMLElement[],
+		courseHeading: HTMLElement,
+		coreCourses: HTMLElement;
 
 	const coursesData: Course[] = [
 		{
@@ -320,25 +324,141 @@ interface Course {
 		},
 	];
 
+	const copyForCategoryPages = {
+		'tuning starter package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-starter-package/',
+			courseLandingPages: ['https://www.hpacademy.com/courses/efi-tuning/'],
+			savingCopy: '60%',
+			price: '417',
+			packageName: `Tuning 'How to' Starter Package`,
+			coursesIncluded: [
+				'EFI Tuning Fundamentals',
+				'Understanding AFR',
+				'Practical Standalone Tuning',
+				'Practical Reflash Tuning',
+			],
+			numOfCourses: '4',
+			totalValue: '$1102.00',
+		},
+		'wiring starter package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-wiring-starter-package/',
+			courseLandingPages: ['https://www.hpacademy.com/courses/learn-motorsport-wiring/'],
+			savingCopy: '60%',
+			price: '299',
+			packageName: 'The Ultimate Wiring Package',
+			coursesIncluded: ['Wiring Fundamentals', 'Practical Wiring - Club Level'],
+			numOfCourses: '2',
+			totalValue: '$784.00',
+		},
+		'engine building starter package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-engine-building-starter-package/',
+			courseLandingPages: ['https://www.hpacademy.com/courses/learn-how-to-build-engines/'],
+			savingCopy: '60%',
+			price: '299',
+			packageName: 'Engine Building Starter Package',
+			coursesIncluded: ['Engine Building Fundamentals', 'Practical Engine Building', 'How to Degree a Cam'],
+			numOfCourses: '3',
+			totalValue: '$833.00',
+		},
+		'diesel tuning starter package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-diesel-tuning-starter-package/',
+			courseLandingPages: ['https://www.hpacademy.com/courses/diesel-tuning/'],
+			savingCopy: '60%',
+			price: '299',
+			packageName: 'The Ultimate Diesel Tuning Package',
+			coursesIncluded: ['Diesel Tuning Fundamentals', 'Practical Diesel Tuning'],
+			numOfCourses: '2',
+			totalValue: '$814.00',
+		},
+		'track day package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-track-day-starter-package/',
+			courseLandingPages: [
+				'https://www.hpacademy.com/courses/suspension-and-car-setup/',
+				'https://www.hpacademy.com/courses/driver-training-and-improvement/',
+			],
+			savingCopy: '50%',
+			price: '397',
+			packageName: 'Track Day Package',
+			coursesIncluded: [
+				'Race Driving Fundamentals',
+				'Motorsport Wheel Alignment',
+				'Practical Corner Weighting',
+				'Data Analysis Fundamentals',
+			],
+			numOfCourses: '4',
+			totalValue: '$912.00',
+		},
+
+		'fabrication package': {
+			packageToLinkTo: 'https://www.hpacademy.com/hpa-fabrication-starter-package/',
+			courseLandingPages: ['https://www.hpacademy.com/courses/motorsport-fabrication-and-design/'],
+			savingCopy: '60%',
+			price: '299',
+			packageName: 'The Ultimate Motorsport Fabrication Education Package',
+			coursesIncluded: ['Motorsport Fabrication Fundamentals', 'Practical TIG Welding'],
+			numOfCourses: '2',
+			totalValue: '$755.00',
+		},
+	};
+
 	const icons = {
 		students: 'https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/students-2.png',
 		play: 'https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/play-button%201.png',
+		heroTick: `<img src="/assets/Content_Sections/1dff896ea1/DLP_Icon_Green_Tick__ScaleWidthWzE2XQ.png" alt="Applicable to all cars">`,
+		refresh: `<img  class="opti_refresh_icon" alt="frequency icon" src="https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/refresh%201.png"/>`,
+		dollarSign: `<img class="opti_dollar_sign" alt="dollar sign icon" src="https://cdn.jsdelivr.net/gh/riahamhari/hpa-resources@main/images/dollar_sign_icon.png"/>`,
 	};
 	const myInterval = setInterval(() => {
 		courseCards = [...document.querySelectorAll<HTMLElement>('.courseSeries__preview')];
-		twoCardRowCols = [...document.querySelectorAll<HTMLElement>('.col-md-5:not(.copyright)')];
-		rowArr = [...document.querySelectorAll<HTMLElement>('.site-main .row.equal-height')];
+
+		mainContainers = [...document.querySelectorAll<HTMLElement>('.courseSalesContainer .container-fluid')];
+		coreCourses =
+			document.getElementById('core-courses') ||
+			document.querySelector<HTMLElement>(
+				'.courseSalesContainer .container-fluid:first-child .courseSeries:first-child'
+			);
+		courseHeading = coreCourses?.querySelector('h1');
+
 		courseSeries = [...document.querySelectorAll<HTMLElement>('.courseSeries')];
-		if (courseCards.length && twoCardRowCols && rowArr.length && courseSeries.length) {
+		if (courseCards.length && courseSeries.length && mainContainers.length && coreCourses && courseHeading) {
 			clearInterval(myInterval);
+
 			optiInit();
 		}
 	}, 300);
 
 	const optiInit = () => {
+		let upsellBlock;
 		const categoryCourses: Course[] = [];
 
+		const currentUrl = window.location.href;
+
+		const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
+		const key = Object.keys(copyForCategoryPages).find((course) =>
+			copyForCategoryPages[course].courseLandingPages.some(
+				(page) => page === baseUrl // Compare against the base URL only
+			)
+		);
+		// if (!key) {
+		// 	return;
+		// }
+		courseHeading.innerText += ' Courses';
+		coreCourses.insertAdjacentHTML(
+			'beforeend',
+			`<div class="opti_courseSeries__info"><p>Learn from <strong>Start to Finish</strong> with this selection of courses. Suitable for 
+										<strong>any skill level, and any ECU/Engine combination</strong></p></div>`
+		);
+		coreCourses.append(createCourseTicks());
+
+		if (key) {
+			const matchingCourse = copyForCategoryPages[key];
+			upsellBlock = createUpsellBlock(matchingCourse, key);
+		}
+
+		// init course cards
+
 		courseCards.forEach((card) => {
+			let matchingCourseInfo;
 			const courseTitle = card.querySelector<HTMLElement>('.courseSeries__preview__title').innerText;
 			const coursePrice = card.querySelector<HTMLElement>('.courseSeries__preview__price h4').innerText.split('USD')[0];
 			const videoMask = card.querySelector<HTMLElement>('.video-mask');
@@ -356,33 +476,26 @@ interface Course {
 
 			viewCourseBtn.innerText = 'View Course';
 
-			const matchingCourseInfo = coursesData.find(
+			matchingCourseInfo = coursesData.find(
 				(course) => course.title.toLowerCase().trim() === courseTitle.toLowerCase().trim()
 			);
+
 			videoMask.after(createCardInfo(matchingCourseInfo, coursePrice));
+
 			categoryCourses.push(matchingCourseInfo);
 		});
 
-		const mostPopularCourse = categoryCourses.reduce((a, c) => (a.totalStudents > c.totalStudents ? a : c)).title;
-
-		const mostPopularCard = courseCards.find((card) => {
-			const title = card.querySelector<HTMLElement>('.courseSeries__preview__title');
-			console.log(title.innerText.trim());
-
-			return title.innerText.trim() === mostPopularCourse;
-		});
-
-		if (mostPopularCard) {
-			// add popular label
-			const priceSect = mostPopularCard.querySelector('.opti_course_card_title__price');
-			priceSect.insertAdjacentHTML('beforeend', `<div class="opti_popular_course_label"><p>Most Popular</p></div>`);
+		const mostPopularCard = getMostPopularCard(categoryCourses);
+		if (courseCards.length > 1) {
+			insertPopularLabel(mostPopularCard);
 		}
 
-		// get every vide card
-		//
-		courseSeries.forEach((series) => {
-			restructureToThreeColsPerRow(series);
-		});
+		// change to a three column layout
+		changeLayout();
+
+		if (upsellBlock) {
+			mainContainers[0].append(upsellBlock);
+		}
 	};
 
 	const createCardInfo = ({ title, lessons, totalStudents }: Course, coursePrice: string) => {
@@ -399,50 +512,149 @@ interface Course {
 									<p><img alt="students icon" src="${icons.students}"><span>${Number(
 			totalStudents
 		).toLocaleString()} Students Enrolled</span></p>
-									<p><img alt="video icon" src="${icons.play}"><span>${lessons} Video Lessons</span></p>
+									<p class="opti_course_video_lessons_text"><img alt="video icon" src="${
+										icons.play
+									}"><span>${lessons} Video Lessons</span></p>
 								</div>
 								`;
 
 		return cardInfo;
 	};
 
-	const shuffleAlongColumns = (rowArr) => {
-		let threeRowClass = 'col-xs-12 col-sm-6 col-md-4';
-		twoCardRowCols.forEach((col) => (col.className = threeRowClass));
+	const getMostPopularCard = (categoryCourses: Course[]) => {
+		const mostPopularCourse = categoryCourses.reduce((a, c) => (a.totalStudents > c.totalStudents ? a : c)).title;
 
-		rowArr.forEach((row, i) => {
-			const lastBlock = [...row.querySelectorAll('.col-md-5:not(#opti_starter_block)')]?.[1];
-			const rowBelow = rowArr[i + 1];
+		const mostPopularCard = courseCards.find((card) => {
+			const title = card.querySelector<HTMLElement>('.courseSeries__preview__title');
 
-			if (lastBlock) {
-				if (rowBelow) {
-					const rowBelowFirstCol = rowBelow.querySelector('.col-md-1');
-					rowBelowFirstCol.insertAdjacentElement('afterend', lastBlock);
-				} else {
-					const numOfBlocksInRow = [...row.querySelectorAll('.col-md-5')].length;
-					if (numOfBlocksInRow == 2) {
-						return;
-					}
-					const newRow = document.createElement('div');
-					newRow.classList.add('row', 'equal-height');
-
-					newRow.insertAdjacentHTML('afterbegin', '<div class="col-md-1"></div>');
-					newRow.appendChild(lastBlock);
-					row.insertAdjacentElement('afterend', newRow);
-					return;
-				}
-			}
+			return title.innerText.trim() === mostPopularCourse;
 		});
 
-		rowArr.forEach((row, i) => {
-			const rowBelow = rowArr[i + 1];
-			if (rowBelow) {
-				const firstColInRowBelow = rowBelow.querySelector('.col-md-5');
-				row.append(firstColInRowBelow);
-			}
+		return mostPopularCard;
+	};
 
-			const lastBlock = [...row.querySelectorAll('.col-md-5')]?.[1];
+	const insertPopularLabel = (mostPopularCard) => {
+		if (mostPopularCard) {
+			// add popular label
+			const priceSect = mostPopularCard.querySelector('.opti_course_card_title__price');
+			priceSect.insertAdjacentHTML('beforeend', `<div class="opti_popular_course_label"><p>Most Popular</p></div>`);
+		}
+	};
+
+	const createCourseTicks = () => {
+		const banner = document.createElement('div');
+		banner.classList.add('opti_course_ticks_banner');
+
+		banner.innerHTML = `<div class="opti_course_tick">${icons.heroTick}
+                               <p>Lifetime access</p>
+        </div>
+		<div class="opti_course_tick">${icons.dollarSign}
+                               <p>60-day guarantee</p>
+        </div>
+			<div class="opti_course_tick">${icons.refresh}
+                               <p>Frequently updated</p>
+        </div>
+		`;
+
+		return banner;
+	};
+
+	const popoverInit = (popoverTrigger, popover) => {
+		popoverTrigger.addEventListener('click', function (e) {
+			e.preventDefault();
+			popover.classList.toggle('opti_show_popover');
 		});
+		document.addEventListener('click', function (e) {
+			if (!popover.contains(e.target) && !popoverTrigger.contains(e.target)) {
+				popover.classList.remove('opti_show_popover');
+			}
+		});
+	};
+
+	const changeLayout = () => {
+		courseSeries.forEach((series) => {
+			restructureToThreeColsPerRow(series);
+		});
+
+		mainContainers.forEach((container) => {
+			repackVisibleCols(container);
+		});
+		matchCourseSeriesPreviewHeights();
+	};
+
+	const getEightPaymentsVal = (price) => {
+		const priceNum = parseFloat(price);
+		const eightPaymentsVal = (priceNum / 8).toFixed(2);
+
+		return eightPaymentsVal;
+	};
+
+	const generatePriceBlockHtml = (price, totalValue) => {
+		const priceBlockHtml = `<div class="col-sm-12 col-md-6 tittleAndPriceBlock__price">
+			<h3 class="price"><span class="new-price">$${price} USD</span></h3>
+			<p class="opti_total_value">TOTAL VALUE <span class="opti_popover_trigger">${totalValue}</span></p>
+			<span class="titleAndPriceBlock__paymentPlanLink">
+				<div
+					class="popover fade bottom"
+					role="tooltip"
+					id="opti_modal_popover_upsell_block">
+					<div class="arrow"></div>
+					<h3 class="popover-title" style="display: none;"></h3>
+					<div class="popover-content">
+						Spreading out your payments cost no more than paying the full amount, and is just as quick and easy:<br />
+						- Use the same checkout as normal<br />
+						- Pay by Visa, Mastercard or PayPal<br />
+						- No ID, contracts or paperwork<br />
+						- No fees, interest or penalties<br />
+						- Instant course access<br /><br />
+						Plus all payments made are eligible for our 60-day money back guarantee.<br /><br />
+						Simply select your preferred payment frequency and amount when checking out, then enjoy immediate access to
+						your course.
+					</div>
+				</div>
+			</span>
+		</div>`;
+
+		return priceBlockHtml;
+	};
+
+	const createUpsellBlock = ({ packageToLinkTo, savingCopy, coursesIncluded, price, totalValue }, courseName) => {
+		const upsellBlock = document.createElement('div');
+		upsellBlock.setAttribute('id', 'opti_upsell_block');
+
+		const eightPaymentsVal = getEightPaymentsVal(price);
+		upsellBlock.innerHTML = `	<span class="opti_slant corner-badge">Save ${savingCopy}</span>
+								<span class="opti-upsell-cross opti_modal_close_icon" data-dismiss="modal">×</span>
+					
+					
+								<div class="opti_upsell_content">
+									<h4 class="opti-upsell-heading">Bundle these courses together and save!</h4>
+									<div class="opti_upsell_content__includes">
+
+										<p>Upgrade today for instant access to our ${coursesIncluded
+											.map((course, i) => {
+												return i === coursesIncluded.length - 1 ? `& ${course},` : `${course},`;
+											})
+											.join(' ')} plus 24 months of Gold Membership.
+											<a href="${packageToLinkTo}" class="opti_upsell_content__includes__link">See what's included here</a>
+										</p>
+										
+									</div>
+								</div>
+								<div class="opti_upsell_content__priceBlock">
+									${generatePriceBlockHtml(price, totalValue)}
+									<div class="opti_upsell_content__cta">
+											<a href="${packageToLinkTo}?autoSubmit=true&OpenPaymentPlanOptions=1" class="btn btn-primary btn-large">SAVE NOW</a>
+									</div>
+									<p class="opti_price_subtext"><i>or use our payment plan and break it into 8 payments of just $${eightPaymentsVal}</i></p>
+									
+								</div>`;
+
+		const popoverTrigger = upsellBlock.querySelector('.opti_popover_trigger');
+		const popover = upsellBlock.querySelector('#opti_modal_popover_upsell_block');
+		popoverInit(popoverTrigger, popover);
+
+		return upsellBlock;
 	};
 
 	function restructureToThreeColsPerRow(container) {
@@ -450,7 +662,7 @@ interface Course {
 		if (!container) return;
 
 		// Step 1: Collect all relevant column elements
-		const allCols = [...container.querySelectorAll('.col-md-5')];
+		const allCols = [...container.querySelectorAll('.col-xs-12:has(.courseSeries__preview)')];
 
 		// Step 2: Remove existing rows
 		const rows = container.querySelectorAll('.row.equal-height');
@@ -471,6 +683,7 @@ interface Course {
 				const col = allCols[i + j];
 				if (col) {
 					col.classList.remove('col-md-5');
+					col.classList.remove('col-md-6');
 					col.classList.add('col-md-4');
 					row.appendChild(col);
 				}
@@ -486,45 +699,60 @@ interface Course {
 		}
 	}
 
-	// function restructureToThreeColsPerRow(rowArr: HTMLElement[]) {
-	// 	if (!rowArr.length) return;
+	function repackVisibleCols(container: HTMLElement) {
+		if (!container) return;
 
-	// 	// Get the parent container (assumes all rows share the same parent)
-	// 	const container = rowArr[0].parentElement;
-	// 	if (!container) return;
+		// Step 1: Collect all visible columns inside this container
+		const allVisibleCols = [...container.querySelectorAll<HTMLElement>('.col-md-4')].filter(
+			(col) => col.offsetParent !== null
+		); // Only keep visible ones
 
-	// 	// Step 1: Collect all content columns from the provided rows
-	// 	const allCols = rowArr.flatMap((row) => Array.from(row.querySelectorAll<HTMLElement>('.col-md-5')));
+		// Step 2: Remove all existing row.equal-height nodes
+		const existingRows = container.querySelectorAll('.row.equal-height');
+		existingRows.forEach((row) => row.remove());
 
-	// 	// Step 2: Remove the original rows from the DOM
-	// 	rowArr.forEach((row) => container.removeChild(row));
+		// Step 3: Rebuild rows with exactly 3 visible columns per row
+		for (let i = 0; i < allVisibleCols.length; i += 3) {
+			const row = document.createElement('div');
+			row.className = 'row equal-height';
 
-	// 	// Step 3: Rebuild layout with 3 columns per row
-	// 	for (let i = 0; i < allCols.length; i += 3) {
-	// 		const row = document.createElement('div');
-	// 		row.className = 'row equal-height';
+			// Optional: Add left spacer
+			const leftSpacer = document.createElement('div');
+			leftSpacer.className = 'col-md-1 opti_spacer_hide';
+			row.appendChild(leftSpacer);
 
-	// 		// Optional spacer (you can hide with CSS)
-	// 		const leftSpacer = document.createElement('div');
-	// 		leftSpacer.className = 'col-md-1 opti_spacer_hide';
-	// 		row.appendChild(leftSpacer);
+			for (let j = 0; j < 3; j++) {
+				const col = allVisibleCols[i + j];
+				if (col) {
+					row.appendChild(col);
+				}
+			}
 
-	// 		for (let j = 0; j < 3; j++) {
-	// 			const col = allCols[i + j];
-	// 			if (col) {
-	// 				col.classList.remove('col-md-5');
-	// 				col.classList.add('col-md-4');
-	// 				row.appendChild(col);
-	// 			}
-	// 		}
+			// Optional: Add right spacer
+			const rightSpacer = document.createElement('div');
+			rightSpacer.className = 'col-md-1 opti_spacer_hide';
+			row.appendChild(rightSpacer);
 
-	// 		const rightSpacer = document.createElement('div');
-	// 		rightSpacer.className = 'col-md-1 opti_spacer_hide';
-	// 		row.appendChild(rightSpacer);
+			container.appendChild(row);
+		}
+	}
 
-	// 		container.appendChild(row);
-	// 	}
-	// }
+	function matchCourseSeriesPreviewHeights() {
+		const rows = document.querySelectorAll('.row.equal-height');
+
+		rows.forEach((row) => {
+			const previewDivs = Array.from(row.querySelectorAll<HTMLElement>('.col-md-4 .courseSeries__preview'));
+
+			// Reset heights first in case it was previously set
+			previewDivs.forEach((div) => (div.style.height = 'auto'));
+
+			// Find the tallest
+			const maxHeight = Math.max(...previewDivs.map((div) => div.offsetHeight));
+
+			// Apply the max height to all
+			previewDivs.forEach((div) => (div.style.height = `${maxHeight}px`));
+		});
+	}
 
 	setTimeout(function () {
 		if (myInterval) {
@@ -532,3 +760,30 @@ interface Course {
 		}
 	}, 15000);
 })();
+
+// html`<div class="container-fluid">
+// 		<div class="courseSeries text-center">
+// 			<div class="row equal-height">
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 			</div>
+// 			<div class="row equal-height">
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 			</div>
+// 		</div>
+// 		<div class="courseSeries text-center">
+// 			<div class="row equal-height">
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
+// 				<div class="col-md-1 opti_spacer_hide"></div>
+// 			</div>
+// 		</div>
+// 	</div>
+
+// `

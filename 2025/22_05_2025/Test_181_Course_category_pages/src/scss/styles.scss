@@ -1,21 +1,146 @@
 @use 'sass/base' as *;
 
+.courseSeries__preview--thumbsHigherImage .video-mask {
+	@media screen and (min-width: 480px) {
+		height: 208px !important;
+	}
+}
+#data-analysis-and-improvement {
+	display: none;
+}
+.breadcrumbs-wrapper .container-fluid {
+	background-color: #fefefe;
+	width: 100% !important;
+}
+
+.courseSalesContainer {
+	background: #fefefe;
+}
+
+.container-fluid:has(.courseSeries__info) {
+	// background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 30%, #ecebea 30%, #ecebea 100%);
+	background-image: linear-gradient(
+		to bottom,
+		#fefefe 0%,
+		#fefefe 30%,
+		#ecebea 30%,
+		#ecebea 90%,
+		#fefefe 90%,
+		#fefefe 100%
+	);
+	width: 100% !important;
+}
+
+.container-fluid {
+	padding: 0 120px;
+
+	@media screen and (max-width: 767.98px) {
+		padding: 0 30px;
+	}
+	.courseSeries {
+		& > h2 {
+			text-align: left;
+			font-weight: 600;
+			&::after {
+				content: '';
+				background: #ffae01;
+				width: 32%;
+				display: block;
+				height: 3px;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+#core-courses,
+.courseSalesContainer .container-fluid:first-child .courseSeries:first-child {
+	h1 {
+		text-align: left;
+		font-weight: 600;
+		margin-bottom: 20px;
+		@media screen and (max-width: 767.98px) {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.courseSeries__info {
+		display: none;
+	}
+	.opti_courseSeries__info {
+		// margin-top: 20px;
+		margin-bottom: 20px;
+		p {
+			color: #404041;
+			text-align: left;
+			max-width: 50%;
+
+			@media screen and (max-width: 767.98px) {
+				max-width: unset;
+				text-align: center;
+			}
+			strong {
+				font-weight: 600;
+			}
+		}
+	}
+	.opti_course_ticks_banner {
+		background-color: #f0f9e6;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		padding: 10px 20px;
+		max-width: fit-content;
+		border-radius: 4px;
+		@media screen and (max-width: 767.98px) {
+			max-width: unset;
+		}
+		.opti_course_tick {
+			display: flex;
+			align-items: center;
+		}
+
+		p {
+			font-size: 16px;
+			color: #404041;
+			font-weight: 300;
+			margin: 0;
+		}
+
+		img {
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+		}
+	}
+}
+
 .courseSeries__preview {
 	padding-top: 0;
 	border: 0;
+	// box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	.courseSeries__preview__banner {
 		background-color: #69b3e5;
 		text-align: left;
 		width: fit-content;
-		padding: 0 20px;
-		top: -40px;
-		// a h4 {
-		// 	font-size: 0;
-		// 	&::after {
-		// 		font-size: 1.25em;
-		// 		content: 'Start here for FREE';
-		// 	}
-		// }
+		padding: 0 30px;
+		top: -30px;
+		height: 30px;
+
+		a {
+			font-size: 16px;
+			h4 {
+				margin-top: 5px;
+				font-size: 16px;
+			}
+		}
 	}
 	.courseSeries__preview__title,
 	.courseSeries__preview__step,
@@ -32,9 +157,9 @@
 		.opti_course_card_title {
 			display: flex;
 			justify-content: space-between;
-			padding: 10px;
+			padding: 0;
 			h3 {
-				font-size: 25px;
+				font-size: 22px;
 				font-weight: 400;
 				margin-bottom: 0;
 			}
@@ -43,16 +168,18 @@
 					font-size: 25px;
 					font-weight: 400;
 					text-align: right;
-					margin-bottom: 10px;
+					color: #404041;
+					margin: 0;
+					text-transform: uppercase;
 				}
 				.opti_popular_course_label {
 					border-radius: 100px;
 					color: #fefefe;
-					font-size: 15px;
-					padding: 4px;
+
+					padding: 2px 8px;
 					text-align: center;
 					background-color: #69b3e5;
-					margin-top: 16px;
+					margin-top: 5px;
 					white-space: nowrap;
 					p {
 						color: #fefefe;
@@ -64,13 +191,15 @@
 			}
 		}
 		.opti_course_card_details {
+			margin-top: 10px;
 			p {
 				display: flex;
 				gap: 10px;
 				margin-bottom: 0;
+				font-size: 15px;
 				img {
-					width: 20px;
-					height: 20px;
+					width: 18px;
+					height: 18px;
 					object-fit: contain;
 				}
 			}
@@ -79,7 +208,7 @@
 	.courseSeries__preview__bottom {
 		padding: 16px 0 0;
 		border-top: 2px solid #dcd;
-		margin: 16px 16px 0;
+		margin: 0 16px;
 		.courseSeries__preview__bottom__fistRow {
 			display: none;
 		}
@@ -94,4 +223,214 @@
 
 .opti_spacer_hide {
 	display: none !important;
+}
+
+#practical-application h2,
+#practical-application .courseSeries__info,
+#software-tutorials {
+	display: none;
+}
+
+#advanced-tuning-topics,
+.courseSalesContainer .container-fluid:nth-child(2) .courseSeries {
+	.courseSeries__info {
+		display: none;
+	}
+}
+
+#opti_upsell_block {
+	position: relative;
+	max-width: 85%;
+	padding: 20px;
+	overflow: hidden;
+	background-color: #fefefe;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	@media screen and (max-width: 768px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		flex-direction: column;
+		gap: 10px;
+	}
+	@media screen and (max-width: 580px) {
+		padding-bottom: 20px;
+	}
+
+	.opti_slant {
+		font-family: museo-sans-rounded, sans-serif;
+		font-weight: 700;
+		font-size: 12px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #ffae01;
+		color: #fefefe;
+		padding: 7px 20px;
+		border-radius: 0;
+		display: inline-block;
+		@media screen and (min-width: 768px) {
+			font-size: 14px;
+		}
+		&::after {
+			content: ' ';
+			height: 100%;
+			width: 29px;
+			display: inline-block;
+			position: absolute;
+			background-color: #ffae01;
+			right: -10px;
+			top: 0;
+			transform: skewX(-27deg);
+			bottom: 0;
+		}
+	}
+	.opti_modal_close_icon {
+		font-size: 25px;
+		position: absolute;
+		right: 10px;
+		top: 0;
+	}
+	.opti-upsell-heading {
+		color: #808184;
+		font-weight: 700;
+		font-size: 25px;
+		margin-bottom: 10px;
+		@media screen and (max-width: 768px) {
+			margin-top: 10px;
+			font-size: 18px;
+		}
+	}
+
+	.opti_upsell_content {
+		padding-bottom: 0;
+		@media screen and (max-width: 768px) {
+			gap: 0;
+			align-items: center;
+		}
+
+		&__includes {
+			p {
+				line-height: 1.3;
+			}
+			&__link {
+				text-decoration: underline;
+				color: #69b3e5;
+				display: inline;
+				text-align: left;
+				margin-left: 4px;
+				@media screen and (max-width: 768px) {
+					margin-left: 0;
+					text-align: center;
+				}
+				@media screen and (max-width: 580px) {
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	.opti_upsell_content__priceBlock {
+		text-align: center;
+		@media screen and (max-width: 768px) {
+			margin: 0;
+		}
+		.tittleAndPriceBlock__price {
+			width: 100%;
+			h3.price {
+				white-space: nowrap;
+				color: #69b3e5;
+				font-size: 2.5em;
+				font-weight: 600;
+				margin-bottom: 10px;
+				@media screen and (max-width: 768px) {
+					font-size: 32px;
+				}
+			}
+			.opti_total_value {
+				font-size: 15px;
+				margin-bottom: 10px;
+				font-weight: 700;
+				color: #808184;
+			}
+			.titleAndPriceBlock__paymentPlanLink {
+				font-size: 15px;
+				display: block;
+				width: 50%;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				position: relative;
+				max-width: 332px;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
+				@media screen and (max-width: 580px) {
+					font-size: 14px;
+				}
+				.desktopOr {
+					display: none;
+				}
+				.popover-trigger {
+					color: #69b3e5;
+					text-decoration: underline;
+					cursor: pointer;
+				}
+				.popover {
+					left: 50%;
+					transform: translateX(-25%);
+					top: -315px;
+					min-width: 280px;
+				}
+				.opti_show_popover {
+					display: block;
+					opacity: 1;
+					.arrow {
+						bottom: -10px;
+						transform: rotate(180deg);
+						top: unset;
+					}
+				}
+			}
+		}
+		.opti_upsell_content__cta {
+			a {
+				color: #fefefe;
+				background-color: #ffae01;
+				border-color: #ffae01;
+				padding: 15px 22px;
+				width: 100%;
+				@media screen and (max-width: 768px) {
+					font-size: 16px;
+					width: 100%;
+					padding: 15px;
+					white-space: normal;
+				}
+				p {
+					font-weight: 100;
+					color: #fefefe;
+					font-size: 15px;
+					margin-top: 4px;
+					@media screen and (max-width: 768px) {
+						font-size: 15px;
+					}
+					@media screen and (max-width: 580px) {
+						font-size: 14px;
+						margin-top: 4px;
+						letter-spacing: 1px;
+					}
+				}
+			}
+		}
+		.opti_price_subtext {
+			text-align: center;
+			color: #808184;
+			line-height: 1.2;
+			font-size: 15px;
+			margin-top: 10px;
+		}
+	}
+}
+
+.membership-cta {
+	display: none;
 }
