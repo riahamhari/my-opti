@@ -490,6 +490,14 @@ interface Course {
 			insertPopularLabel(mostPopularCard);
 		}
 
+		if (document.getElementById('software-tutorials')) {
+			// insert new container
+			insertNewMainContainer();
+
+			// reassign main containers
+			mainContainers = [...document.querySelectorAll<HTMLElement>('.courseSalesContainer .container-fluid')];
+		}
+
 		// change to a three column layout
 		changeLayout();
 
@@ -519,6 +527,15 @@ interface Course {
 								`;
 
 		return cardInfo;
+	};
+
+	const insertNewMainContainer = () => {
+		const positionEl = document.querySelector('.container-fluid:has(#advanced-tuning-topics)');
+		const softwareTutorialSection = document.getElementById('software-tutorials');
+		const mainContainer = document.createElement('div');
+		mainContainer.classList.add('container-fluid');
+		positionEl.after(mainContainer);
+		mainContainer.append(softwareTutorialSection);
 	};
 
 	const getMostPopularCard = (categoryCourses: Course[]) => {
@@ -592,7 +609,7 @@ interface Course {
 	const generatePriceBlockHtml = (price, totalValue) => {
 		const priceBlockHtml = `<div class="col-sm-12 col-md-6 tittleAndPriceBlock__price">
 			<h3 class="price"><span class="new-price">$${price} USD</span></h3>
-			<p class="opti_total_value">TOTAL VALUE <span class="opti_popover_trigger">${totalValue}</span></p>
+			<p class="opti_total_value">TOTAL VALUE <span>${totalValue}</span></p>
 			<span class="titleAndPriceBlock__paymentPlanLink">
 				<div
 					class="popover fade bottom"
@@ -646,7 +663,7 @@ interface Course {
 									<div class="opti_upsell_content__cta">
 											<a href="${packageToLinkTo}?autoSubmit=true&OpenPaymentPlanOptions=1" class="btn btn-primary btn-large">SAVE NOW</a>
 									</div>
-									<p class="opti_price_subtext"><i>or use our payment plan and break it into 8 payments of just $${eightPaymentsVal}</i></p>
+									<p class="opti_price_subtext"><i>or use our <span class="opti_popover_trigger">payment plan</span> and break it into 8 payments of just $${eightPaymentsVal}</i></p>
 									
 								</div>`;
 
@@ -658,7 +675,6 @@ interface Course {
 	};
 
 	function restructureToThreeColsPerRow(container) {
-		// const container = document.querySelector('#advanced-tuning-topics');
 		if (!container) return;
 
 		// Step 1: Collect all relevant column elements

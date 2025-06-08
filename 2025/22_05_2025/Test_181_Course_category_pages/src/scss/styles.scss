@@ -76,7 +76,7 @@
 		p {
 			color: #404041;
 			text-align: left;
-			max-width: 50%;
+			max-width: 500px;
 
 			@media screen and (max-width: 767.98px) {
 				max-width: unset;
@@ -226,8 +226,11 @@
 }
 
 #practical-application h2,
-#practical-application .courseSeries__info,
-#software-tutorials {
+#practical-application .courseSeries__info {
+	display: none;
+}
+
+#software-tutorials .courseSeries__info {
 	display: none;
 }
 
@@ -242,7 +245,7 @@
 	position: relative;
 	max-width: 85%;
 	padding: 20px;
-	overflow: hidden;
+
 	background-color: #fefefe;
 	display: flex;
 	gap: 20px;
@@ -377,17 +380,15 @@
 				}
 				.popover {
 					left: 50%;
-					transform: translateX(-25%);
-					top: -315px;
+					transform: translateX(-50%);
+					top: 72px;
 					min-width: 280px;
 				}
 				.opti_show_popover {
 					display: block;
 					opacity: 1;
 					.arrow {
-						bottom: -10px;
-						transform: rotate(180deg);
-						top: unset;
+						top: -10px;
 					}
 				}
 			}
@@ -427,10 +428,33 @@
 			line-height: 1.2;
 			font-size: 15px;
 			margin-top: 10px;
+			.opti_popover_trigger {
+				text-decoration: underline;
+				cursor: pointer;
+			}
 		}
 	}
 }
 
 .membership-cta {
 	display: none;
+}
+
+.container-fluid:has(#advanced-wiring-topics),
+.container-fluid:has(#advanced-tuning-topics) {
+	.opti_course_video_lessons_text {
+		display: none;
+	}
+}
+
+.container-fluid:has(#software-tutorials) {
+	background-image: linear-gradient(
+		to bottom,
+		#fefefe 0%,
+		#fefefe 30%,
+		#ecebea 30%,
+		#ecebea 100%,
+		#fefefe 100%,
+		#fefefe 100%
+	);
 }
