@@ -2,9 +2,15 @@
 Developed by: Riah
 Test name: Test 181 - Course category pages
 **/
+const tagInterval = setInterval(() => {
+    if (typeof (window === null || window === void 0 ? void 0 : window.clarity) === 'function') {
+        window.clarity('set', 'test-181', 'variation');
+        clearInterval(tagInterval);
+    }
+}, 300);
 (() => {
     'use strict';
-    let courseCards, courseSeries, mainContainers, courseHeading, coreCourses;
+    let courseCards, courseSalesContainer, courseSeries, mainContainers, courseHeading, coreCourses;
     const coursesData = [
         {
             title: '3D Modeling & CAD for Motorsport',
@@ -390,8 +396,14 @@ Test name: Test 181 - Course category pages
             document.getElementById('core-courses') ||
                 document.querySelector('.courseSalesContainer .container-fluid:first-child .courseSeries:first-child');
         courseHeading = coreCourses === null || coreCourses === void 0 ? void 0 : coreCourses.querySelector('h1');
+        courseSalesContainer = document.querySelector('.courseSalesContainer');
         courseSeries = [...document.querySelectorAll('.courseSeries')];
-        if (courseCards.length && courseSeries.length && mainContainers.length && coreCourses && courseHeading) {
+        if (courseCards.length &&
+            courseSeries.length &&
+            mainContainers.length &&
+            coreCourses &&
+            courseHeading &&
+            courseSalesContainer) {
             clearInterval(myInterval);
             optiInit();
         }
@@ -401,11 +413,11 @@ Test name: Test 181 - Course category pages
         const categoryCourses = [];
         const currentUrl = window.location.href;
         const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
-        const key = Object.keys(copyForCategoryPages).find((course) => copyForCategoryPages[course].courseLandingPages.some((page) => page === baseUrl // Compare against the base URL only
+        const key = Object.keys(copyForCategoryPages).find((course) => copyForCategoryPages[course].courseLandingPages.some((page) => page.includes(baseUrl) // Compare against the base URL only
         ));
-        // if (!key) {
-        // 	return;
-        // }
+        if (document.getElementById('data-analysis-and-improvement')) {
+            courseSalesContainer.classList.add('opti_driver_training_bg');
+        }
         courseHeading.innerText += ' Courses';
         coreCourses.insertAdjacentHTML('beforeend', `<div class="opti_courseSeries__info"><p>Learn from <strong>Start to Finish</strong> with this selection of courses. Suitable for 
 										<strong>any skill level, and any ECU/Engine combination</strong></p></div>`);
@@ -413,6 +425,8 @@ Test name: Test 181 - Course category pages
         if (key) {
             const matchingCourse = copyForCategoryPages[key];
             upsellBlock = createUpsellBlock(matchingCourse, key);
+            // classlist to handle styling of background
+            courseSalesContainer.classList.add(`opti_${key.split(' ').join('_')}`);
         }
         // init course cards
         courseCards.forEach((card) => {
@@ -589,6 +603,10 @@ Test name: Test 181 - Course category pages
         const popoverTrigger = upsellBlock.querySelector('.opti_popover_trigger');
         const popover = upsellBlock.querySelector('#opti_modal_popover_upsell_block');
         popoverInit(popoverTrigger, popover);
+        const closeIcon = upsellBlock.querySelector('.opti_modal_close_icon');
+        closeIcon.onclick = () => {
+            upsellBlock.remove();
+        };
         return upsellBlock;
     };
     function restructureToThreeColsPerRow(container) {
@@ -611,9 +629,12 @@ Test name: Test 181 - Course category pages
             for (let j = 0; j < 3; j++) {
                 const col = allCols[i + j];
                 if (col) {
-                    col.classList.remove('col-md-5');
-                    col.classList.remove('col-md-6');
-                    col.classList.add('col-md-4');
+                    // col.classList.remove('col-md-5');
+                    // col.classList.remove('col-md-6');
+                    // // col.classlist.remove('col-sm-5');
+                    // // col.classlist.add('col-sm-6');
+                    // col.classList.add('col-md-4');
+                    col.className = 'col-xs-12 col-sm-6 col-md-4';
                     row.appendChild(col);
                 }
             }
@@ -673,28 +694,3 @@ Test name: Test 181 - Course category pages
     }, 15000);
 })();
 export {};
-// html`<div class="container-fluid">
-// 		<div class="courseSeries text-center">
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 		</div>
-// 		<div class="courseSeries text-center">
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 		</div>
-// 	</div>
-// `

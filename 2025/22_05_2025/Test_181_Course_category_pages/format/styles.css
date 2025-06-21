@@ -1,25 +1,36 @@
-@media screen and (min-width: 480px) {
-  .courseSeries__preview--thumbsHigherImage .video-mask {
-    height: 208px !important;
-  }
+#data-analysis-and-improvement h2,
+#data-analysis-and-improvement .courseSeries__info {
+  display: none;
 }
 
-#data-analysis-and-improvement {
-  display: none;
+.CourseSales .breadcrumbs-wrapper {
+  background-color: #fefefe;
 }
 
 .breadcrumbs-wrapper .container-fluid {
   background-color: #fefefe;
-  width: 100% !important;
 }
 
 .courseSalesContainer {
-  background: #fefefe;
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 50%, #ecebea 50%);
 }
-
-.container-fluid:has(.courseSeries__info) {
-  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 30%, #ecebea 30%, #ecebea 90%, #fefefe 90%, #fefefe 100%);
-  width: 100% !important;
+.courseSalesContainer.opti_tuning_starter_package {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 12%, #ecebea 12%, #ecebea 38%, #fefefe 38%, #fefefe 62%, #ecebea 62%, #ecebea 82%, #fefefe 82%, #fefefe 100%);
+}
+.courseSalesContainer.opti_wiring_starter_package, .courseSalesContainer.opti_engine_building_starter_package {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 25%, #ecebea 25%, #ecebea 57%, #fefefe 57%, #fefefe 77%, #ecebea 77%);
+}
+.courseSalesContainer.opti_diesel_tuning_starter_package {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 40%, #ecebea 40%, #ecebea 40%, #ecebea 90%, #fefefe 90%);
+}
+.courseSalesContainer.opti_track_day_package {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 30%, #ecebea 30%, #ecebea 30%, #ecebea 90%, #fefefe 90%);
+}
+.courseSalesContainer.opti_track_day_package.opti_driver_training_bg {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 40%, #ecebea 40%, #ecebea 30%, #ecebea 90%, #fefefe 90%);
+}
+.courseSalesContainer.opti_fabrication_package {
+  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 20%, #ecebea 20%, #ecebea 67%, #fefefe 67%, #fefefe 77%);
 }
 
 .container-fluid {
@@ -99,6 +110,8 @@
   #core-courses .opti_course_ticks_banner,
   .courseSalesContainer .container-fluid:first-child .courseSeries:first-child .opti_course_ticks_banner {
     max-width: unset;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 #core-courses .opti_course_ticks_banner .opti_course_tick,
@@ -152,6 +165,21 @@
   margin-top: 0;
   margin-bottom: 0;
   border: 0;
+  aspect-ratio: 16/9;
+  height: unset;
+}
+.courseSeries__preview .video-mask > a {
+  aspect-ratio: 16/9;
+  height: unset;
+}
+.courseSeries__preview .video-mask > a .play-arrow {
+  margin-left: -45px;
+  width: 88px;
+  height: 55px;
+}
+.courseSeries__preview .video-mask > a .play-arrow svg {
+  width: 30px;
+  height: 30px;
 }
 .courseSeries__preview .opti_course_card_info {
   padding: 16px;
@@ -238,7 +266,6 @@
 
 #opti_upsell_block {
   position: relative;
-  max-width: 85%;
   padding: 20px;
   background-color: #fefefe;
   display: flex;
@@ -251,6 +278,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
     flex-direction: column;
+    max-width: unset;
     gap: 10px;
   }
 }
@@ -294,6 +322,7 @@
   position: absolute;
   right: 10px;
   top: 0;
+  cursor: pointer;
 }
 #opti_upsell_block .opti-upsell-heading {
   color: #808184;
@@ -413,6 +442,9 @@
   padding: 15px 22px;
   width: 100%;
 }
+#opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a:hover {
+  background-color: rgb(239, 161, 6);
+}
 @media screen and (max-width: 768px) {
   #opti_upsell_block .opti_upsell_content__priceBlock .opti_upsell_content__cta a {
     font-size: 16px;
@@ -458,8 +490,4 @@
 .container-fluid:has(#advanced-wiring-topics) .opti_course_video_lessons_text,
 .container-fluid:has(#advanced-tuning-topics) .opti_course_video_lessons_text {
   display: none;
-}
-
-.container-fluid:has(#software-tutorials) {
-  background-image: linear-gradient(to bottom, #fefefe 0%, #fefefe 30%, #ecebea 30%, #ecebea 100%, #fefefe 100%, #fefefe 100%);
 }

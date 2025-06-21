@@ -19,9 +19,17 @@ interface Course {
 	nonVipStudents: number;
 }
 
+const tagInterval = setInterval(() => {
+	if (typeof window?.clarity === 'function') {
+		window.clarity('set', 'test-181', 'variation');
+		clearInterval(tagInterval);
+	}
+}, 300);
+
 (() => {
 	'use strict';
 	let courseCards: HTMLElement[],
+		courseSalesContainer: HTMLElement,
 		courseSeries: HTMLElement[],
 		mainContainers: HTMLElement[],
 		courseHeading: HTMLElement,
@@ -418,9 +426,16 @@ interface Course {
 				'.courseSalesContainer .container-fluid:first-child .courseSeries:first-child'
 			);
 		courseHeading = coreCourses?.querySelector('h1');
-
+		courseSalesContainer = document.querySelector('.courseSalesContainer');
 		courseSeries = [...document.querySelectorAll<HTMLElement>('.courseSeries')];
-		if (courseCards.length && courseSeries.length && mainContainers.length && coreCourses && courseHeading) {
+		if (
+			courseCards.length &&
+			courseSeries.length &&
+			mainContainers.length &&
+			coreCourses &&
+			courseHeading &&
+			courseSalesContainer
+		) {
 			clearInterval(myInterval);
 
 			optiInit();
@@ -434,14 +449,17 @@ interface Course {
 		const currentUrl = window.location.href;
 
 		const baseUrl = new URL(currentUrl).origin + new URL(currentUrl).pathname;
+
 		const key = Object.keys(copyForCategoryPages).find((course) =>
 			copyForCategoryPages[course].courseLandingPages.some(
-				(page) => page === baseUrl // Compare against the base URL only
+				(page) => page.includes(baseUrl) // Compare against the base URL only
 			)
 		);
-		// if (!key) {
-		// 	return;
-		// }
+
+		if (document.getElementById('data-analysis-and-improvement')) {
+			courseSalesContainer.classList.add('opti_driver_training_bg');
+		}
+
 		courseHeading.innerText += ' Courses';
 		coreCourses.insertAdjacentHTML(
 			'beforeend',
@@ -453,6 +471,9 @@ interface Course {
 		if (key) {
 			const matchingCourse = copyForCategoryPages[key];
 			upsellBlock = createUpsellBlock(matchingCourse, key);
+
+			// classlist to handle styling of background
+			courseSalesContainer.classList.add(`opti_${key.split(' ').join('_')}`);
 		}
 
 		// init course cards
@@ -671,6 +692,12 @@ interface Course {
 		const popover = upsellBlock.querySelector('#opti_modal_popover_upsell_block');
 		popoverInit(popoverTrigger, popover);
 
+		const closeIcon: HTMLElement = upsellBlock.querySelector('.opti_modal_close_icon');
+
+		closeIcon.onclick = () => {
+			upsellBlock.remove();
+		};
+
 		return upsellBlock;
 	};
 
@@ -698,9 +725,12 @@ interface Course {
 			for (let j = 0; j < 3; j++) {
 				const col = allCols[i + j];
 				if (col) {
-					col.classList.remove('col-md-5');
-					col.classList.remove('col-md-6');
-					col.classList.add('col-md-4');
+					// col.classList.remove('col-md-5');
+					// col.classList.remove('col-md-6');
+					// // col.classlist.remove('col-sm-5');
+					// // col.classlist.add('col-sm-6');
+					// col.classList.add('col-md-4');
+					col.className = 'col-xs-12 col-sm-6 col-md-4';
 					row.appendChild(col);
 				}
 			}
@@ -776,30 +806,3 @@ interface Course {
 		}
 	}, 15000);
 })();
-
-// html`<div class="container-fluid">
-// 		<div class="courseSeries text-center">
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 		</div>
-// 		<div class="courseSeries text-center">
-// 			<div class="row equal-height">
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-xs-12 col-sm-6 col-md-4"></div>
-// 				<div class="col-md-1 opti_spacer_hide"></div>
-// 			</div>
-// 		</div>
-// 	</div>
-
-// `
